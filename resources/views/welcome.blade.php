@@ -23,40 +23,9 @@
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <p>TEST 2</p>
+                    <p>TEST 3</p>
 
 
-                        <form id="loginForm" action="/your-server-side-endpoint" method="POST">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" required>
-                            
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
-                            
-                            <button type="submit" onclick="onClick(event)">Login</button>
-                        </form>
-                    
-                        <script>
-                            function onClick(e) {
-                                e.preventDefault();  // Prevent the default form submission
-                    
-                                grecaptcha.enterprise.ready(async () => {
-                                    const token = await grecaptcha.enterprise.execute('6LeMjjIqAAAAAG-l7cKzzWgLxVfcB0QC0tM7q9_q', {action: 'LOGIN'});
-                                    
-                                    // Append the token to the form
-                                    const form = document.getElementById('loginForm');
-                                    const input = document.createElement('input');
-                                    input.type = 'hidden';
-                                    input.name = 'g-recaptcha-response';  // Required by reCAPTCHA on server-side
-                                    input.value = token;
-                    
-                                    form.appendChild(input);
-                                    
-                                    // Now submit the form
-                                    form.submit();
-                                });
-                            }
-                        </script>
 
                     
                     <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
