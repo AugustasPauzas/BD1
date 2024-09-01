@@ -15,9 +15,7 @@
     <p> commit 3 test </p>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    <p>aaaaaaaaaa</p>
-                    <h1>aaaaaaaaa</h1>
+
                     <?php
                     phpinfo();
                     ?>
