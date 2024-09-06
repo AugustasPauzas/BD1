@@ -6,7 +6,6 @@
 
         <title>Laravel Test</title>
 
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeMjjIqAAAAAG-l7cKzzWgLxVfcB0QC0tM7q9_q"></script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
