@@ -3,12 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/phpinfo', function () {
-    return view('phpinfo');
-});
+Route::get('/', function () {return view('index');});
+//Route::get('/', function () {return view('welcome');});
+Route::get('/phpinfo', function () {return view('phpinfo');});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,0 +1,33 @@
+
+:root {
+    --primary-color: #dddddda6;
+    --var_text_color_primary: black;
+
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  
+}
+.no_ancor_decoration{
+color: var(--var_text_color_primary);
+text-decoration: none !important;
+}
+.no_ancor_decoration:hover{
+color: var(--var_text_color_primary);
+text-decoration: none !important;
+}
+
+.primary_background_color {
+    background-color: var(--primary-color);
+} 
+.default_padding {
+    padding: 6px;
+}
+.radius_bottom_5_px {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
