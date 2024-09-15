@@ -1,7 +1,10 @@
 
 
+<?php
 
-
+$VarWebsiteNameShort = "Pcparts";
+$VarWebsiteLogo = "/images/logo64.png";
+?>
 
 <nav class="navbar navbar-expand-lg navbar-light primary_background_color ">
     <a class="navbar-brand" href="{{ url('/') }}">
