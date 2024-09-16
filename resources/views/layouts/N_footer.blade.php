@@ -10,7 +10,7 @@
         <div class="col-md-6 mt-md-0 mt-3">
 
             <h5 class="text-uppercase ">{{ $VarWebsiteNameLong }}</h5>
-            <p class="text_center_edges">Welcome to our e-shop, your go-to destination for all your shopping desires! Explore a diverse range of top-notch products, from fashion and electronics to home essentials. Enjoy a hassle-free experience with secure payments and swift delivery, all from the comfort of your home. Shop now for convenience and quality at your fingertips!</p>
+            <p class="text_center_edges">Welcome to our e-commerce. We’re your go-to destination for top-quality PC parts and accessories. Whether you're building a custom rig or upgrading your current setup, we've got everything you need- from processors and GPUs to the latest peripherals. Enjoy fast shipping, competitive prices, and expert customer support. Happy building!</p>
         </div>
 
 
