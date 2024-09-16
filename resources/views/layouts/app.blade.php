@@ -7,6 +7,18 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <?php
+        //meta
+        $VarWebsiteNameLong = "Computer Parts";
+        $VarWebsiteNameShort = "Pcparts";
+        $VarWebsiteLogo = "/images/logo64.png";
+
+        //kontaktiniai duomenys
+        $VarWebsitePhoneNumber = "+370 674 20469";
+        $VarWebsiteEmail = "Email@gmail.com";
+        $VarWebsiteLocation = "Pramonės pr. 20";
+        ?>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -32,25 +44,35 @@
     </head>
     <body class="font-sans antialiased">
         
-        @include('layouts.N_navigation')
 
         <div class="min-h-screen bg-gray-100">
            
-            @include('layouts.navigation')
+            
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
 
-            <!-- Page Content -->
-            <main>
+
+            <div class="screen_height">
+                @include('layouts.N_navigation')
+                
+                <!-- Page Heading -->
+                @isset($header)
+                    <header class="bg-white shadow">
+                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                            {{ $header }}
+                        </div>
+                    </header>
+                @endisset
+                @include('layouts.navigation')
+    
+                <!-- Page Content -->
                 {{ $slot }}
-            </main>
+    
+                @include('layouts.N_footer',[
+                    'VarWebsiteNameLong' => $VarWebsiteNameLong,
+                    'VarWebsitePhoneNumber' => $VarWebsitePhoneNumber,
+                    'VarWebsiteEmail' => $VarWebsiteEmail,
+                    'VarWebsiteLocation' => $VarWebsiteLocation])
+            </div>
         </div>
     </body>
 </html>

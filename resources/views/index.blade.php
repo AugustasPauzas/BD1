@@ -40,12 +40,57 @@
 
     
     <body class="">
-
+        
         <header>
         @include('layouts.header')
         </header>
+        <div class="screen_height">
+            @include('layouts.N_navigation')
+            <br>
+            <br>
+            <br>
+            <div class="container primary_background_color default_padding default_margin default_radius">
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6">CPU</div>
+                            <div class="col-6">GPU</div>      
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6">RAM</div>
+                            <div class="col-6">PSU</div>      
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6">Mother Board</div>
+                            <div class="col-6">SSD/HDD</div>      
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6">Case</div>
+                            <div class="col-6">Fan</div>      
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
 
-        @include('layouts.N_navigation')
+
+
+            @include('layouts.N_footer',[
+                'VarWebsiteNameLong' => $VarWebsiteNameLong,
+                'VarWebsitePhoneNumber' => $VarWebsitePhoneNumber,
+                'VarWebsiteEmail' => $VarWebsiteEmail,
+                'VarWebsiteLocation' => $VarWebsiteLocation])
+        </div>
+        
 
 
     </body>
