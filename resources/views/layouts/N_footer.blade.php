@@ -1,5 +1,16 @@
-<div class="default_top_margin"></div>
-<footer class="page-footer font-small blue pt-4 primary_background_color footer_fixed_bottom default_top_margin">
+
+
+<?php
+//meta
+$VarWebsiteNameLong = "Computer Parts";
+//kontaktiniai duomenys
+$VarWebsitePhoneNumber = "+370 674 20469";
+$VarWebsiteEmail = "Email@gmail.com";
+$VarWebsiteLocation = "Pramonės pr. 20";
+?>
+
+<div class="default_top_margin under_shadow_top"></div>
+<footer class="page-footer font-small blue pt-4 primary_background_color footer_fixed_bottom default_top_margin under_shadow_top">
 <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
 
@@ -14,7 +25,7 @@
         </div>
 
 
-        <hr class="clearfix w-100 d-md-none pb-3">
+
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">

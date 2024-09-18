@@ -6,7 +6,7 @@ $VarWebsiteNameShort = "Pcparts";
 $VarWebsiteLogo = "/images/logo64.png";
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light primary_background_color ">
+<nav class="navbar navbar-expand-lg navbar-light primary_background_color under_shadow  ">
     <a class="navbar-brand" href="{{ url('/') }}">
       <img src="{{ $VarWebsiteLogo }}" width="auto" height="auto" class="navigation-responsive-image d-inline-block " alt="">
       {{ $VarWebsiteNameShort }}
@@ -20,13 +20,22 @@ $VarWebsiteLogo = "/images/logo64.png";
           <a class="nav-link" href="{{ url('/') }}">Home </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
+         </li>
+       <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/category') }}">Category</a>
+         </li>
+
+        <li class="nav-item">
           <a class="nav-link" href="{{ url('/FAQ') }}">F.A.Q.</a>
         </li>
-  
+ 
       </ul>
   
   
       <ul class="navbar-nav ml-auto">
+
+
       @auth
   
 
@@ -76,7 +85,7 @@ $VarWebsiteLogo = "/images/logo64.png";
 
 
 <!-- SEARCH FORM -->
-<div class="container primary_background_color default_padding radius_bottom_5_px">
+<div class="container primary_background_color default_padding radius_bottom_5_px under_shadow search_bar">
     <div class="row ">
             <div class="col">
             <form action="/Main/Search/" method="post">
