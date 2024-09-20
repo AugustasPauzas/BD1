@@ -4,18 +4,30 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 
-Route::get('/', function () {return view('index');});
 //Route::get('/', function () {return view('welcome');});
+
+
+
+//ALL IN NAVIGATION TOP
+Route::get('/', function () {return view('index');});
 Route::get('/phpinfo', function () {return view('phpinfo');});
-
-
-Route::get('/categories',[MainController::class, 'categories']);
-
-Route::get('/category', function () {return view('category');});
+//Route::get('/category', function () {return view('category');});
+Route::get('/category',[MainController::class, 'category_unspec']);
 Route::get('/category/{category}',[MainController::class, 'category']);
+    //ADMIN NAVIGATION
+    Route::get('/categories',[MainController::class, 'categories']);
+    Route::get('/specifications',[MainController::class, 'specifications']);
 
-route::post('/add_new_category',[MainController::class, 'add_new_category']);
 
+//FUNCTIONAL ROUTES
+    //TABLE CATEGORY
+    route::post('/add_new_category',[MainController::class, 'add_new_category']);
+
+    //TABLE VALUE
+    route::post('/add_new_value',[MainController::class, 'add_new_value']);
+
+    //TABLE PARAMETER
+    route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
 
 
 

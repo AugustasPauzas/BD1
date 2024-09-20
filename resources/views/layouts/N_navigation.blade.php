@@ -8,7 +8,7 @@ $VarWebsiteLogo = "/images/logo64.png";
 
 <nav class="navbar navbar-expand-lg navbar-light primary_background_color under_shadow  ">
     <a class="navbar-brand" href="{{ url('/') }}">
-      <img src="{{ $VarWebsiteLogo }}" width="auto" height="auto" class="navigation-responsive-image d-inline-block " alt="">
+      <img class="medium_svg" src="{{ $VarWebsiteLogo }}" width="auto" height="auto" class="navigation-responsive-image d-inline-block " alt="">
       {{ $VarWebsiteNameShort }}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,6 +19,9 @@ $VarWebsiteLogo = "/images/logo64.png";
         <li class="nav-item active">
           <a class="nav-link" href="{{ url('/') }}">Home </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/specifications') }}">Specifications</a>
+         </li>
         <li class="nav-item">
           <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
          </li>

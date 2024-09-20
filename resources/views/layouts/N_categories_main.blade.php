@@ -4,22 +4,30 @@
 
     <form action="add_new_category" method="post">
         @csrf
-        <div class="row no_margin_sides">
-            <div class="form-group col-5 ">
-            <label for="exampleInputEmail1">Category Name</label>
-            <input name="category" type="" value="{{ old('categoryname')}}" class="form-control" placeholder="Category Name">
-            <p> @error('category'){{$message}}@enderror</p>
+        <div class="row align-items-end">
+            <!-- Category Name Input -->
+            <div class="form-group col-md-5">
+                <label for="category">Category Name</label>
+                <input id="category" name="category" type="text" value="{{ old('categoryname') }}" class="form-control" placeholder="Category Name">
             </div>
-            <div class="form-group col-5">
-            <label for="exampleInputPassword1">Full Category Name</label>
-            <input name="category_full" type="" value="{{ old('fullcategoryname')}}" class="form-control" placeholder="Full Category Name">
-            <p > @error('category_full'){{$message}}@enderror</p>
-            </div>  
-            <div class="form-group col-2 ">
+    
+            <!-- Full Category Name Input -->
+            <div class="form-group col-md-5">
+                <label for="category_full">Full Category Name</label>
+                <input id="category_full" name="category_full" type="text" value="{{ old('fullcategoryname') }}" class="form-control" placeholder="Full Category Name">
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="form-group col-md-2 d-flex align-items-end">
                 <button type="submit" class="btn btn-primary">Add</button>
-            </div>                                  
+            </div>
         </div>
+
     </form>
+    
+    
+    
+    
 
 </div>
 <br>
@@ -28,8 +36,7 @@
         <p ><strong class="remain_center">Category Table</strong>  </p>
         <div class="row no_margin_sides">
 
-            <table>
-
+            <table class="table-striped table-hover ">
             <thead>
                 <tr>
                   <th scope="col">ID</th>

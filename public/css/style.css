@@ -26,6 +26,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
 }
 .index_image{
     background-image: url('/images/background2.jpg') ; 
@@ -66,6 +67,16 @@ text-decoration: none !important;
     margin-bottom: 5px;
 
 }
+.default_large_margin{
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+.default_extra_large_margin{
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+}
 .default_padding {
     padding: 6px;
 }
@@ -81,8 +92,12 @@ text-decoration: none !important;
     border-bottom-right-radius: 5px;
 }
 .black_border{
-    border: 1px solid black;
+    border: 1px solid black !important;
 }
+.grey_border{
+    border: 1px solid grey !important;
+}
+
 .index_items{
     background-color: rgba(36, 36, 36, 0.925);
     color: white;
@@ -111,6 +126,7 @@ text-decoration: none !important;
     width: 100%;
 }
 
+
 .clearfix::after {
     content: "";
     display: table;
@@ -130,4 +146,160 @@ text-decoration: none !important;
 }
 .under_shadow_top{
     box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.cut_off {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+.full_width_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* Center the image */
+}
+.two_line_clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5em; /* Adjust based on font size */
+    max-height: 3em;    /* 2 lines * line-height */
+}
+.price_p{
+    color: rgb(209, 27, 27);
+    font-size: 110%;
+    align-items: flex-end;
+}
+.Price_small_p{
+    font-size: 85%;
+    position: relative;
+    bottom: 0;
+}
+
+.item_list_margin{
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
+}
+.cart_button{
+    padding: 4px;
+    width: 100%;
+    background-color: rgba(54, 255, 54, 0.63);
+}
+.cart_button:hover{
+
+    background-color: rgba(54, 255, 54, 0.781);
+}
+
+.extra_small_svg{
+    height: 24px;
+    width: 24px;
+}
+.small_svg{
+    height: 32px;
+    width: 32px;
+}
+.medium_svg{
+    height: 48px;
+    width: 48px;
+}
+
+.image_svg_wrapper {
+    position: relative; /* Set relative positioning to contain absolute elements */
+    width: 100%; /* Adjust as needed */
+}
+
+.heart_div {
+    position: absolute;
+    top: 6px; /* Adjust spacing from the top */
+    right: 6px; /* Adjust spacing from the right */
+    background-color: rgba(255, 255, 255, 0.55); /* Optional: add background to make the SVG visible */
+    border-radius: 50%; /* Optional: to make the div round */
+    padding: 5px; /* Optional: adjust padding to control the size of the clickable area */
+    z-index: 2;
+}
+
+.heart_svg{
+    opacity: 0.6; 
+    fill: rgba(255, 255, 255, 0) !important;
+    transition: fill 0.3s ease, color 0.3s ease; 
+}
+.heart_svg:hover{
+    transition: fill 0.3s ease, color 0.3s ease; 
+    fill: rgba(255, 60, 60, 0.801) !important;
+}
+
+
+
+.item_list {
+    background-color: white;
+    transition: background-color 0.5s ease, color 0.5s ease; 
+    align-items: stretch !important;
+    width: 24.44%;
+    height: auto;
+    margin: 0.1%;
+    padding: 0px;
+    border: 1px solid var(--var_primary_border_color);
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+.item_list:hover{
+    background-color: rgba(216, 216, 216, 0.014);
+}
+.item_list:hover img {
+    opacity: 0.85; 
+}
+.item_list:hover .heart_svg {
+    opacity: 0.85; 
+}
+
+
+
+  @media (max-width: 1199.98px) {
+    .item_list {
+        width: 32.7%;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .item_list {
+        width: 49%;  
+    }
+  }
+  @media (max-width: 323.98px) {
+    .item_list {
+        width: 100%;  
+    }
+  }
+
+
+.parameter-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+
+
+.parameter-item {
+    width: 100%;
+    margin-bottom: 0.5rem; /* Adjust spacing for smaller screens */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+@media (max-width: 992px) {
+    .parameter-container {
+        flex-wrap: nowrap;
+        flex-direction: row; /* Arrange items in a row */
+        overflow-x: auto; /* Add horizontal scrolling if needed */
+    }
+
+    .parameter-item {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: auto;
+        flex: 0 0 auto; /* Ensures each item takes up 20% of the container's width */
+        margin-bottom: 0.5rem; /* Adjust spacing for smaller screens */
+    }
 }
