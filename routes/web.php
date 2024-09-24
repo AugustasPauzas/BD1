@@ -13,10 +13,14 @@ Route::get('/', function () {return view('index');});
 Route::get('/phpinfo', function () {return view('phpinfo');});
 //Route::get('/category', function () {return view('category');});
 Route::get('/category',[MainController::class, 'category_unspec']);
-Route::get('/category/{category}',[MainController::class, 'category']);
+Route::get('/view/{item_id}',[MainController::class, 'view_item']);
+//Route::get('/category/{category}',[MainController::class, 'category']);
+Route::get('/cart',[MainController::class, 'cart']);
     //ADMIN NAVIGATION
     Route::get('/categories',[MainController::class, 'categories']);
     Route::get('/specifications',[MainController::class, 'specifications']);
+    Route::get('/create',[MainController::class, 'create']);
+    Route::get('/update/view/{item_id}',[MainController::class, 'view_item_update']);
 
 
 //FUNCTIONAL ROUTES
@@ -28,6 +32,14 @@ Route::get('/category/{category}',[MainController::class, 'category']);
 
     //TABLE PARAMETER
     route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
+
+    //TABLE ITEM
+    route::post('/add_new_item',[MainController::class, 'add_new_item']);
+
+    //TABLE IMAGE IMAGEPARSE
+    route::post('/add_new_image',[MainController::class, 'add_new_image']);
+    Route::get('/delete/item/image/{image_parse_id}', [MainController::class, 'delete_image']);
+
 
 
 

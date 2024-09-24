@@ -28,6 +28,12 @@ $VarWebsiteLogo = "/images/logo64.png";
        <li class="nav-item">
           <a class="nav-link"  href="{{ url('/category') }}">Category</a>
          </li>
+         <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/create') }}">Create</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/rule') }}">rule</a>
+         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/FAQ') }}">F.A.Q.</a>
@@ -39,18 +45,39 @@ $VarWebsiteLogo = "/images/logo64.png";
       <ul class="navbar-nav ml-auto">
 
 
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/cart') }}">
+            <div class="cart_svg_div" style="position: relative;">
+              <svg class="extra_small_svg svg_nav cart_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: relative;">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+
+                <!-- Add the number 6 in the top right -->
+                <text class="cart_number" x="10" y="9" fill="grey" font-size="11" stroke="none" font-weight="bold">0</text>
+              </svg>
+              cart
+            </div>
+          </a>
+        </li>
+        
+        
       @auth
   
 
         @else
         @endauth
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('/Profile') }}"></a>
-        </li>
+
         
   
         @if (Route::has('login'))
                 @auth
+
+
                     <li class="nav-item">
                       <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
                       
