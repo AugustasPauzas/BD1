@@ -63,7 +63,9 @@
                     <div class="default_radius under_shadow item_list grey_border item_list_margin">
                         
                         <div class="image_svg_wrapper">
-
+                            @php 
+                            $imageFound=false;
+                            @endphp
                             @foreach ($data_image as $img)
                                 @php 
                                 $imageFound=false;

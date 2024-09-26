@@ -11,6 +11,7 @@ use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File; 
 use Illuminate\Support\Str; 
 
 
@@ -217,55 +218,81 @@ class MainController extends Controller
         }    
 //---
 // TABLE IMAGE
-    public function ajax_item_image_upload(Request $request)
-    {
+public function ajax_item_image_upload(Request $request)
+{
     error_log('FUNCTION ajax_item_image_upload'); 
     $request->validate([
         'item_id' => 'integer',
         'image' => 'required|image|mimes:webp,jpg,jpeg,png,gif|max:25600',
-        'position' => 'nullable|integer',]);
+        'position' => 'nullable|integer',
+    ]);
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+
+        // Calculate the hash before saving the file
+        $temp_path = $file->getRealPath();
+        $hash = hash_file('sha256', $temp_path);
+
+        // Check if the hash exists
+        $hash_exists = Image::where('hash', $hash)->first();
+
+        if ($hash_exists) {
+            // If hash exists, don't save the file again
+            $the_image_id = $hash_exists->id;
+            $imageParse = ImageParse::create([
+                'item_id' => $request->input('item_id'),
+                'image_id' => $the_image_id,
+                'position' => $request->input('position')
+            ]);
+
+            $this->item_images_reorder();
+
+            $item_image_id_target = ImageParse::find($imageParse->id);
+            error_log('t id: ' . $item_image_id_target);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Image already exists!',
+                'image' => [
+                    'image_parse_id' => $imageParse->id,
+                    'image_location' => $hash_exists->image_location,
+                    'position' => $item_image_id_target->position,
+                    'parse_id' => $item_image_id_target->id,
+                    'item_id' => $request->input('item_id')
+                ],
+            ]);
+        } else {
+            // If hash doesn't exist, save the file
             $filename = time() . '_' . str()->random() . '.' . $file->getClientOriginalExtension();
             $path = public_path('images/item');
             $file->move($path, $filename);
-            $hash = hash_file('sha256', $path . '/' . $filename);
-            $hash_exists = Image::where('hash', $hash)->first();
 
-            if ($hash_exists) {
-                $the_image_id = $hash_exists->id; 
-                $imageParse = ImageParse::create(['item_id' => $request->input('item_id'),'image_id' => $the_image_id,'position' => $request->input('position')]);
+            // Now save the image details
+            $image = Image::create([
+                'image_location' => 'images/item/' . $filename,
+                'hash' => $hash,
+            ]);
 
-                $this->item_images_reorder();
+            $imageParse = ImageParse::create([
+                'item_id' => $request->input('item_id'),
+                'image_id' => $image->id,
+                'position' => $request->input('position')
+            ]);
 
-
-                $item_image_id_target =  ImageParse::find($imageParse->id);;
-                error_log('t id: '.$item_image_id_target);
-                
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Image uploaded successfully!',
-                    'image' => ['image_parse_id' => $imageParse->id,'image_location' => $hash_exists->image_location,'position' => $item_image_id_target->position,'parse_id'=> $item_image_id_target->id,'item_id' => $request->input('item_id')],
-                ]);
-            } 
-            else {
-                $image = Image::create([
-                    'image_location' => 'images/item/' . $filename,'hash' => $hash, 
-                ]);
-                $imageParse = ImageParse::create([
-                    'item_id' => $request->input('item_id'),'image_id' => $image->id,'position' => $request->input('position'),
-                ]);
-                
-                /*return response()->json([
-                    'success' => true,
-                    'message' => 'Image uploaded successfully!',
-                    'image' => ['image_parse_id' => $imageParse->id,'image_location' => $image->image_location,'position' => $imageParse->position],
-                ]);*/
-            }
+            return response()->json([
+                'success' => true,
+                'message' => 'Image uploaded successfully!',
+                'image' => [
+                    'image_parse_id' => $imageParse->id,
+                    'image_location' => $image->image_location,
+                    'position' => $imageParse->position,
+                ],
+            ]);
         }
     }
+}
+
     public function ajax_move_image_to_left($image_parse_id)
     {
         error_log('Entering ajax_move_image_to_left method with image_parse_id: ' . $image_parse_id);
