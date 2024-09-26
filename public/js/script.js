@@ -28,20 +28,20 @@ $(document).ready(function() {
                     // Optionally, reload the data or show a success message
                     console.log('Image deleted successfully');
                 } else {
-                    alert('Failed to delete the image.');
+                    //alert('Failed to delete the image.');
                 }
             },
             error: function(xhr) {
                 console.error(xhr.responseText); // Handle errors
-                alert('Error deleting the image.');
+                //alert('Error deleting the image.');
             }
         });
     });
 
     //view update  move image
 // Move image to the left and reload images
-    $(document).on('click', 'a.image_position_left', function(e) {
-        e.preventDefault(); // Prevent default anchor click behavior
+    $(document).on('click', 'a.image_position_left', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
         const imageParseId = $(this).data('image-parse-id');
         const itemId = $(this).data('item-id'); // Get the item_id from the button's data attribute
         // AJAX call to move the image to the left
@@ -134,6 +134,25 @@ $(document).ready(function() {
         });
     });
 
+
+
+
+    $(document).on('click', '.action_reload_b_pic', function() {
+        var itemId = $(this).data('item-id'); // Assuming item_id is stored in a data attribute
+        
+        $.ajax({
+            url: '/Live_view_update_big_pick/' + itemId,
+            method: 'GET',
+            success: function(response) {
+                $('#big-pick-container').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+    
+
 });//Dock ready end
 
 
@@ -165,7 +184,7 @@ $(document).ready(function() {
                                 #${response.image.position}
                             </div>
                 
-                            <a href="#" class="image_position_left default_radius no_border" data-image-parse-id="${response.image.image_parse_id}" data-item-id="${response.image.item_id}">
+                            <a href="#" class="image_position_left default_radius no_border action_reload_b_pic reload_all_images" data-image-parse-id="${response.image.image_parse_id}" data-item-id="${response.image.item_id}">
                                 <svg class="small_svg" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.144"/>
@@ -175,7 +194,7 @@ $(document).ready(function() {
                                 </svg>
                             </a>
                             
-                            <a href="#" class="image_position_right default_radius no_border"   data-image-parse-id="${response.image.image_parse_id}" data-item-id="${response.image.item_id}">
+                            <a href="#" class="image_position_right default_radius no_border action_reload_b_pic reload_all_images"   data-image-parse-id="${response.image.image_parse_id}" data-item-id="${response.image.item_id}">
                                 <svg class="small_svg" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.144"/>

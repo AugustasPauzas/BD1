@@ -266,11 +266,19 @@ text-decoration: none !important;
     z-index: 2;
     padding: 5px; 
     border-radius: 4px; 
-    background-color: rgba(255, 255, 255, 0.719); 
+    background-color: rgba(255, 255, 255); 
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+.image_position_left:hover, .image_position_right:hover {
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+
 }
 .delete_div {
     top: 6px; 
-    right: 6px; 
+    right: 6px;
+    transition: 0.3s ease; 
 }
 .position_div {
     top: 6px; 
@@ -285,6 +293,7 @@ text-decoration: none !important;
     right: 6px; 
 }
 .delete_div:hover{
+    transition: 0.3s ease;
     background-color: rgba(255, 206, 206, 0.719);
 }
 .heart_div {
@@ -541,7 +550,9 @@ text-decoration: none !important;
     object-fit: cover;
     transition: transform 0.5s ease, opacity 0.5s ease; 
 }
-.transform_105:hover{
+.transform_105{
 
+}
+.transform_105:hover{
     transform: scale(1.02); 
 }

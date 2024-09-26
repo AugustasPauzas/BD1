@@ -11,5 +11,6 @@
              src="" 
              onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" 
              alt="Image">
+             
     </div>
 @endif

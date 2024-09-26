@@ -26,11 +26,12 @@ Route::get('/cart',[MainController::class, 'cart']);
 
 Route::get('/live_reload_all_images/{item_id}', [MainController::class, 'Live_reload_all_images']);
 
+Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
 
 
 //Route::get('Live_reload_update_images/{item_id}',[MainController::class, 'Live_reload_update_images']);
 
-//Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
+
 
 
 //FUNCTIONAL ROUTES

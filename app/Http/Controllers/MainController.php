@@ -72,6 +72,14 @@ class MainController extends Controller
             return response()->json(['error' => 'Item not found.'], 404);
         }
     }
+    public function Live_view_update_big_pick($item_id) {
+        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+        ->where('image_parse.item_id', $item_id)
+        ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
+        ->orderBy('position')->get();
+        return view('partials.Live_view_update_big_pick', compact('data_image'));
+    }
+    
     public function Live_reload_all_images($item_id)
     {
         error_log('FUNCTION Live_reload_all_images');
@@ -90,7 +98,7 @@ class MainController extends Controller
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
             ->orderBy('position')->get();
 
-            return view('partials.images', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]); 
+            return view('partials.Live_images_reload', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]); 
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return response()->json(['error' => 'Item not found.'], 404);
         } catch (\Exception $e) {
@@ -280,13 +288,19 @@ public function ajax_item_image_upload(Request $request)
                 'position' => $request->input('position')
             ]);
 
+            $this->item_images_reorder();
+            $item_image_id_target = ImageParse::find($imageParse->id);
+            error_log('t position: ' . $item_image_id_target->position);
+
+
             return response()->json([
                 'success' => true,
                 'message' => 'Image uploaded successfully!',
                 'image' => [
                     'image_parse_id' => $imageParse->id,
                     'image_location' => $image->image_location,
-                    'position' => $imageParse->position,
+                    'position' => $item_image_id_target->position,
+                    'item_id' => $item_image_id_target->item_id
                 ],
             ]);
         }
@@ -450,29 +464,7 @@ public function ajax_item_image_upload(Request $request)
             'message' => 'Image deleted successfully.',
             'data' => $data_image
         ]);
-
-
         //TODO delete image if 0 in use
-        /*
-        if ($imageParse) {
-            // Optionally delete the image file from storage
-            $image = Image::find($imageParse->image_id);
-            if ($image) {
-                // Assuming the images are stored locally, delete the file
-                // Storage::delete($image->file_path); // Uncomment if file deletion is needed
-                $image->delete(); // Delete the image from the database
-            }
-
-            // Delete the record from image_parse table
-            $imageParse->delete();
-
-            return redirect()->back()->with('success', 'Image deleted successfully');
-        } else {
-            return redirect()->back()->with('error', 'Image not found');
-        }*/
-
-        //return without new data
-        //return redirect()->back()->with('success', 'Image deleted successfully');
     }
     //----
     
