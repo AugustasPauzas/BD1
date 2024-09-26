@@ -120,6 +120,9 @@ text-decoration: none !important;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+.no_border{
+    border: 0px !important
+}
 .black_border{
     border: 1px solid black !important;
 }
@@ -193,6 +196,9 @@ text-decoration: none !important;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+.full_height{
+    height: 100% !important;
+}
 .full_width_image {
 
     width: 100% !important;
@@ -255,29 +261,41 @@ text-decoration: none !important;
     position: relative; /* Set relative positioning to contain absolute elements */
     width: 100%; /* Adjust as needed */
 }
-.delete_div {
+.delete_div, .position_div, .image_position_left, .image_position_right {
     position: absolute;
-    top: 6px; /* Adjust spacing from the top */
-    right: 6px; /* Adjust spacing from the right */
-    background-color: rgba(255, 255, 255, 0.719); /* Optional: add background to make the SVG visible */
-    border-radius: 4px; /* Optional: to make the div round */
-    padding: 5px; /* Optional: adjust padding to control the size of the clickable area */
     z-index: 2;
+    padding: 5px; 
+    border-radius: 4px; 
+    background-color: rgba(255, 255, 255, 0.719); 
+}
+.delete_div {
+    top: 6px; 
+    right: 6px; 
+}
+.position_div {
+    top: 6px; 
+    left: 6px;
+}
+.image_position_left{
+    bottom: 6px; 
+    left: 6px;
+}
+.image_position_right{
+    bottom: 6px; 
+    right: 6px; 
 }
 .delete_div:hover{
     background-color: rgba(255, 206, 206, 0.719);
 }
-
 .heart_div {
     position: absolute;
-    top: 6px; /* Adjust spacing from the top */
-    right: 6px; /* Adjust spacing from the right */
-    background-color: rgba(255, 255, 255, 0.55); /* Optional: add background to make the SVG visible */
-    border-radius: 50%; /* Optional: to make the div round */
-    padding: 5px; /* Optional: adjust padding to control the size of the clickable area */
+    top: 6px; 
+    right: 6px; 
+    background-color: rgba(255, 255, 255, 0.55); 
+    border-radius: 50%; 
+    padding: 5px; 
     z-index: 2;
 }
-
 .heart_svg{
     opacity: 0.6; 
     fill: rgba(255, 255, 255, 0) !important;
@@ -477,7 +495,8 @@ text-decoration: none !important;
 }
 
 .update_add_images_item{
-    background-color: white;
+
+
 
     
     transition: background-color 0.5s ease, color 0.5s ease; 
@@ -485,8 +504,9 @@ text-decoration: none !important;
     width: 24.4%;
     height: 128px;
     margin: 0.1%;
-    padding: 0px;
-    border: 1px solid var(--var_primary_border_color);
+    margin-top: 2px;
+    margin-bottom: 2px;
+
     text-align: center;
     display: inline-block;
     box-sizing: border-box;

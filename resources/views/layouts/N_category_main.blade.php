@@ -63,7 +63,23 @@
                     <div class="default_radius under_shadow item_list grey_border item_list_margin">
                         
                         <div class="image_svg_wrapper">
-                            <img class="default_radius full_width_image" src="images/missingPicture.png" alt="">
+
+                            @foreach ($data_image as $img)
+                                @php 
+                                $imageFound=false;
+                                @endphp
+                                @if($i->id== $img->item_id && !$imageFound)
+                                    <img id="replace_image_item_view square_image" class="default_radius full_width_image square_image tertiary_background_color " src="{{ asset($img->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
+                                    @php 
+                                    $imageFound=true;
+                                    @endphp
+                                    @break
+                                @endif 
+                            @endforeach  
+                            @if (!$imageFound)
+                            <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
+                            @endif
+
                             <a href="add/like/item/{{$i->id}}">
                                 <div class="heart_div default_radius">
                                     <svg class="heart_svg extra_small_svg" viewBox="-0.96 -0.96 17.92 17.92" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">

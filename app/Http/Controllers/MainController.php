@@ -29,7 +29,7 @@ class MainController extends Controller
             $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->where('image_parse.item_id', $item_id)
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position') // Select image_parse.id as image_parse_id
-            ->get();
+            ->orderBy('position')->get();
             //$data_specification = Specification::findOrFail($item_id);
             
             //echo $data_item;
@@ -55,9 +55,9 @@ class MainController extends Controller
             //$item_id = 1;
             $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->where('image_parse.item_id', $item_id)
-            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position') // Select image_parse.id as image_parse_id
-            ->get();
-        
+            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
+            ->orderBy('position')->get();
+
 
             //dd($data_image); 
             
@@ -66,13 +66,41 @@ class MainController extends Controller
             
             //echo $data_item;
             //echo $data_specification;
-            return view('view_update', ['data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]);
+            return view('view_update', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-
-            echo "Fatal Error";
-            //return redirect('/category')->with('error', 'Item not found.');
+            return response()->json(['error' => 'Item not found.'], 404);
         }
     }
+    public function Live_reload_all_images($item_id)
+    {
+        error_log('FUNCTION Live_reload_all_images');
+        try {
+            $data_item = Item::findOrFail($item_id);
+
+            $data_parameter = Parameter::all();
+            $data_category = Category::all();
+            $data_value = Value::all();
+            $data_specification = Specification::all();
+            //$data_image_parse = ImageParse::where('item_id', $item_id)->get();
+            //$data_image = Image::all();
+            //$item_id = 1;
+            $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+            ->where('image_parse.item_id', $item_id)
+            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
+            ->orderBy('position')->get();
+
+            return view('partials.images', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]); 
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json(['error' => 'Item not found.'], 404);
+        } catch (\Exception $e) {
+            error_log($e);
+            return response()->json(['error' => 'An error occurred.'], 500);
+        }
+    }
+    
+    
+    
+
     public function categories()
     {
         //echo "CONTROLLER WORKS";
@@ -86,23 +114,34 @@ class MainController extends Controller
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_value = Value::all();
-        return view('create', ['data_category' => $data_category], ['data_parameter' => $data_parameter], ['data_value' => $data_value]);
+
+
+        return view('create', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_value' => $data_value]);
     }
     public function cart()
     {
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_value = Value::all();
-        return view('cart', ['data_category' => $data_category], ['data_parameter' => $data_parameter], ['data_value' => $data_value]);
+        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+        ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') // Also select item_id for reference
+        ->get();
+        
+        return view('cart', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_value' => $data_value, 'data_image'=> $data_image]);
     }
     public function category_unspec()
     {
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_item = Item::all();
-        error_log('aaa');
+        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+        ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') // Also select item_id for reference
+        ->orderBy('position')->get();
+    
+        
+        //error_log('aaa');
 
-        return view('category', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_item' => $data_item]);
+        return view('category', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_item' => $data_item, 'data_image'=> $data_image]);
     }
     public function category($category)
     {
@@ -176,15 +215,16 @@ class MainController extends Controller
         
             return redirect('/category');
         }    
-    //---
-    // TABLE IMAGE
-    public function add_new_image(Request $request)
+//---
+// TABLE IMAGE
+    public function ajax_item_image_upload(Request $request)
     {
-        $request->validate([
-            'item_id' => 'required|integer',
-            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:25600',
-            'position' => 'nullable|integer',
-        ]);
+    error_log('FUNCTION ajax_item_image_upload'); 
+    $request->validate([
+        'item_id' => 'integer',
+        'image' => 'required|image|mimes:webp,jpg,jpeg,png,gif|max:25600',
+        'position' => 'nullable|integer',]);
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_' . str()->random() . '.' . $file->getClientOriginalExtension();
@@ -194,14 +234,149 @@ class MainController extends Controller
             $hash_exists = Image::where('hash', $hash)->first();
 
             if ($hash_exists) {
-                echo "Image Already Exists";
+                $the_image_id = $hash_exists->id; 
+                $imageParse = ImageParse::create(['item_id' => $request->input('item_id'),'image_id' => $the_image_id,'position' => $request->input('position')]);
+
+                $this->item_images_reorder();
+
+
+                $item_image_id_target =  ImageParse::find($imageParse->id);;
+                error_log('t id: '.$item_image_id_target);
+                
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Image uploaded successfully!',
+                    'image' => ['image_parse_id' => $imageParse->id,'image_location' => $hash_exists->image_location,'position' => $item_image_id_target->position,'parse_id'=> $item_image_id_target->id,'item_id' => $request->input('item_id')],
+                ]);
+            } 
+            else {
+                $image = Image::create([
+                    'image_location' => 'images/item/' . $filename,'hash' => $hash, 
+                ]);
+                $imageParse = ImageParse::create([
+                    'item_id' => $request->input('item_id'),'image_id' => $image->id,'position' => $request->input('position'),
+                ]);
+                
+                /*return response()->json([
+                    'success' => true,
+                    'message' => 'Image uploaded successfully!',
+                    'image' => ['image_parse_id' => $imageParse->id,'image_location' => $image->image_location,'position' => $imageParse->position],
+                ]);*/
+            }
+        }
+    }
+    public function ajax_move_image_to_left($image_parse_id)
+    {
+        error_log('Entering ajax_move_image_to_left method with image_parse_id: ' . $image_parse_id);
+    
+        try {
+            $this->item_images_reorder();
+            error_log('FUNCTION move_image_to_left');
+    
+            $primary = ImageParse::findOrFail($image_parse_id);
+            $item_id = $primary->item_id;
+    
+            // Check if the previous position exists
+            $primary_position_target = $primary->position - 1;
+            $secondary_position_target = $primary->position;
+    
+            // Find the secondary image at the previous position
+            $secondary = ImageParse::where('position', $primary_position_target)
+                ->where('item_id', $item_id)
+                ->first();
+    
+            if (!$secondary) {
+                error_log('No secondary image found at position: ' . $primary_position_target);
+                //return response()->json(['error' => 'No image found to the left.'], 404);B
+                goto break_free_of_try;
+            }
+    
+            // Swap the positions
+            $secondary->position = $secondary_position_target;
+            $secondary->save();
+    
+            $primary->position = $primary_position_target;
+            $primary->save();
+    
+            //return response()->json(['success' => 'Image moved left successfully.']);
+        } catch (\Exception $e) {
+            error_log('Error in ajax_move_image_to_left: ' . $e->getMessage());
+            //return response()->json(['error' => 'An error occurred while moving the image.'], 500);
+        }
+        break_free_of_try:
+    }
+    
+    public function ajax_move_image_to_right($image_parse_id)
+    {
+        error_log('Entering ajax_move_image_to_right method with image_parse_id: ' . $image_parse_id);
+    
+        try {
+            $this->item_images_reorder();
+            error_log('FUNCTION move_image_to_right'); 
+    
+            $primary = ImageParse::findOrFail($image_parse_id);
+            $item_id = $primary->item_id;
+    
+            // Check if the next position exists
+            $primary_position_target = $primary->position + 1;
+            $secondary_position_target = $primary->position;
+    
+            $secondary = ImageParse::where('position', $primary_position_target)
+                ->where('item_id', $item_id)
+                ->first();
+    
+            if (!$secondary) {
+                error_log('No secondary image found at position: ' . $primary_position_target);
+                //return response()->json(['error' => 'No image found to the right.'], 404);
+                goto break_free_of_try;
+            }
+    
+            $secondary->position = $secondary_position_target;
+            $secondary->save();
+    
+            $primary->position = $primary_position_target;
+            $primary->save();
+    
+            return response()->json(['success' => 'Image moved right successfully.']);
+        } catch (\Exception $e) {
+            error_log('Error in ajax_move_image_to_right: ' . $e->getMessage());
+            //return response()->json(['error' => 'An error occurred while moving the image.'], 500);
+        }
+        break_free_of_try:
+    }
+    
+/*
+    public function add_new_image($item_id, Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:webp,jpg,jpeg,png,gif|max:25600',
+            'position' => 'nullable|integer',
+        ]);
+    
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . str()->random() . '.' . $file->getClientOriginalExtension();
+            $path = public_path('images/item');
+            $file->move($path, $filename);
+            $hash = hash_file('sha256', $path . '/' . $filename);
+            $hash_exists = Image::where('hash', $hash)->first();
+    
+            if ($hash_exists) {
                 $the_image_id = $hash_exists->id; 
                 ImageParse::create([
-                    'item_id' => $request->input('item_id'),
+                    'item_id' => $item_id,
                     'image_id' => $the_image_id,
-                    'position' => $request->input('position'),  
+                    'position' => $request->input('position'),
                 ]);
-                return redirect()->back()->with('success', 'Image uploaded successfully!');
+                $this->item_images_reorder();
+                
+    
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Image uploaded successfully!',
+                    'image' => $hash_exists,
+                ]);
             } else {
                 $image = Image::create([
                     'image_location' => 'images/item/' . $filename,
@@ -209,21 +384,48 @@ class MainController extends Controller
                 ]);
                 $the_image_id = $image->id; 
                 ImageParse::create([
-                    'item_id' => $request->input('item_id'),
+                    'item_id' => $item_id,
                     'image_id' => $the_image_id,
-                    'position' => $request->input('position'), 
+                    'position' => $request->input('position'),
                 ]);
             }
-            return redirect()->back()->with('success', 'Image uploaded successfully!');
         }
-        return redirect()->back()->with('error', 'Image upload failed.');
     }
-    public function delete_image($image_parse_id)
+*/
+
+
+    public function delete_image($item_id, $image_parse_id)
     {
+        error_log('FUNCTION delete_image'); 
         // Retrieve the image_parse record
         $imageParse = ImageParse::find($image_parse_id);
-
+        
+        if (!$imageParse) {
+            // Return a 404 response if the image is not found
+            return response()->json(['error' => 'Image not found.'], 404);
+        }
+    
+        // Delete the image_parse record
         $imageParse->delete();
+    
+        // Reorder images if necessary
+        $this->item_images_reorder();
+    
+        // Retrieve the updated list of images
+        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+            ->where('image_parse.item_id', $item_id)
+            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
+            ->orderBy('position')->get();
+    
+        // Return success and updated data as JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'Image deleted successfully.',
+            'data' => $data_image
+        ]);
+
+
+        //TODO delete image if 0 in use
         /*
         if ($imageParse) {
             // Optionally delete the image file from storage
@@ -241,11 +443,39 @@ class MainController extends Controller
         } else {
             return redirect()->back()->with('error', 'Image not found');
         }*/
-        return redirect()->back()->with('success', 'Image deleted successfully');
+
+        //return without new data
+        //return redirect()->back()->with('success', 'Image deleted successfully');
     }
     //----
     
     
+
+
+
+
+    // Function only
+    public function item_images_reorder()
+    {
+        $uniqueItemIds = ImageParse::distinct()->pluck('item_id');
+        foreach ($uniqueItemIds as $uniqueItemId) {
+            $images = ImageParse::where('item_id', $uniqueItemId)->orderBy('position')->get();
+            $new_position = 1;
+            foreach ($images as $img) {
+                $update_target = ImageParse::find($img->id);
+                if ($update_target->position !== $new_position) {
+                    $update_target->position = $new_position;
+                    $update_target->save();
+                }
+                $new_position++;
+            }
+        }
+        //return response()->json(['status' => 'success', 'message' => 'Image positions reordered successfully.']);
+        return;
+    }
+    
+
+
     
         
     

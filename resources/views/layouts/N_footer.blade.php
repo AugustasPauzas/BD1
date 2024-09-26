@@ -83,6 +83,8 @@ $VarWebsiteLocation = "Pramonės pr. 20";
         </div>
     </div>
     </div>
+
+
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© {{ now()->year }}  Copyright:
     <a href="/"> {{ $VarWebsiteNameLong }}</a>

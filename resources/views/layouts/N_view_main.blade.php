@@ -38,11 +38,11 @@
             <div class="image_svg_wrapper default_margin">
                 @if($data_image->isNotEmpty())
                 <div class="image-container big_square_image">
-                    <img class="default_radius full_width_image big_square_image tertiary_background_color grey_border" src="{{ asset($data_image->first()->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
+                    <img id="replace_image_item_view" class="default_radius full_width_image big_square_image tertiary_background_color grey_border" src="{{ asset($data_image->first()->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
                 </div>
                 @else
                 <div class="image-container">
-                    <img class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
+                    <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
                 </div>
                 @endif
             </div>
@@ -52,40 +52,22 @@
                     <div class="tertiary_background_color default_margin default_padding">
 
                     
-                        <div class="same_line_container default_padding" id="imageContainer">
+                        <div  class="same_line_container default_padding" id="imageContainer">
                             @foreach($data_image as $image)
                             <div class="same_line_item small_pading_left_right  default_margin">
-                                <img class=" square_image default_radius full_width_image  transform_105 image_cover" src="/{{ $image->image_location }}"  onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" alt="">
+                                <img id="click_too_replace_main" class=" square_image default_radius full_width_image  transform_105 image_cover" src="/{{ $image->image_location }}"  onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" alt="">
 
 
                             </div>                                
                             @endforeach
                         </div>
 
+                        
 
                         <button class="scroll_button left" onclick="view_item_image_menu_scroll_left()">←</button>
                         <button class="scroll_button right" onclick="view_item_image_menu_scroll_right()">→</button>
                     
-                        <!-- Inline JavaScript -->
-                        <script>
-                            function view_item_image_menu_scroll_left() {
-                                const container = document.getElementById('imageContainer');
-                                const scrollAmount = container.clientWidth * 0.65; // 80% 
-                                container.scrollBy({
-                                    left: -scrollAmount,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        
-                            function view_item_image_menu_scroll_right() {
-                                const container = document.getElementById('imageContainer');
-                                const scrollAmount = container.clientWidth * 0.65; // 80%
-                                container.scrollBy({
-                                    left: scrollAmount,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        </script>
+
                         
 
                     </div>
