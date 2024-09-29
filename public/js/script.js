@@ -135,8 +135,6 @@ $(document).ready(function() {
     });
 
 
-
-
     $(document).on('click', '.action_reload_b_pic', function() {
         var itemId = $(this).data('item-id'); // Assuming item_id is stored in a data attribute
         
@@ -153,11 +151,205 @@ $(document).ready(function() {
     });
     
 
+
+    // Add item AJAX
+    $(document).ready(function() {
+        $('#add-item-form').on('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+            var form = $(this);
+            // Get the URL from the data-ajax-url attribute
+            var url = form.data('ajax-url');
+    
+            $.ajax({
+                url: url, // Use the data-ajax-url attribute
+                method: 'POST',
+                data: form.serialize(), // Send form data
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+                },
+                success: function(response) {
+                    //alert('Item added successfully!');
+                    form.trigger('reset');
+                    $('.text-danger').text(''); // Clear previous error messages
+                },
+                error: function(xhr) {
+                    var errors = xhr.responseJSON.errors; // Get validation errors
+    
+                    // Clear previous errors
+                    $('.text-danger').text('');
+    
+                    // Display validation errors dynamically
+                    
+                    if (errors.name) $('.error-name').text(errors.name[0]);
+                    if (errors.ien_code) $('.error-ien_code').text(errors.ien_code[0]);
+                    if (errors.price) $('.error-price').text(errors.price[0]);
+                    if (errors.status) $('.error-status').text(errors.status[0]);
+                    if (errors.description) $('.error-description').text(errors.description[0]);
+                    if (errors.quantity) $('.error-quantity').text(errors.quantity[0]);
+                    if (errors.category) $('.error-category').text(errors.category[0]);
+                    // BAD not from controller
+                    /*if (errors.name) $('.error-name').text("Item Name Field Is Required");
+                    if (errors.ien_code) $('.error-ien_code').text("IEN Code Field Is Required");
+                    if (errors.price) $('.error-price').text("Valid Price Is Required");
+                    if (errors.status) $('.error-status').text("Status Must Be Selected");
+                    if (errors.description) $('.error-description').text("Description Is Required");
+                    if (errors.quantity) $('.error-quantity').text("Quantity Is Required");
+                    if (errors.category) $('.error-category').text("Valid Caregory Is Required");*/
+                }
+            });
+        });
+        //Update Item Ajax
+        $(document).ready(function() {
+            $('#update-item-form').on('submit', function(e) {
+                e.preventDefault(); // Prevent page reload
+                var form = $(this);
+                // Get the URL from the data-ajax-url attribute
+                var url = form.data('ajax-url');
+        
+                $.ajax({
+                    url: url, // Use the data-ajax-url attribute
+                    method: 'POST',
+                    data: form.serialize(), // Send form data
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+                    },
+                    success: function(response) {
+                        //alert('Item Updated successfully!');
+                        //form.trigger('reset');
+                        //$('.text-danger').text(''); // Clear previous error messages
+                    },
+                    error: function(xhr) {
+                        var errors = xhr.responseJSON.errors; // Get validation errors
+        
+                        // Clear previous errors
+                        $('.text-danger').text('');
+        
+                        // Display validation errors dynamically
+                        
+                        if (errors.name) $('.error-name').text(errors.name[0]);
+                        if (errors.ien_code) $('.error-ien_code').text(errors.ien_code[0]);
+                        if (errors.price) $('.error-price').text(errors.price[0]);
+                        if (errors.status) $('.error-status').text(errors.status[0]);
+                        if (errors.description) $('.error-description').text(errors.description[0]);
+                        if (errors.quantity) $('.error-quantity').text(errors.quantity[0]);
+                        if (errors.category) $('.error-category').text(errors.category[0]);
+                        // BAD not from controller
+                        /*if (errors.name) $('.error-name').text("Item Name Field Is Required");
+                        if (errors.ien_code) $('.error-ien_code').text("IEN Code Field Is Required");
+                        if (errors.price) $('.error-price').text("Valid Price Is Required");
+                        if (errors.status) $('.error-status').text("Status Must Be Selected");
+                        if (errors.description) $('.error-description').text("Description Is Required");
+                        if (errors.quantity) $('.error-quantity').text("Quantity Is Required");
+                        if (errors.category) $('.error-category').text("Valid Caregory Is Required");*/
+                    }
+                });
+            });
+        });
+        // create item price vald.
+        document.getElementById('price').addEventListener('input', function (e) {
+            // Replace commas with dots
+            this.value = this.value.replace(/,/g, '.');
+            // Remove all characters except digits and dots
+            this.value = this.value.replace(/[^0-9.]/g, '');
+            
+            const parts = this.value.split('.');
+            
+            // Allow only one decimal point
+            if (parts.length > 2) {
+                this.value = parts[0] + '.' + parts.slice(1).join('');
+            }
+        
+            // Limit decimal places to 2
+            if (parts[1] && parts[1].length > 2) {
+                this.value = parts[0] + '.' + parts[1].slice(0, 2);
+            }
+            
+            // Check for maximum value of 999999.99
+            const maxValue = 999999.99;
+            if (parseFloat(this.value) > maxValue) {
+                this.value = maxValue.toFixed(2); // Set to max value if exceeded
+            }
+        });
+        // Create item quantity vald.
+        document.getElementById('quantity').addEventListener('input', function (e) {
+            // Get the current value
+            const value = this.value;
+    
+            // Filter out non-numeric characters
+            const filteredValue = value.replace(/[^0-9]/g, '');
+    
+            // Ensure the value does not exceed 6 digits
+            if (filteredValue.length > 6) {
+                this.value = filteredValue.slice(0, 6); // Trim to 6 digits
+            } else {
+                this.value = filteredValue; // Set the filtered value
+            }
+        });
+    });
+    
+
+
+
+
+
 });//Dock ready end
 
+// 
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to adjust targetDiv's height based on sourceDiv
+    function adjustHeight() {
+        const screenWidth = window.innerWidth;
+
+        // Check if both elements exist, if not, stop execution
+        const sourceDiv = document.getElementById('sourceDiv');
+        const targetDiv = document.getElementById('targetDiv');
+
+        if (!sourceDiv || !targetDiv) {
+            console.warn('sourceDiv or targetDiv not found. Stopping function.');
+            window.removeEventListener('resize', adjustHeight); // Stop adjusting height if elements are not found
+            return;
+        }
+
+        // Only execute if the screen width is 1200px or more
+        if (screenWidth >= 1200) {
+            // Get sourceDiv height and set it to targetDiv
+            const sourceHeight = sourceDiv.getBoundingClientRect().height;
+            targetDiv.style.height = sourceHeight + 'px';
+        } else {
+            targetDiv.style.height = 'auto';
+        }
+    }
+
+    // Run the function once on page load
+    adjustHeight();
+
+    // Run the function when the window is resized
+    window.addEventListener('resize', adjustHeight);
+});
 
 
 
+// Item Quantity in item view
+document.addEventListener('DOMContentLoaded', function() {
+    const maxQuantity = document.getElementById('view_item_add_quantity').max;
+    const inputField = document.getElementById('view_item_add_quantity');
+    const increaseButton = document.getElementById('view_item_add_quantity_increaseButton');
+    const decreaseButton = document.getElementById('view_item_add_quantity_decreaseButton');
+
+    increaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(inputField.value);
+        if (currentValue < maxQuantity) {
+            inputField.value = currentValue + 1;
+        }
+    });
+
+    decreaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(inputField.value);
+        if (currentValue > 1) {
+            inputField.value = currentValue - 1;
+        }
+    });
+});
 
 
 $(document).ready(function() {
@@ -240,6 +432,22 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
+// CREATE ITEM
+
+
+
+
+
+
+
+
+
+// VIEW ITEM
 
 
 // Add a click event listener to all images with id click_too_replace_main

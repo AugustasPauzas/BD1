@@ -17,10 +17,11 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('status');
             $table->string('name');            
-            $table->string('description');
+            $table->text('description');
             $table->double('price');
             $table->string('ien_code');
             $table->integer('quantity');
+            $table->timestamps();
 
             });
     }

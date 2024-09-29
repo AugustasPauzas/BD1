@@ -19,7 +19,9 @@ Route::get('/cart',[MainController::class, 'cart']);
     //ADMIN NAVIGATION
     Route::get('/categories',[MainController::class, 'categories']);
     Route::get('/specifications',[MainController::class, 'specifications']);
-    Route::get('/create',[MainController::class, 'create']);
+
+    Route::get('/create',[MainController::class, 'create']); //<- validation done
+
     Route::get('/update/view/{item_id}',[MainController::class, 'view_item_update']);
 
 //LIVE
@@ -45,7 +47,10 @@ Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_v
     route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
 
     //TABLE ITEM
-    route::post('/add_new_item',[MainController::class, 'add_new_item']);
+    //Route::post('/add_new_item', [MainController::class, 'add_new_item']);
+    Route::post('/ajax_add_new_item', [MainController::class, 'ajax_add_new_item']);
+    Route::post('/ajax_update_item', [MainController::class, 'ajax_update_item']);
+
 
     //TABLE IMAGE IMAGEPARSE
     //route::post('/add_new_image/{item_id}',[MainController::class, 'add_new_image']);

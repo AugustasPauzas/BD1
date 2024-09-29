@@ -3,11 +3,13 @@
 
 <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
     <div class="row ">
-        <div class="col-6">
-            <p>id: {{$data_item->first()->id}}</p>
+        <div class="col-6  ">
+            <div class="default_margin default_margin_sides">
+                <p>id: {{$data_item->id}}</p>
+            </div>
         </div>
         <div class="col-6">
-            <div class="text-end">
+            <div class="text-end default_margin default_margin_sides">
                 <a href="/view/{{$data_item->id}}">
                     <button type="button" class="btn btn-primary btn">
                         <svg class="extra_small_svg edit_svg_color" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="returnIconTitle" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" > <title id="returnIconTitle"></title> <path d="M19,8 L19,11 C19,12.1045695 18.1045695,13 17,13 L6,13"/> <polyline points="8 16 5 13 8 10"/> </svg>                        
@@ -22,6 +24,99 @@
 
 <br>
 
+<div class="container primary_background_color default_padding default_margin default_radius under_shadow">
+    <div class="row no_sides_margin">
+        <div class="col-12">
+            <form id="update-item-form" method="POST" data-ajax-url="{{ url('ajax_update_item') }}">
+                @csrf
+                <input id="name" name="id"  type="text" value="{{$data_item->id}}" class="form-control" hidden placeholder="">
+                <div class="row">
+                    <div class="col-md-6 ">
+                    <div class="default_margin default_margin_sides">
+                        <div class="form-group">
+                            <label for="name">Item Name</label>
+                            <input id="name" name="name" type="text" value="{{ $data_item->name }}" class="form-control" placeholder="">
+                            <span class="text-danger error-name"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ien_code">IEN Code</label>
+                            <input id="ien_code" name="ien_code" value="{{ $data_item->ien_code }}"  type="text" value="" class="form-control" placeholder="">
+                            <span class="text-danger error-ien_code"></span>
+                        </div>
+                        
+                        <label for="price">Price</label>
+                        <div class= "form-group">
+                            <div class=" input-group">
+                                <input id="price"  name="price" value="{{ $data_item->price }}" type="text" class="form-control" pattern="^\d+([.,]\d{1,2})?$">
+                                <span class="input-group-text">€</span>
+                                
+                            </div>
+                            <span class="text-danger error-price"></span>                            
+                        </div>
+                        <label for="status">Status</label>
+                        
+                        <div class=" input-group">
+                            <select class="form-group form-select" id="status" name="status">
+                                <option value="2" {{ $data_item->status == 2 ? 'selected' : '' }}>Not Public</option>
+                                <option value="1" {{ $data_item->status == 1 ? 'selected' : '' }}>Public</option> 
+                            </select>
+                            
+                            <span class="text-danger error-status"></span>
+                        </div>                        
+                    </div>
+
+                    </div>
+                    <div class="col-md-6">
+                    <div class="default_margin default_margin_sides">
+                        <div class="form-group">
+                        <label  for="description">Description</label>
+                        <div class="input-group">
+                            
+                            <textarea  id="description"  rows="4" name="description" class="form-control">{{ $data_item->description }}</textarea>
+                            
+                        </div>       
+                        <span class="text-danger error-description"></span>                
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input value="{{ $data_item->quantity }}" id="quantity" name="quantity" type="text" class="form-control" placeholder="">
+
+
+                            <span class="text-danger error-quantity"></span>
+                        </div>
+                        
+                        <label for="category">Category</label>
+                        <div>
+                            <div class="input-group">
+                                <select class="form-select" id="category" name="category">
+                                    <option selected></option>
+                                    @foreach ($data_category as $i)
+                                        <option value="{{ $i->id }}" {{ $data_item->category_id == $i->id ? 'selected' : '' }}>{{ $i->category }}</option>
+                                    @endforeach
+                                </select>
+                                
+                                <button class="btn btn-primary" type="submit">Update</button>
+                            </div>        
+                            <span class="text-danger error-category"></span>               
+                        </div>
+
+                    </div>                        
+                    </div>
+
+                </div>
+            </form>
+            
+            
+            
+                       
+        </div>
+      
+    </div>
+</div>
+<br>
 
 
 <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
@@ -97,7 +192,7 @@
                         </a>
                         
                         <img class=" default_radius default_radius full_width_image transform_105 image_cover" src="/{{ $image->image_location }}" alt="Image">
-                        <a class="item_update_delete_button" data-item-id="{{ $data_item->first()->id }}" data-image-parse-id="{{ $image->image_parse_id }}">
+                        <a class="item_update_delete_button" data-item-id="{{ $data_item->id }}" data-image-parse-id="{{ $image->image_parse_id }}">
                             <div class="delete_div default_radius">
                                 <svg class="small_svg delete_button_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

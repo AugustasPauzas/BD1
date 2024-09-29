@@ -11,6 +11,7 @@ use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File; 
 use Illuminate\Support\Str; 
 
@@ -21,24 +22,35 @@ class MainController extends Controller
     public function view_item($item_id)
     {
         try {
-            $data_item = Item::findOrFail($item_id);
+
+            $data_item = Item::findOrFail($item_id); 
+
+            $data_all_item = Item::all()->filter(fn($item) => $item->id !== (int)$item_id);
+            $data_all_item = $data_all_item->filter(fn($item) => $item->category_id === $data_item->category_id);
+            $data_all_item = $data_all_item->shuffle()->take(6);
+
 
             $data_parameter = Parameter::all();
             $data_category = Category::all();
             $data_value = Value::all();
             $data_specification = Specification::all();
+            $data_all_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
+            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') // Also select item_id for reference
+            ->get();
+
             $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->where('image_parse.item_id', $item_id)
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position') // Select image_parse.id as image_parse_id
             ->orderBy('position')->get();
+            
             //$data_specification = Specification::findOrFail($item_id);
             
             //echo $data_item;
             //echo $data_specification;
-            return view('view', ['data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]);
+            return view('view', ['data_item' => $data_item,'data_all_item' => $data_all_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification,'data_all_image' => $data_all_image, 'data_image' => $data_image]);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 
-            echo "Fatal Error";
+            echo "Fatal Error, Item Not Found";
             //return redirect('/category')->with('error', 'Item not found.');
         }
     }
@@ -138,6 +150,9 @@ class MainController extends Controller
         
         return view('cart', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_value' => $data_value, 'data_image'=> $data_image]);
     }
+    public function category_search($search_name){
+
+    }
     public function category_unspec()
     {
         $data_parameter = Parameter::all();
@@ -196,34 +211,100 @@ class MainController extends Controller
         return view('specifications', ['value_data' => $value_data,'parameter_data' => $parameter_data,'specification_data' => $specification_data]);
     }
     //---TABLE ITEM
-        public function add_new_item(Request $request)
-        {
-            // "," -> "."
-            $request->merge(['price' => str_replace(',', '.', $request->input('price'))]);
+    public function ajax_add_new_item(Request $request)
+    {
+        // Prepare price by converting ',' to '.'
+        $request->merge(['price' => str_replace(',', '.', $request->input('price'))]);
+    
+        // Validate the input
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'ien_code' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'status' => 'required|string',
+            'description' => 'required|string',
+            'quantity' => 'required|integer|min:0|max:999999',
+            'category' => 'required|string',
+        ], [
+            'name.required' => 'Item Name Field Is Required',
+            'ien_code.required' => 'IEN Code Field Is Required',
+            'price.required' => 'Price Field Is Required',
+            'status.required' => 'Valid Status Is Required',
+            'description.required' => 'Description Field Is Required',
+            'quantity.required' => 'Quantity Field Is Required',
+            'category.required' => 'Valid Category Is Required',
+        ]);
+    
+        // Check validation fails
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+    
+        // Save the new item to the database
+        Item::create([
+            'category_id' => $request->input('category'),
+            'user_id' => 444, // or auth()->id(),
+            'status' => $request->input('status'),
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'ien_code' => $request->input('ien_code'),
+            'quantity' => $request->input('quantity'),
+        ]);
+    
+        // Return a successful response
+        return response()->json(['message' => 'Item added successfully!'], 200);
+    }
+    public function ajax_update_item(Request $request)
+    {
+        error_log("FUNCTION ajax_update_item, id: ".$request->id);
+        // Prepare price by converting ',' to '.'
+        $request->merge(['price' => str_replace(',', '.', $request->input('price'))]);
+    
+        // Validate the input
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'ien_code' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'status' => 'required|string',
+            'description' => 'required|string',
+            'quantity' => 'required|integer|min:0|max:999999',
+            'category' => 'required|string',
+        ], [
+            'name.required' => 'Item Name Field Is Required',
+            'ien_code.required' => 'IEN Code Field Is Required',
+            'price.required' => 'Price Field Is Required',
+            'status.required' => 'Valid Status Is Required',
+            'description.required' => 'Description Field Is Required',
+            'quantity.required' => 'Quantity Field Is Required',
+            'category.required' => 'Valid Category Is Required',
+        ]);
+    
+        // Check validation fails
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+    
+        // Save the new item to the database
+        $item = Item::find($request->id);
+        $item->update([
+            'category_id' => $request->input('category'),
+            'user_id' => 444, // or auth()->id(),
+            'status' => $request->input('status'),
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'ien_code' => $request->input('ien_code'),
+            'quantity' => $request->input('quantity'),
+        ]);
+    
+        // Return a successful response
+        return response()->json(['message' => 'Item added successfully!'], 200);
         
-            $request->validate([
-                'name' => 'required|string|max:255',
-                'ien_code' => 'required|string|max:255',
-                'price' => 'required|regex:/^\d+(\.\d{1,2})?$/', // 4.44 4,44 4,4 4.4
-                'status' => 'required|integer',
-                'description' => 'required|string',
-                'quantity' => 'required|integer',
-                'category' => 'required|integer',
-            ]);
-        
-            Item::create([
-                'category_id' => $request->input('category'),
-                'user_id' => 444, // or auth()->id(),
-                'status' => $request->input('status'),
-                'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price'),
-                'ien_code' => $request->input('ien_code'),
-                'quantity' => $request->input('quantity'),
-            ]);
-        
-            return redirect('/category');
-        }    
+    }
+    
+    
+    
 //---
 // TABLE IMAGE
 public function ajax_item_image_upload(Request $request)
@@ -305,6 +386,7 @@ public function ajax_item_image_upload(Request $request)
             ]);
         }
     }
+    error_log("bad File");
 }
 
     public function ajax_move_image_to_left($image_parse_id)
@@ -491,6 +573,15 @@ public function ajax_item_image_upload(Request $request)
         }
         //return response()->json(['status' => 'success', 'message' => 'Image positions reordered successfully.']);
         return;
+    }
+    public function language_parse($input_text)
+    {   
+        //TODO create language translator
+        error_log( 'Parsing Text: '.$input_text);
+        //$this->language_parse("test");
+        
+        $translater_text= "translated";
+        return $translater_text;
     }
     
 
