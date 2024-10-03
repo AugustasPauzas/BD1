@@ -2,9 +2,6 @@
 
 
 <div class="container">
-
-
-
     <div class="row">
         <div class="col-12">
             <div class="primary_background_color default_padding default_margin default_radius under_shadow">
@@ -19,20 +16,11 @@
                 </p>
             </div>
         </div>
-
-
     </div>
     <div class="row">
     </div>
-
-    
 </div>
-
-
 <div class="container">
-
-
-
     <div class="row  ">
         <div class="col-lg-2 ">
             <div class="primary_background_color default_padding default_large_margin default_radius under_shadow">
@@ -48,7 +36,6 @@
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">option 2 (0)</label>
-                            
                           </div>
                     </div>
                     @endforeach  
@@ -57,11 +44,9 @@
         </div>
         <div class="col-lg-10  ">
             <div class="item_parent_container primary_background_color default_padding default_large_margin default_radius under_shadow">
-                
                 @foreach ($data_item as $i)
                 <a class="no_ancor_decoration" href="/view/{{$i->id}}">
                     <div class="default_radius under_shadow item_list grey_border item_list_margin">
-                        
                         <div class="image_svg_wrapper">
                             @php 
                             $imageFound=false;
@@ -93,9 +78,7 @@
                                     </svg>
                                 </div>
                             </a>
-
                         </div>
-                        
                         <p class="one_line_clamp default_padding"><strong>{{$i->name}}</strong></p>
                         <p ><strong class="remain_center price_p">{{$i->price}}<span class="Price_small_p"></span> €</strong>    </p>
                         <a class="no_ancor_decoration" href="/add/cart/item/{{$i->id}}">
@@ -107,15 +90,10 @@
                     </div>                    
                 </a>
                 @endforeach
-
                 <div>
-                
                 </div>
             </div>
-
         </div>
-
     </div>
-
-    
 </div>
+

@@ -9,6 +9,22 @@ $(document).ready(function() {
     }
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        attachFormSubmitListeners(); 
+        attachFormSubmitListeners2();
+        reloadSpecificationsOnPageLoad(); 
+    
+
+        
+        setInterval(function() {
+            attachFormSubmitListeners();
+            attachFormSubmitListeners2();
+            reloadSpecificationsOnPageLoad(); 
+        }, 100); 
+        
+    });
+
+    
     // Handle delete button click with event delegation for both PHP and AJAX-generated content
     $(document).on('click', '.item_update_delete_button', function(event) {
         console.log('Delete button Pressed');
@@ -137,7 +153,8 @@ $(document).ready(function() {
 
     $(document).on('click', '.action_reload_b_pic', function() {
         var itemId = $(this).data('item-id'); // Assuming item_id is stored in a data attribute
-        
+        console.log($('meta[name="csrf-token"]').attr('content'));
+
         $.ajax({
             url: '/Live_view_update_big_pick/' + itemId,
             method: 'GET',
@@ -149,7 +166,61 @@ $(document).ready(function() {
             }
         });
     });
+
+    // AJAX delete parameter value
+    $(document).on('click', '.delete_parameter_value_button', function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
     
+        var valueId = $(this).data('value-id'); // Get the value_id from data attribute
+        var itemId = $(this).data('item-id'); 
+        var specificationId = $(this).data('specification-id'); 
+        
+        $.ajax({
+            url: '/ajax_update_view_delete_value',
+            type: 'POST',
+            data: {
+                value_id: valueId,
+                specification_id: specificationId,
+                _token: $('meta[name="csrf-token"]').attr('content') // Correct way to pass CSRF token
+            },
+            success: function(response) {
+                console.log('Success:', response);
+                // Optionally reload specifications after success
+                reloadSpecifications(itemId); // Reload after success
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', xhr.responseText); // Log error details
+            }
+        });
+    });
+
+    // AJAX delete specification row
+    $(document).on('click', '.delete_specification_row_button', function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+    
+        var parameterId = $(this).data('parameter-id'); // Get the value_id from data attribute
+        var itemId = $(this).data('item-id'); 
+        var specificationId = $(this).data('specification-id'); 
+        
+        $.ajax({
+            url: '/ajax_delete_specification_row',
+            type: 'POST',
+            data: {
+                parameter_id: parameterId,
+                item_id: itemId,
+                specification_id: specificationId,
+                _token: $('meta[name="csrf-token"]').attr('content') // Correct way to pass CSRF token
+            },
+            success: function(response) {
+                console.log('Success:', response);
+                // Optionally reload specifications after success
+                //reloadSpecifications(itemId); // Reload after success
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', xhr.responseText); // Log error details
+            }
+        });
+    });
 
 
     // Add item AJAX
@@ -287,6 +358,207 @@ $(document).ready(function() {
         });
     });
     
+
+    //Add new specification from /view/update
+    document.getElementById('ajax_add_specification').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        const formData = new FormData(this); // Collect form data
+    
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Include CSRF token
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Parse JSON response
+        })
+        .then(data => {
+            // Handle success
+            document.getElementById('success_messageText').innerText = data.message; // Display success message
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.style.display = 'block'; // Show the message
+    
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                responseMessage.style.display = 'none';
+            }, 5000);
+    
+            // Add click event to close button
+            document.getElementById('closeMessage').onclick = function() {
+                responseMessage.style.display = 'none'; // Hide the message
+            };
+    
+            // Optionally, clear the form fields
+            document.getElementById('parameter_name').value = '';
+            document.getElementById('value_name').value = '';
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error:', error);
+            document.getElementById('responseMessage').innerHTML = 'An error occurred. Please try again.'; // Display error message
+        });
+    });
+    
+    //UPDATE parameter name from view update
+    function attachFormSubmitListeners() {
+        document.querySelectorAll('.ajax_parameter_update_form').forEach(form => {
+            const existingListener = form.getAttribute('data-listener'); // Check if a listener exists
+            if (existingListener) {
+                form.removeEventListener('submit', existingListener); // Remove the existing listener
+            }
+    
+            const listener = function(event) {
+                event.preventDefault(); // Prevent the default form submission
+    
+                const formData = new FormData(this); // Collect form data
+                const formAction = this.action; // Store form action URL
+    
+                fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Include CSRF token
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // Parse JSON response
+                })
+                .then(data => {
+                    // Handle success
+                    document.getElementById('success_messageText').innerText = data.message; // Display success message
+                    const responseMessage = document.getElementById('responseMessage');
+                    responseMessage.style.display = 'block'; // Show the message
+    
+                    // Hide the message after 5 seconds
+                    setTimeout(() => {
+                        responseMessage.style.display = 'none';
+                    }, 5000);
+    
+                    // Add click event to close button
+                    document.getElementById('closeMessage').onclick = function() {
+                        responseMessage.style.display = 'none'; // Hide the message
+                    };
+    
+                    // Optionally, clear the form fields if needed
+                    //form.reset(); // DONT DO IT :(
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error:', error);
+                    const responseMessage = document.getElementById('responseMessage');
+                    if (responseMessage) {
+                        responseMessage.innerHTML = 'An error occurred. Please try again.'; // Display error message
+                    }
+                });
+            };
+    
+            form.setAttribute('data-listener', listener); // Store the listener reference
+            form.addEventListener('submit', listener); // Attach the listener
+        });
+    }
+
+    //ADD Value with no parameter input here
+    function attachFormSubmitListeners2() {
+        document.querySelectorAll('.ajax_add_only_value_form').forEach(form => {
+            const existingListener = form.getAttribute('data-listener'); // Check if a listener exists
+            if (existingListener) {
+                form.removeEventListener('submit', existingListener); // Remove the existing listener
+            }
+            const listener = function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const formData = new FormData(this); // Collect form data
+                const formAction = this.action; // Store form action URL
+    
+                fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Include CSRF token
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // Parse JSON response
+                    
+                    
+                })
+                .then(data => {
+                    // Handle success
+                    document.getElementById('success_messageText').innerText = data.message; // Display success message
+                    const responseMessage = document.getElementById('responseMessage');
+                    responseMessage.style.display = 'block'; // Show the message
+    
+                    // Hide the message after 5 seconds
+                    setTimeout(() => {
+                        responseMessage.style.display = 'none';
+                    }, 5000);
+    
+                    // Add click event to close button
+                    document.getElementById('closeMessage').onclick = function() {
+                        responseMessage.style.display = 'none'; // Hide the message
+                    };
+    
+                    // Optionally, clear the form fields if needed
+                    form.reset(); // DONT DO IT :(
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error:', error);
+                    const responseMessage = document.getElementById('responseMessage');
+                    if (responseMessage) {
+                        responseMessage.innerHTML = 'An error occurred. Please try again.'; // Display error message
+                    }
+                });
+                
+            };
+    
+            form.setAttribute('data-listener', listener); // Store the listener reference
+            form.addEventListener('submit', listener); // Attach the listener
+        });
+    }
+    
+
+    //LIVE RELOAD OF update specification
+    // Use event delegation with 'on' to attach the click event to dynamically loaded buttons
+    $(document).on('click', '.ajax_reload_update_specification', function() {
+        const itemId = $(this).data('item-id'); // Get the item_id from the button's data attribute
+        reloadSpecifications(itemId); // Call the function with the itemId
+        attachFormSubmitListeners();
+        attachFormSubmitListeners2();
+    });
+
+
+    function reloadSpecifications(itemId) {
+        setTimeout(function() {
+            $.ajax({
+                url: `/Live_reload_update_specification/${itemId}`, // Use the retrieved itemId
+                method: 'GET', // Use GET method
+                success: function(response) {
+                    $('#specificationsContainer').html(response); // Replace the content of #data-container with the new data
+                    console.log('Reloaded successfully.');
+    
+                    // Reattach form submit listeners after reloading the content
+                    attachFormSubmitListeners();
+                    attachFormSubmitListeners2();
+                },
+                error: function(xhr) {
+                    console.error('Error reloading:', xhr.responseText); // Log errors
+                    alert('An error occurred while reloading: ' + xhr.responseText); // Show error message
+                }
+            });
+        }, 20);
+    }
 
 
 

@@ -26,7 +26,11 @@ Route::get('/cart',[MainController::class, 'cart']);
 
 //LIVE
 
+Route::get('/reload/specifications/{item_id}', [MainController::class, 'reloadSpecifications']);
+
 Route::get('/live_reload_all_images/{item_id}', [MainController::class, 'Live_reload_all_images']);
+
+Route::get('/Live_reload_update_specification/{item_id}', [MainController::class, 'Live_reload_update_specification']);
 
 Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
 
@@ -39,12 +43,23 @@ Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_v
 //FUNCTIONAL ROUTES
     //TABLE CATEGORY
     route::post('/add_new_category',[MainController::class, 'add_new_category']);
+    //TABLE SPECIFICATION
+    route::post('/ajax_add_specification',[MainController::class, 'ajax_add_specification']);
+    route::post('/ajax_delete_specification_row',[MainController::class, 'ajax_delete_specification_row']);
+
 
     //TABLE VALUE
     route::post('/add_new_value',[MainController::class, 'add_new_value']);
+    route::post('/ajax_update_view_delete_value',[MainController::class, 'ajax_update_view_delete_value']);
+    route::post('/ajax_add_only_value_form',[MainController::class, 'ajax_add_only_value_form']);
+
+
 
     //TABLE PARAMETER
     route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
+    Route::post('/ajax_update_specification_parameter', [MainController::class, 'ajax_update_specification_parameter'])->name('ajax_update_specification_parameter');
+
+
 
     //TABLE ITEM
     //Route::post('/add_new_item', [MainController::class, 'add_new_item']);

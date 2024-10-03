@@ -12,6 +12,7 @@ use App\Models\Image;
 use App\Models\ImageParse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File; 
 use Illuminate\Support\Str; 
 
@@ -33,7 +34,26 @@ class MainController extends Controller
             $data_parameter = Parameter::all();
             $data_category = Category::all();
             $data_value = Value::all();
-            $data_specification = Specification::all();
+
+
+
+            $data_specifications_table = DB::table('specification as s')
+                ->join('parameter as p', 's.parameter_id', '=', 'p.id')
+                ->join('value as v', 's.value_id', '=', 'v.id')
+                ->select(
+                    's.id as specification_id',
+                    's.item_id',
+                    's.parameter_id',
+                    'p.parameter_name',
+                    's.value_id',
+                    'v.value_name'
+                )
+                ->where('s.item_id', $item_id) 
+                ->orderBy('p.parameter_name')
+                ->get();
+
+            $data_specification = Specification::all(); // DELETE LATER if not needed
+
             $data_all_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') // Also select item_id for reference
             ->get();
@@ -47,7 +67,7 @@ class MainController extends Controller
             
             //echo $data_item;
             //echo $data_specification;
-            return view('view', ['data_item' => $data_item,'data_all_item' => $data_all_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification,'data_all_image' => $data_all_image, 'data_image' => $data_image]);
+            return view('view', ['data_item' => $data_item,'data_all_item' => $data_all_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification,'data_all_image' => $data_all_image, 'data_image' => $data_image, 'data_specifications_table' => $data_specifications_table]);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 
             echo "Fatal Error, Item Not Found";
@@ -63,9 +83,26 @@ class MainController extends Controller
             $data_category = Category::all();
             $data_value = Value::all();
             $data_specification = Specification::all();
+
+            $data_specifications_table = DB::table('specification as s')
+            ->join('parameter as p', 's.parameter_id', '=', 'p.id')
+            ->join('value as v', 's.value_id', '=', 'v.id')
+            ->select(
+                's.id as specification_id',
+                's.item_id',
+                's.parameter_id',
+                'p.parameter_name',
+                's.value_id',
+                'v.value_name'
+            )
+            ->where('s.item_id', $item_id) 
+            ->orderBy('p.parameter_name')
+            ->get();
+
             //$data_image_parse = ImageParse::where('item_id', $item_id)->get();
             //$data_image = Image::all();
             //$item_id = 1;
+            //dd($data_parameter);
             $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->where('image_parse.item_id', $item_id)
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
@@ -79,11 +116,37 @@ class MainController extends Controller
             
             //echo $data_item;
             //echo $data_specification;
-            return view('view_update', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]);
+            return view('view_update', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification,  'data_image' => $data_image, 'data_specifications_table' => $data_specifications_table]);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return response()->json(['error' => 'Item not found.'], 404);
         }
     }
+    public function Live_reload_update_specification($itemId)
+    {
+        // Fetch the required data based on $itemId
+        $data_item = Item::find($itemId);
+        $data_specification = Specification::where('item_id', $itemId)->get(); // Adjust as per your logic
+        $data_parameter = Parameter::all();
+        $data_value = Value::all(); // Adjust according to your models
+        $data_specifications_table = DB::table('specification as s')
+        ->join('parameter as p', 's.parameter_id', '=', 'p.id')
+        ->join('value as v', 's.value_id', '=', 'v.id')
+        ->select(
+            's.id as specification_id',
+            's.item_id',
+            's.parameter_id',
+            'p.parameter_name',
+            's.value_id',
+            'v.value_name'
+        )
+        ->where('s.item_id', $itemId) 
+        ->orderByDesc('s.id')
+        ->get();
+
+        // Return a partial view with the filtered data
+        return view('partials.Live_specifications', compact('data_item', 'data_specification', 'data_parameter', 'data_value', 'data_specifications_table'));
+    }
+
     public function Live_view_update_big_pick($item_id) {
         $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
         ->where('image_parse.item_id', $item_id)
@@ -192,6 +255,38 @@ class MainController extends Controller
         Value::create($validatedData);
         return redirect('/specifications'); 
     }
+
+    public function ajax_update_view_delete_value(Request $request)
+    {
+        $value_id = $request->input('value_id'); 
+        $specification_id = $request->input('specification_id'); 
+        error_log('Function ajax_update_view_delete_value SPECIFICATION ID: ' . $specification_id);
+        error_log('Function ajax_update_view_delete_value, Value ID: ' . $value_id);
+    
+
+        //$delete_specification = Specification::where('value_id', $value_id)->whereIn('id', $specification_id);
+        //$delete_specification = Specification::where('id', $specification_id);
+        $delete_specification = Specification::where('id', $specification_id);
+        error_log('Function ajax_update_view_delete_value, DELETING 1: ' . $delete_specification->get());
+
+        if ($delete_specification->exists()) {
+            error_log('Deleting NOW');
+            try {
+                $delete_specification->delete(); 
+                error_log('Deleted');
+                return response()->json(['success' => true]); // Return success
+            } catch (\Exception $e) {
+                error_log('Error deleting specification: ' . $e->getMessage());
+                return response()->json(['success' => false, 'message' => $e->getMessage()]);
+            }
+        }
+        //TODO REMOVE value from value table if not in use; same for parameter
+    
+        return response()->json(['success' => false, 'message' => 'No specification found to delete.']);
+    }
+    
+    
+    
     //---
     //TABLE PARAMETER
     public function add_new_parameter(Request $request){
@@ -201,6 +296,146 @@ class MainController extends Controller
     
         Parameter::create($validatedData);
         return redirect('/specifications'); 
+    }
+    public function ajax_update_specification_parameter(Request $request)
+    {
+        // Log the incoming request data
+        error_log("FUNCTION ajax_update_specification_parameter, item id: " . $request->item_id);
+        error_log("FUNCTION ajax_update_specification_parameter, par id: " . $request->parameter_id);
+        error_log("FUNCTION ajax_update_specification_parameter, spec id: " . $request->specification_id);
+        error_log("FUNCTION ajax_update_specification_parameter, name: " . $request->name);
+    
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'item_id' => 'required|integer',
+            'parameter_id' => 'required|integer',
+            'specification_id' => 'required|string|max:255',
+        ]);
+    
+        // Parse the specification IDs into an array of integers
+        $specificationIds = array_map('intval', array_map('trim', explode(',', $validatedData['specification_id'])));
+        error_log("Parsed Specification IDs: " . implode(', ', $specificationIds));
+    
+        // Retrieve specifications with the parsed IDs
+        $specifications = Specification::whereIn('id', $specificationIds)->get();
+    
+        // Find or create the parameter
+        $parameterFound = Parameter::where('parameter_name', $validatedData['name'])->first();
+        if ($parameterFound) {
+            error_log("Parameter exists, reusing existing parameter.");
+            $newParId = $parameterFound->id;
+        } else {
+            // Create a new parameter and get the new ID
+            $newParameter = Parameter::create(['parameter_name' => $validatedData['name']]);
+            $newParId = $newParameter->id;
+            error_log("New Parameter created with ID: " . $newParId);
+        }
+    
+        // Check if specifications were found
+        if ($specifications->isNotEmpty()) {
+            foreach ($specifications as $specification) {
+                error_log("Updating Specification ID: " . $specification->id);
+                $specification->parameter_id = $newParId; // Assign the new or existing parameter ID
+                $specification->save(); // Save the updated specification
+            }
+    
+            return response()->json(['message' => 'Specifications updated successfully.']);
+        } else {
+            // No specifications found
+            return response()->json(['message' => 'Specifications not found.'], 404);
+        }
+    }
+    
+    
+    //TABLE SPECIFICATION
+    public function ajax_delete_specification_row(Request $request)
+    {
+        error_log("ajax_delete_specification_row, item id: " . $request->item_id);
+        error_log("ajax_delete_specification_row, parameter id: " . $request->parameter_id);
+        error_log("ajax_delete_specification_row, specification id: " . $request->specification_id);
+        $specifications = Specification::where('parameter_id', $request->parameter_id)->where('item_id', $request->item_id)->get();
+        error_log("ajax_delete_specification_row, DATA2: " . $specifications);
+        foreach ($specifications as $specification) {
+            $specification->delete();
+        }
+    
+        return response()->json(['message' => 'Specifications deleted successfully']);
+    }
+    
+
+    public function ajax_add_only_value_form (Request $request){
+        error_log("ajax_add_only_value_form, itemid: ".$request->item_id);
+        error_log("ajax_add_only_value_form, value name: ".$request->name);
+        error_log("ajax_add_only_value_form, parameter: ".$request->parameter_id);
+
+
+        $validatedData = $request->validate([
+            'item_id' => 'required|integer',  // Ensure item_id exists and is valid
+            'name' => 'required|string|max:255',              // Ensure name is a string and not too long
+            'parameter_id' => 'required|integer', // Ensure parameter_id exists and is valid
+        ]);
+
+        $value = Value::where('value_name', $validatedData['name'])->first();
+
+        if ($value) {
+            error_log("value exist, reparsing");
+            error_log("value exist, data: " . $value);
+        } else {
+            error_log("value does not exist, creating new value");
+    
+            // Add the name into validated data and create a new value
+            $validatedData['value_name'] = $validatedData['name']; 
+            $value = Value::create($validatedData);
+        }
+
+        Specification::create([
+            'item_id' =>  $validatedData['item_id'],
+            'value_id' => $value->id,
+            'parameter_id' =>  $validatedData['parameter_id']
+        ]);
+
+        $this->remove_dublication_from_specification();
+
+        return response()->json(['message' => 'Value added successfully']);
+    }
+
+    public function ajax_add_specification(Request $request){
+
+        error_log("FUNCTION ajax_add_specification, id: ".$request->item_id);
+        error_log("FUNCTION ajax_add_specification, par name: ".$request->parameter_name);
+        error_log("FUNCTION ajax_add_specification, val name: ".$request->value_name);
+        $validatedData = $request->validate([
+            'value_name' => 'required|string|max:255',
+            'parameter_name' => 'required|string|max:255'
+        ]);
+
+        $parameter = Parameter::where('parameter_name',  $validatedData['parameter_name'])->first();
+        if ($parameter){
+            error_log("Parameter exist, reparsing");
+        }
+        else{
+            $parameter = Parameter::create($validatedData);
+        }
+        
+        $value = Value::where('value_name',  $validatedData['value_name'])->first();
+        if ($value){
+            error_log("value exist, reparsing");
+        }
+        else{
+            $value = value::create($validatedData);          
+        }
+        
+        Specification::create([
+            'item_id' => $request->input('item_id'),
+            'value_id' => $value->id,
+            'parameter_id' => $parameter->id
+        ]);
+        $this->remove_dublication_from_specification();
+        return response()->json(['message' => 'Specification added successfully']);
+
+
+    //return response()->json(['error' => 'Fatal Error']);
     }
     //---
     public function specifications(){
@@ -583,8 +818,23 @@ public function ajax_item_image_upload(Request $request)
         $translater_text= "translated";
         return $translater_text;
     }
+    public function remove_dublication_from_specification()
+    {
+        error_log('METHOD remove_dublication_from_specification');
+        $data_specification = Specification::all();
+        $uniqueSpecifications = [];
+        foreach ($data_specification as $specification) {
+            $key = $specification->item_id . '_' . $specification->value_id . '_' . $specification->parameter_id;
+            if (isset($uniqueSpecifications[$key])) {
+                //error_log('Deleting duplicate: ' . json_encode($specification));
+                $specification->delete(); 
+            } else {
+                $uniqueSpecifications[$key] = $specification->id;
+            }
+        }
+        return response()->json(['message' => 'Duplicate specifications removed successfully.']);
+    }
     
-
 
     
         

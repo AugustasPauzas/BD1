@@ -258,41 +258,56 @@
 
         <div class="col-md-6 no_padding">
         <div class="default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
+            <p class="text-center"> <strong>Full Specification</strong></p> 
             <div class="row no_margin_sides no_padding">
                 <table class="table-striped table-hover default_margin  ">
                     <thead>
-                        <tr>
-                            <th scope="col">Parameter</th>
-                            <th scope="col w-50">Values</th>
+                        <tr >
+                            <th scope="col">
+                                <p class="no_margin_bottom default_padding ">Parameter</p>
+                            </th>
+                            <th  scope="col w-50">
+                                <p class="no_margin_bottom default_padding ">Values</p>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data_parameter as $p)
-                            @php
-                                $values = []; 
-                            @endphp
-                
-                            @foreach ($data_specification as $spec)
-                                @if ($data_item->id == $spec->item_id && $spec->parameter_id == $p->id)
-                                    @foreach ($data_value as $v)
-                                        @if ($spec->value_id == $v->id)
-                                            @php
-                                                $values[] = $v->value_name; 
-                                            @endphp
-                                        @endif
-                                    @endforeach
-                                @endif
-                            @endforeach
-                
-                            @if (count($values) > 0)
-                                <tr>
-                                    <td>{{ $p->parameter_name }}</td>
-                                    <td>
-                                        {{ implode(', ', $values) }} 
-                                    </td>
-                                </tr>
-                            @endif
+                        
+            @php
+            // Group the specifications by parameter_name
+            $grouped_specifications = [];
+            foreach ($data_specifications_table as $item) {
+                $grouped_specifications[$item->parameter_name][] = $item->value_name;
+            }
+            @endphp
+            @foreach ($grouped_specifications as $parameter_name => $value_names)
+            
+
+
+
+                <tr class="default_pading_left_right">
+                    <td class="default_margin">
+                        <p class="no_margin_bottom default_padding ">
+                            {{ $parameter_name }}
+                        </p>
+                        
+                        
+                    </td>
+                    <td>
+                        <p class="no_margin_bottom default_padding ">
+                        @foreach (array_unique($value_names) as $value_name)
+                        
+                            {{ $value_name }};
+                        
+                            
                         @endforeach
+                        </p>
+                    </td>
+                </tr>
+
+
+            @endforeach
+                        
                     </tbody>
                 </table>    
             </div>           
@@ -301,7 +316,11 @@
 
         <div class="col-md-6 no_padding">
         <div class="default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
-            <p class="text-center"> <strong>Costumer Reviews</strong></p>         
+            <p class="text-center"> <strong>Costumer Reviews</strong></p>  
+
+            
+
+            
         </div>
 
         </div>
