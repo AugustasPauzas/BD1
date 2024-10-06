@@ -12,7 +12,10 @@ use App\Http\Controllers\MainController;
 Route::get('/', function () {return view('index');});
 Route::get('/phpinfo', function () {return view('phpinfo');});
 //Route::get('/category', function () {return view('category');});
+Route::get('/category/{category_name_or_id}',[MainController::class, 'category_spec']);
+
 Route::get('/category',[MainController::class, 'category_unspec']);
+
 Route::get('/view/{item_id}',[MainController::class, 'view_item']);
 //Route::get('/category/{category}',[MainController::class, 'category']);
 Route::get('/cart',[MainController::class, 'cart']);
@@ -26,13 +29,18 @@ Route::get('/cart',[MainController::class, 'cart']);
 
 //LIVE
 
+
 Route::get('/reload/specifications/{item_id}', [MainController::class, 'reloadSpecifications']);
+
+
+
+Route::get('/Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
 
 Route::get('/live_reload_all_images/{item_id}', [MainController::class, 'Live_reload_all_images']);
 
 Route::get('/Live_reload_update_specification/{item_id}', [MainController::class, 'Live_reload_update_specification']);
 
-Route::get('Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
+Route::get('/Live_specification_add_form/{item_id}',[MainController::class, 'Live_specification_add_form']);
 
 
 //Route::get('Live_reload_update_images/{item_id}',[MainController::class, 'Live_reload_update_images']);

@@ -134,6 +134,11 @@ text-decoration: none !important;
     margin-right: 5px;
 
 }
+.large_margin_sides{
+    margin-left: 12px;
+    margin-right: 12px;
+
+}
 
 .default_large_margin{
     margin-top: 12px;
@@ -488,13 +493,21 @@ text-decoration: none !important;
         flex-direction: row; /* Arrange items in a row */
         overflow-x: auto; /* Add horizontal scrolling if needed */
     }
-
+    .parameter-item-price-only {
+        min-width: 35% !important;
+    }
     .parameter-item {
         padding-left: 10px;
         padding-right: 10px;
         width: auto;
+        min-width: 24%;
         flex: 0 0 auto; /* Ensures each item takes up 20% of the container's width */
         margin-bottom: 0.5rem; /* Adjust spacing for smaller screens */
+    }
+}
+@media (max-width: 420px) {
+    .parameter-item-price-only {
+        min-width: 65% !important;
     }
 }
 .max_width64{
@@ -883,3 +896,20 @@ background-color: #555; /* Darker handle on hover */
     } 
 }
 
+
+.dropdown-menu {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    max-height: 500%; 
+    overflow-y: auto; 
+
+    li {
+    padding: 4px 8px;
+    cursor: pointer;
+    }
+    li:hover {
+    background-color: #f1f1f1; 
+    }
+}

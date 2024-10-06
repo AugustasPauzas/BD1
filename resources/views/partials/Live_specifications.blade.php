@@ -18,12 +18,12 @@ $equalrow = 1;
         
     <div class="update_view_parameter_col default_radius ">
         @php $Parameter_ID=$value_names[0]['parameter_id']; @endphp
-        <form class="ajax_parameter_update_form ajax_reload_update_specification" data-item-id="{{ $data_item->id }}" action="/ajax_update_specification_parameter" method="POST">
+        <form class="ajax_parameter_update_form " data-item-id="{{ $data_item->id }}" action="/ajax_update_specification_parameter" method="POST">
             
             @csrf
             <div class="input-group mb-3 no_margin_bottom">
                 <input type="text" name="name" class="form-control" value="{{ $parameter_name }}" required>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary ajax_reload_update_specification" data-item-id="{{ $data_item->id }}">Update</button>
             </div>
             <input type="hidden" name="item_id" value="{{ $data_item->id }}">
             

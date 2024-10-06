@@ -33,7 +33,7 @@
 
 <div class="container">
 <p class="no_margin_bottom font_85 secondary_text"> <a class='no_ancor_decoration' href="{{ url('/') }}">Home</a> | 
-    <a class='no_ancor_decoration' href="{{ url('/category') }}">Category</a> |
+    <a class='no_ancor_decoration' href="{{ url('/category/all_items') }}">Category</a> |
     <a class='no_ancor_decoration' href="{{ url('/category/'.$data_item->category_id.'') }}">{{$data_category->firstWhere('id', $data_item->category_id)->category}}
     </a> |
     <a class='no_ancor_decoration' href="{{ url('/view/'.$data_item->id.'') }}">{{$data_item->name}}</a></p>

@@ -26,7 +26,7 @@ $VarWebsiteLogo = "/images/logo64.png";
           <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
          </li>
        <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/category') }}">Category</a>
+          <a class="nav-link"  href="{{ url('/category/all_items') }}">Category</a>
          </li>
          <li class="nav-item">
           <a class="nav-link"  href="{{ url('/create') }}">Create</a>

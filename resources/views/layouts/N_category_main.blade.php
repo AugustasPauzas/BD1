@@ -3,6 +3,48 @@
 
 <div class="container">
     <div class="row">
+
+
+
+        @php
+        $minPrice = $data_item_all_category->min('price');
+        $maxPrice = $data_item_all_category->max('price');
+        
+        try {
+            $set_minPrice = request()->query('minPrice');
+            if (is_null($set_minPrice)) {
+                $set_minPrice =$minPrice;
+            }
+        } catch (\Exception $e) {
+            $set_minPrice = $minPrice; // Set to $minPrice if an error occurs
+        }
+        
+        try {
+            $set_maxPrice = request()->query('maxPrice');
+            
+            
+            
+            // Check if set_maxPrice is null, if so, set it to $maxPrice
+            if (is_null($set_maxPrice)) {
+                $set_maxPrice = $maxPrice;
+            }
+        } catch (\Exception $e) {
+            $set_maxPrice = $maxPrice; // Set to $maxPrice if an error occurs
+        }
+        /*
+        @if(is_array($filter_array) && count($filter_array) > 0)
+            @foreach ($filter_array as $iii)
+                <p>Parameter ID: {{$iii['parameter_id']}}</p>
+                <p>Value ID: {{$iii['value_id']}}</p>
+            @endforeach
+        @endif
+        */
+
+        @endphp
+
+
+        
+
         <div class="col-12">
             <div class="primary_background_color default_padding default_margin default_radius under_shadow">
                 <p>Category:
@@ -13,40 +55,120 @@
                     echo 'Category not found';  
                 }
                 @endphp
+
+                @php
+                try {
+                    echo $specified_category_id_or_name  ;
+                } catch (\Exception $e) {
+                     $specified_category_id_or_name = "all_items";
+                }
+                @endphp
+
                 </p>
+
+
+
+
+                
+                
+                
             </div>
         </div>
     </div>
     <div class="row">
     </div>
 </div>
+
 <div class="container">
     <div class="row  ">
         <div class="col-lg-2 ">
             <div class="primary_background_color default_padding default_large_margin default_radius under_shadow">
                 <p ><strong class="remain_center"></strong>  </p>
                 <div class="parameter-container">
-                    @foreach ($data_parameter as $i)
-                    <div class="parameter-item">
-                        <p> <strong>{{$i->parameter_name}}</strong>  </p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">option 1 (0)</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">option 2 (0)</label>
-                          </div>
+                    <!-- Price Filter -->
+                    
+                    <div class=" parameter-item parameter-item-price-only">
+
+                        <p><strong>Price Range</strong></p>
+                        <div id="category_price_filter_slider" 
+                             data-min-price="{{ $minPrice }}" 
+                             data-max-price="{{ $maxPrice }}" 
+                             data-set-min-price="{{ $set_minPrice }}" 
+                             data-set-max-price="{{ $set_maxPrice }}" 
+                             class="range-slider large_margin_sides"></div>
+                             <div class="default_padding ">
+                                <div class="d-flex justify-content-between ">
+                                    <span id="category_price_filter_minPriceValue">{{ $minPrice }}</span>
+                                    <span id="category_price_filter_maxPriceValue">{{ $maxPrice }}</span>
+                                </div>                                
+                             </div>
+
+                        <input type="hidden" id="category_identifier" value="{{ $specified_category_id_or_name }}">
+
                     </div>
-                    @endforeach  
+                    
+                    <!--  Parameter Filters-->
+                    @php
+                    $displayedParameters = []; // Array to keep track of displayed parameter names
+                    @endphp
+                    
+                    <a id="apply_filter" href="" class="btn btn-outline-primary">apply</a>
+ 
+
+                    @foreach ($item_filter_parameters as $i)
+                        @if (!in_array($i->parameter_name, $displayedParameters))  
+                            <div class="parameter-item">
+                                <p> <strong>{{$i->parameter_name}} </strong> </p>
+                                @foreach ($item_filter_parameters as $ii)
+                                    @if ($i->parameter_name == $ii->parameter_name)
+                                    <div class="form-check">
+                                        <input class="update_filter_button_url form-check-input" 
+                                               data-parameter-id="{{$i->parameter_id}}" 
+                                               data-value-id="{{$ii->value_id}}" 
+                                               type="checkbox" 
+                                               value="" 
+                                                @if(is_array($filter_array) && count($filter_array) > 0)
+                                                @foreach ($filter_array as $iii)
+                                                @if ($iii['parameter_id']==$i->parameter_id && $iii['value_id'] ==$ii->value_id )
+                                                    checked
+                                                @endif
+                                                @endforeach
+                                                @endif
+                                               id="filter_{{$ii->value_id}}"
+                                               onchange="updateFilterUrl()">
+                                        <label class="form-check-label" for="filter_{{$ii->value_id}}">
+                                            {{$ii->value_name}} 
+                                        </label>
+                                    </div>
+                                     
+                                    @endif
+                                @endforeach
+                            </div>
+                            @php
+                                $displayedParameters[] = $i->parameter_name; // Add the parameter name to the displayed list
+                            @endphp
+                        @endif
+                    @endforeach
+                
+
+
+
+                    
+
                 </div>
             </div>
         </div>
+
+
+
         <div class="col-lg-10  ">
+
             <div class="item_parent_container primary_background_color default_padding default_large_margin default_radius under_shadow">
+                
+                <div id="itemsContainer">
                 @foreach ($data_item as $i)
                 <a class="no_ancor_decoration" href="/view/{{$i->id}}">
-                    <div class="default_radius under_shadow item_list grey_border item_list_margin">
+                    <div class="default_radius under_shadow item_list grey_border item_list_margin" data-price="{{ $i->price }}" >
                         <div class="image_svg_wrapper">
                             @php 
                             $imageFound=false;
@@ -90,6 +212,8 @@
                     </div>                    
                 </a>
                 @endforeach
+
+                </div>
                 <div>
                 </div>
             </div>

@@ -236,7 +236,7 @@
         <span class="position-absolute start-50 translate-middle-x">
             <p><strong>Full Item Specification</strong></p></span>
         <span class="ms-auto">
-            <button class="ajax_reload_update_specification btn btn-primary" data-item-id="{{ $data_item->id }}">
+            <button class="ajax_reload_update_specification btn btn-primary ajax_reload_specification_add_form" data-item-id="{{ $data_item->id }}">
                 <svg class="extra_small_svg" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
@@ -247,25 +247,33 @@
       </div>
       <hr>
       <div class="row no_margin_sides  default_padding default_radius default_margin">
-        <form class="ajax_reload_update_specification no_margin_bottom" data-item-id="{{ $data_item->id }}"  id="ajax_add_specification" enctype="multipart/form-data" method="POST" action="{{ url('/ajax_add_specification') }}">
-            @csrf
-            <div class="row">
-                <div class="col-5">
-                    <label for="parameter_name">Parameter</label>
-                    <div class="input-group mb-3 no_margin_bottom">
-                        <input type="text" name="parameter_name" id="parameter_name" class="form-control" required>
+        <div id="specifications_add_form_container">
+            <form class="no_margin_bottom" id="ajax_add_specification" enctype="multipart/form-data" method="POST" action="{{ url('/ajax_add_specification') }}">
+                @csrf
+                <div class="row">
+                    <div class="col-5">
+                        <label for="parameter_name">Parameter</label>
+                        <div class="input-group mb-3 no_margin_bottom" style="position: relative;">
+                            <input type="text" name="parameter_name" id="parameter_name" class="form-control" value="{{$first_parameter_name = $data_specifications_table_all_items->first()->parameter_name ?? null}}" required onkeyup="parameter_add_filterDropdown()" onfocus="parameter_add_openDropdown()" autocomplete="off" placeholder="Enter Parameter">
+                            <ul class="dropdown-menu dropdown-menu-end full_width" id="parameter_add_dropdown_options">
+                                @foreach ($data_specifications_table_all_items as $i)
+                                    <li onclick="parameter_add_setParameter(' {{$i->parameter_name}}')"> {{$i->parameter_name}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <label for="value_name">Value</label>
+                        <div class="input-group mb-3 no_margin_bottom">
+                            <input id="clear_value_after_submit" type="text" placeholder="Enter Value" name="value_name" class="form-control" required>
+                            <button type="submit" class="btn btn-success ajax_reload_update_specification ajax_reload_specification_add_form" data-item-id="{{ $data_item->id }}">Create Row</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-7">
-                    <label for="value_name">Value</label>
-                    <div class="input-group mb-3 no_margin_bottom">
-                        <input type="text" name="value_name" id="value_name" class="form-control" required>
-                        <button type="submit" class="btn btn-success">Create Row</button>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="item_id" value="{{ $data_item->id }}">
-        </form>
+                <input type="hidden" name="item_id" value="{{ $data_item->id }}">
+            </form>
+            
+        </div> <!--specifications_add_form_container END HERE -->
         <div id="responseMessage" class="the_success_message">
             <span id="success_messageText"></span>
             <button id="closeMessage" style="background: transparent; border: none; color: white; margin-left: 10px; cursor: pointer;">&times;</button>
@@ -301,12 +309,12 @@
             
         <div class="update_view_parameter_col default_radius ">
             @php $Parameter_ID=$value_names[0]['parameter_id']; @endphp
-            <form class="ajax_parameter_update_form ajax_reload_update_specification" data-item-id="{{ $data_item->id }}" action="/ajax_update_specification_parameter" method="POST">
+            <form class="ajax_parameter_update_form " data-item-id="{{ $data_item->id }}" action="/ajax_update_specification_parameter" method="POST">
                 
                 @csrf
                 <div class="input-group mb-3 no_margin_bottom">
                     <input type="text" name="name" class="form-control" value="{{ $parameter_name }}" required>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary ajax_reload_update_specification" data-item-id="{{ $data_item->id }}">Update</button>
                 </div>
                 <input type="hidden" name="item_id" value="{{ $data_item->id }}">
                 
