@@ -11,6 +11,7 @@ use App\Http\Controllers\MainController;
 //ALL IN NAVIGATION TOP
 Route::get('/', function () {return view('index');});
 Route::get('/phpinfo', function () {return view('phpinfo');});
+Route::get('/privacy-policy', function () {return view('privacy');});
 //Route::get('/category', function () {return view('category');});
 Route::get('/category/{category_name_or_id}',[MainController::class, 'category_spec']);
 

@@ -34,3 +34,13 @@
 
 <!-- CSS -->
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+<?php
+/*
+if (isset($_COOKIE['privacyAccepted']) && $_COOKIE['privacyAccepted'] == 'true') {
+    echo "Privacy accepted.";
+} else {
+    echo "Privacy not accepted.";
+}
+*/
+?>

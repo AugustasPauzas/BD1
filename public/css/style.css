@@ -63,7 +63,6 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-  
 }
 footer {
     margin-top: auto;
@@ -74,16 +73,29 @@ footer {
     height: 100vh;
     width: 100%;
 }
-.index_image{
-    background-image: url('/images/background2.jpg') ; 
+.background_image{
+    position: absolute;
     background-position: top center;
     background-repeat: no-repeat;
+    z-index: -1;
+}
+.index_image{
+    background-image: url('/images/background2.jpg') ; 
 }
 .screen_content {
     flex: 1; 
 }
 
 
+.fade_in_0_3 {
+    animation: fade_in 0.3s ease-in-out forwards; 
+}
+.fade_in_0_5 {
+    animation: fade_in 0.5s ease-in-out forwards; 
+}
+.fade_in_0_7 {
+    animation: fade_in 0.7s ease-in-out forwards; 
+}
 
 
 .remain_center {
@@ -123,6 +135,10 @@ text-decoration: none !important;
 } 
 .text_align_center {
     text-align: center;
+}
+.default_container_margin{
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
 }
 .default_margin{
     margin-top: 5px;
@@ -445,6 +461,9 @@ text-decoration: none !important;
     text-align: center;
     display: inline-block;
     box-sizing: border-box;
+
+    animation: fade_in 0.3s ease-in-out forwards; 
+
   }
 .item_list:hover{
     background-color: rgba(216, 216, 216, 0.014);
@@ -912,4 +931,62 @@ background-color: #555; /* Darker handle on hover */
     li:hover {
     background-color: #f1f1f1; 
     }
+}
+
+
+/* Privacy banner styles */
+.privacy_banner {
+    position: fixed;
+    bottom: 1%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    animation: fade_in 0.3s ease-in-out forwards; 
+
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.privacy_banner.show {
+    opacity: 1;
+    visibility: visible; 
+}
+.privacy_banner p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+.privacy_banner a {
+    color: #007bff;
+    text-decoration: none;
+}
+.privacy_banner a:hover {
+    text-decoration: underline;
+}
+.accept_btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.accept_btn:hover {
+    background-color: #0056b3;
 }

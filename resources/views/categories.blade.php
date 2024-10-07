@@ -1,26 +1,71 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-    @include('layouts.N_head')
-    </head>
+@extends ('layouts.default_body')
+@section('content')
 
-    <body class="">
+<div class="default_container_margin">
 
-        <div class="screen_height">
-            @include('layouts.N_navigation')
-            <br>
-            <br>
-            <br>
-
-            @include('layouts.N_categories_main')
-
-
-            <br>
-            <br>
-            <br>
-
-            @include('layouts.N_footer')
-        </div>
+    <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
+        <p ><strong class="remain_center">Add New Category</strong>  </p>
+    
+        <form action="add_new_category" method="post">
+            @csrf
+            <div class="row align-items-end">
+                <!-- Category Name Input -->
+                <div class="form-group col-md-5">
+                    <label for="category">Category Name</label>
+                    <input id="category" name="category" type="text" value="{{ old('categoryname') }}" class="form-control" placeholder="Category Name">
+                </div>
         
-    </body>
-</html>
+                <!-- Full Category Name Input -->
+                <div class="form-group col-md-5">
+                    <label for="category_full">Full Category Name</label>
+                    <input id="category_full" name="category_full" type="text" value="{{ old('fullcategoryname') }}" class="form-control" placeholder="Full Category Name">
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="form-group col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+    
+        </form>
+        
+        
+        
+        
+    
+    </div>
+    <br>
+    <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
+    
+            <p ><strong class="remain_center">Category Table</strong>  </p>
+            <div class="row no_margin_sides">
+    
+                <table class="table-striped table-hover ">
+                <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Category Name</th>
+                      <th scope="col">Full Category Name</th>
+                      <th scope="col">Created At</th>
+                      <th scope="col">Updated At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data as $i)
+                    <tr>
+                      <th scope="row"> {{$i->id}}</th>
+                      <td>{{$i->category}}</td>
+                      <td>{{$i->category_full}}</td>
+                      <td>{{$i->created_at}}</td>
+                      <td>{{$i->updated_at}}</td>
+                    </tr>
+                    @endforeach
+                <tbody>
+            </table> 
+            </div>
+    
+    
+        
+    </div>
+</div>
+@endsection

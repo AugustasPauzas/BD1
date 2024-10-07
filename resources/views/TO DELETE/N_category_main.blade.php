@@ -109,7 +109,7 @@
                     
                     <!--  Parameter Filters-->
                     @php
-                    $displayedParameters = []; // Array to keep track of displayed parameter names
+                    $displayedParameters = []; 
                     @endphp
                     
                     <a id="apply_filter" href="" class="btn btn-outline-primary">apply</a>
@@ -119,41 +119,45 @@
                         @if (!in_array($i->parameter_name, $displayedParameters))  
                             <div class="parameter-item">
                                 <p> <strong>{{$i->parameter_name}} </strong> </p>
+                                @php
+                                $displayedValues = []; 
+                                
+                                @endphp
+                                
                                 @foreach ($item_filter_parameters as $ii)
-                                    @if ($i->parameter_name == $ii->parameter_name)
-                                    <div class="form-check">
-                                        <input class="update_filter_button_url form-check-input" 
-                                               data-parameter-id="{{$i->parameter_id}}" 
-                                               data-value-id="{{$ii->value_id}}" 
-                                               type="checkbox" 
-                                               value="" 
+                                    @if ($i->parameter_name == $ii->parameter_name && !in_array($ii->value_name, $displayedValues))
+                                        <div class="form-check">
+                                            <input class="update_filter_button_url form-check-input" 
+                                                data-parameter-id="{{$i->parameter_id}}" 
+                                                data-value-id="{{$ii->value_id}}" 
+                                                type="checkbox" 
+                                                value="" 
                                                 @if(is_array($filter_array) && count($filter_array) > 0)
-                                                @foreach ($filter_array as $iii)
-                                                @if ($iii['parameter_id']==$i->parameter_id && $iii['value_id'] ==$ii->value_id )
-                                                    checked
+                                                    @foreach ($filter_array as $iii)
+                                                        @if ($iii['parameter_id'] == $i->parameter_id && $iii['value_id'] == $ii->value_id)
+                                                            checked
+                                                        @endif
+                                                    @endforeach
                                                 @endif
-                                                @endforeach
-                                                @endif
-                                               id="filter_{{$ii->value_id}}"
-                                               onchange="updateFilterUrl()">
-                                        <label class="form-check-label" for="filter_{{$ii->value_id}}">
-                                            {{$ii->value_name}} 
-                                        </label>
-                                    </div>
-                                     
+                                                id="filter_{{$ii->value_id}}"
+                                                onchange="updateFilterUrl()">
+                                            <label class="form-check-label" for="filter_{{$ii->value_id}}">
+                                                {{$ii->value_name}} 
+                                            </label>
+                                        </div>
+                                
+                                        @php
+                                            $displayedValues[] = $ii->value_name; 
+                                        @endphp
                                     @endif
                                 @endforeach
                             </div>
                             @php
-                                $displayedParameters[] = $i->parameter_name; // Add the parameter name to the displayed list
+                                $displayedParameters[] = $i->parameter_name; 
                             @endphp
                         @endif
                     @endforeach
-                
 
-
-
-                    
 
                 </div>
             </div>
@@ -166,6 +170,9 @@
             <div class="item_parent_container primary_background_color default_padding default_large_margin default_radius under_shadow">
                 
                 <div id="itemsContainer">
+                @php
+                $oneItemFound = false;
+                @endphp
                 @foreach ($data_item as $i)
                 <a class="no_ancor_decoration" href="/view/{{$i->id}}">
                     <div class="default_radius under_shadow item_list grey_border item_list_margin" data-price="{{ $i->price }}" >
@@ -188,6 +195,9 @@
                             @if (!$imageFound)
                             <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
                             @endif
+                            @php
+                            $oneItemFound = true;
+                            @endphp
 
                             <a href="add/like/item/{{$i->id}}">
                                 <div class="heart_div default_radius">
@@ -212,7 +222,9 @@
                     </div>                    
                 </a>
                 @endforeach
-
+                @if (!$oneItemFound)
+                    <p>No items Found</p>
+                @endif
                 </div>
                 <div>
                 </div>
