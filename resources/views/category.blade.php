@@ -42,30 +42,60 @@
             */
     
             @endphp
-    
+            {{--  --}}
             <div class="col-12">
-                <div class="primary_background_color default_padding default_margin default_radius under_shadow">
-                    <p>Category:
-                    @php
-                    try {
-                        echo $category;
-                    } catch (\Exception $e) {
-                        echo 'Category not found';  
-                    }
-                    @endphp
-    
-                    @php
-                    try {
-                        echo $specified_category_id_or_name  ;
-                    } catch (\Exception $e) {
-                         $specified_category_id_or_name = "all_items";
-                    }
-                    @endphp
-    
-                    </p>
+                <div class="default_padding default_margin ">
+
+                    <div class="flex-container ">
+
+                        <div class="default_radius primary_background_color  default_padding default_margin_sides under_shadow transform_105">
+                            <p class="no_margin_bottom">               
+                            @php
+                            try {
+                                echo $category;
+                            } catch (\Exception $e) {
+                                echo 'Category: ';  
+                            }
+                            @endphp
+            
+                            @php
+                            try {
+                                echo $specified_category_id_or_name  ;
+                            } catch (\Exception $e) {
+                                $specified_category_id_or_name = "all_items";
+                            }
+                            @endphp
+                            </p>  
+                        </div>
+
+                        @if (request()->query('minPrice'))
+                        <div class="default_radius primary_background_color  default_padding default_margin_sides under_shadow transform_105">
+                            <p class="no_margin_bottom">Minimum Price: {{ request()->query('minPrice') }}</p>      
+                        </div>
+                        @endif
+                        @if (request()->query('maxPrice'))
+                        <div class="default_radius primary_background_color  default_padding default_margin_sides under_shadow transform_105">
+                            <p class="no_margin_bottom">Maximum Price: {{ request()->query('maxPrice') }}</p>      
+                        </div>
+                        @endif
+                        @if (request()->query('src'))
+                        <div class="default_radius primary_background_color  default_padding default_margin_sides under_shadow transform_105">
+                            <p class="no_margin_bottom">Search Term: {{ request()->query('src') }}</p>      
+                        </div>
+                        @endif
+
+
+
+
+
+
+                    </div>
+                    
+
 
                 </div>
             </div>
+           
         </div>
         <div class="row">
         </div>
@@ -207,7 +237,7 @@
                             <p ><strong class="remain_center price_p">{{$i->price}}<span class="Price_small_p"></span> €</strong>    </p>
                             <a class="no_ancor_decoration" href="/add/cart/item/{{$i->id}}">
                             <div class="radius_bottom_5_px cart_button">
-                                <strong>Add To <img class="small_svg" src="svg/cart-shopping-svgrepo-com.svg" alt=""></strong> 
+                                <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
                             </div>    
                             </a>
     

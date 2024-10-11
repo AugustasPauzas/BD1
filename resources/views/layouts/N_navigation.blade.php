@@ -118,6 +118,7 @@ $VarWebsiteLogo = "/images/logo64.png";
 <div class="container primary_background_color default_padding radius_bottom_5_px under_shadow search_bar">
     <div class="row ">
             <div class="col">
+            {{--
             <form action="/Main/Search/" method="post">
                 @csrf
                 <div class="input-group">
@@ -127,6 +128,32 @@ $VarWebsiteLogo = "/images/logo64.png";
                 </div>
                 </div>
             </form>
+            --}}
+
+              <div class="input-group">
+                <input id="search_input" type="search" class="form-control rounded" name="searchTerm" placeholder="Search" autocomplete="off" aria-describedby="search_addon" value="@if (request()->query('src')){{ request()->query('src') }}@endif" />
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-primary" id="search_button"  data-url="{{ url('category/all_items') }}">Search</button>
+                </div>
+              </div>              
+
+
+          
+            <script>
+              document.getElementById('search_button').addEventListener('click', function() {
+                  let searchTerm = document.querySelector('input[name="searchTerm"]').value;
+                  let baseUrl = this.getAttribute('data-url');
+                  window.location.href = `${baseUrl}?src=${encodeURIComponent(searchTerm)}`;
+              });
+
+              // Submit on Enter key press
+              document.getElementById('search_input').addEventListener('keydown', function(event) {
+                  if (event.key === 'Enter') {
+                      event.preventDefault(); // Prevent the default form submission (if needed)
+                      document.getElementById('search_button').click(); // Trigger button click
+                  }
+              });
+            </script>
         </div>
     </div>
 </div>

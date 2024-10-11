@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\FunctionController;
+
+
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Parameter;
@@ -10,6 +13,7 @@ use App\Models\Value;
 use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -18,8 +22,20 @@ use Illuminate\Support\Str;
 
 
 
+
+
 class MainController extends Controller
 {   
+    protected $FunctionController;
+    public function __construct(FunctionController $otherController)
+    {
+        $this->FunctionController = $otherController;
+        //usage
+        //return $this->FunctionController->language_parse("text");
+        //error_log ("translated: ".$this->FunctionController->language_parse("text"));
+
+    }
+
     public function view_item($item_id)
     {
         try {
@@ -34,8 +50,6 @@ class MainController extends Controller
             $data_parameter = Parameter::all();
             $data_category = Category::all();
             $data_value = Value::all();
-
-
 
             $data_specifications_table = DB::table('specification as s')
                 ->join('parameter as p', 's.parameter_id', '=', 'p.id')
@@ -143,99 +157,7 @@ class MainController extends Controller
             return response()->json(['error' => 'Item not found.'], 404);
         }
     }
-    public function Live_reload_update_specification($itemId)
-    {
-        $data_item = Item::find($itemId);
-        $data_specification = Specification::where('item_id', $itemId)->get(); 
-        $data_parameter = Parameter::all();
-        $data_value = Value::all(); 
-        $data_specifications_table = DB::table('specification as s')
-        ->join('parameter as p', 's.parameter_id', '=', 'p.id')
-        ->join('value as v', 's.value_id', '=', 'v.id')
-        ->select(
-            's.id as specification_id',
-            's.item_id',
-            's.parameter_id',
-            'p.parameter_name',
-            's.value_id',
-            'v.value_name'
-        )
-        ->where('s.item_id', $itemId) 
-        ->orderByDesc('s.id')
-        ->get();
 
-
-        return view('partials.Live_specifications', compact('data_item', 'data_specification', 'data_parameter', 'data_value', 'data_specifications_table'));
-    }
-
-    public function Live_view_update_big_pick($item_id) {
-        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
-        ->where('image_parse.item_id', $item_id)
-        ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
-        ->orderBy('position')->get();
-        return view('partials.Live_view_update_big_pick', compact('data_image'));
-    }
-    
-    public function Live_reload_all_images($item_id)
-    {
-        error_log('FUNCTION Live_reload_all_images');
-        try {
-            $data_item = Item::findOrFail($item_id);
-
-            $data_parameter = Parameter::all();
-            $data_category = Category::all();
-            $data_value = Value::all();
-            $data_specification = Specification::all();
-            //$data_image_parse = ImageParse::where('item_id', $item_id)->get();
-            //$data_image = Image::all();
-            //$item_id = 1;
-            $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
-            ->where('image_parse.item_id', $item_id)
-            ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
-            ->orderBy('position')->get();
-
-            return view('partials.Live_images_reload', [ 'data_item' => $data_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification, 'data_image' => $data_image]); 
-        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            return response()->json(['error' => 'Item not found.'], 404);
-        } catch (\Exception $e) {
-            error_log($e);
-            return response()->json(['error' => 'An error occurred.'], 500);
-        }
-    }
-
-    public function Live_specification_add_form($item_id) {
-        error_log("METHOD Live_specification_add_form, Item ID: " . $item_id);
-    
-        $data_item = Item::findOrFail($item_id);
-    
-        // Loading DROP DOWN here
-        $data_specifications_table_all_items = DB::table('specification as s')
-            ->join('parameter as p', 's.parameter_id', '=', 'p.id')
-            ->join('value as v', 's.value_id', '=', 'v.id')
-            ->join('item as i', 's.item_id', '=', 'i.id') 
-            ->select(
-                's.parameter_id',      
-                'p.parameter_name',
-                'i.category_id'
-            )
-            ->where('i.category_id', $data_item->category_id)
-            ->whereNotIn('s.parameter_id', function($query) use ($item_id) {
-                $query->select('s.parameter_id')
-                      ->from('specification as s')
-                      ->where('s.item_id', $item_id);
-            })
-            ->distinct()
-            ->orderBy('p.parameter_name')
-            ->get();
-    
-        error_log("Data Specifications: " . json_encode($data_specifications_table_all_items)); // Check the data
-    
-        return view('partials.Live_specification_add_form', compact('data_item', 'data_specifications_table_all_items'));
-    }
-    
-    
-    
-    
 
     public function categories()
     {
@@ -265,27 +187,11 @@ class MainController extends Controller
         
         return view('cart', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_value' => $data_value, 'data_image'=> $data_image]);
     }
-    public function category_search($search_name){
-
-    }
-
-    //TODO Not used Delete
-    public function category_unspec()
-    {
-        $data_parameter = Parameter::all();
-        $data_category = Category::all();
-        $data_item = Item::all();
-        $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
-        ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') // Also select item_id for reference
-        ->orderBy('position')->get();
-        //error_log('aaa');
-
-        return view('category', ['data_category' => $data_category, 'data_parameter' => $data_parameter, 'data_item' => $data_item, 'data_image'=> $data_image]);
-    }
 
     public function category_spec($category_name_or_id)
     {
-    error_log("All Query Parameters: " . json_encode(request()->query()));
+
+    //error_log("All Query Parameters: " . json_encode(request()->query()));
     $filterArray = request()->query('fa', []); 
     error_log("Raw Filter array: " . json_encode($filterArray)); 
     if (!is_array($filterArray)) {
@@ -302,6 +208,11 @@ class MainController extends Controller
             ];
         }
     }
+
+    //Looking for scr option
+    $searchTerm = request()->query('src'); 
+
+
     // DONT DELETE function too call FA
     /*
     foreach ($filters as $filter) {
@@ -310,8 +221,6 @@ class MainController extends Controller
     }*/
 
         try {
-
-
 
             error_log('METHOD category_spec');
             error_log('METHOD category_spec category_name_or_id: ' . $category_name_or_id);
@@ -397,6 +306,7 @@ class MainController extends Controller
             
 
 
+
             /*$item_only_parameters = DB::table('item')
             ->join('specification', 'item.id', '=', 'specification.item_id')
             ->select('item.category_id', 'specification.parameter_id', 'specification.value_id')
@@ -413,7 +323,20 @@ class MainController extends Controller
             ->orderBy('parameter.parameter_name')
             ->get();
         
-           
+            error_log("all items: " . json_encode($filtered_items));
+            if ($searchTerm) {
+                error_log("Filtering By Search Name: " . json_encode($searchTerm));
+            
+                // Filter items based on similarity in 'name' or 'description' fields
+                $filtered_items = $filtered_items->filter(function ($item) use ($searchTerm) {
+                    return stripos($item->name, $searchTerm) !== false || stripos($item->description, $searchTerm) !== false;
+                });
+            
+                // Log the filtered items
+                error_log("Filtered Items: " . json_encode($filtered_items));
+            } else {
+                error_log("No Search Option by name, skipping");
+            }
 
             //error_log('METHOD parameters:'. $item_filter_parameters );
     
@@ -429,7 +352,8 @@ class MainController extends Controller
                 'specified_category_id_or_name' => $category_name_or_id,
                 'data_item_all_category' =>$data_item_all_category,
                 'item_filter_parameters' => $item_filter_parameters,
-                'filter_array' => $filters
+                'filter_array' => $filters,
+                'search_term' => $searchTerm
             ]);
         } catch (\Exception $e) {
             error_log('Error in category_spec: ' . $e->getMessage());
@@ -470,8 +394,6 @@ class MainController extends Controller
         $specification_id = $request->input('specification_id'); 
         error_log('Function ajax_update_view_delete_value SPECIFICATION ID: ' . $specification_id);
         error_log('Function ajax_update_view_delete_value, Value ID: ' . $value_id);
-    
-
         //$delete_specification = Specification::where('value_id', $value_id)->whereIn('id', $specification_id);
         //$delete_specification = Specification::where('id', $specification_id);
         $delete_specification = Specification::where('id', $specification_id);
@@ -541,7 +463,6 @@ class MainController extends Controller
         }
     }
     
-    
     //TABLE SPECIFICATION
     public function ajax_delete_specification_row(Request $request)
     {
@@ -556,7 +477,6 @@ class MainController extends Controller
     
         return response()->json(['message' => 'Specifications deleted successfully']);
     }
-    
 
     public function ajax_add_only_value_form (Request $request){
         error_log("ajax_add_only_value_form, itemid: ".$request->item_id);
@@ -731,8 +651,6 @@ class MainController extends Controller
         //return response()->json(['message' => 'Item added successfully!'], 200);
     }
     
-    
-    
 //---
 // TABLE IMAGE
 public function ajax_item_image_upload(Request $request)
@@ -888,54 +806,6 @@ public function ajax_item_image_upload(Request $request)
         break_free_of_try:
     }
     
-/*
-    public function add_new_image($item_id, Request $request)
-    {
-        $request->validate([
-            'image' => 'required|image|mimes:webp,jpg,jpeg,png,gif|max:25600',
-            'position' => 'nullable|integer',
-        ]);
-    
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '_' . str()->random() . '.' . $file->getClientOriginalExtension();
-            $path = public_path('images/item');
-            $file->move($path, $filename);
-            $hash = hash_file('sha256', $path . '/' . $filename);
-            $hash_exists = Image::where('hash', $hash)->first();
-    
-            if ($hash_exists) {
-                $the_image_id = $hash_exists->id; 
-                ImageParse::create([
-                    'item_id' => $item_id,
-                    'image_id' => $the_image_id,
-                    'position' => $request->input('position'),
-                ]);
-                $this->item_images_reorder();
-                
-    
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Image uploaded successfully!',
-                    'image' => $hash_exists,
-                ]);
-            } else {
-                $image = Image::create([
-                    'image_location' => 'images/item/' . $filename,
-                    'hash' => $hash, 
-                ]);
-                $the_image_id = $image->id; 
-                ImageParse::create([
-                    'item_id' => $item_id,
-                    'image_id' => $the_image_id,
-                    'position' => $request->input('position'),
-                ]);
-            }
-        }
-    }
-*/
-
-
     public function delete_image($item_id, $image_parse_id)
     {
         error_log('FUNCTION delete_image'); 
@@ -947,9 +817,7 @@ public function ajax_item_image_upload(Request $request)
         }
 
         $imageParse->delete();
-
         $this->item_images_reorder();
-    
         $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
             ->where('image_parse.item_id', $item_id)
             ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.position')
@@ -963,59 +831,10 @@ public function ajax_item_image_upload(Request $request)
         //TODO delete image if 0 in use
     }
     //----
-    
-    
-
-
-
-
-    // Function only
+    //LEGACY SUPPORT
     public function item_images_reorder()
-    {
-        $uniqueItemIds = ImageParse::distinct()->pluck('item_id');
-        foreach ($uniqueItemIds as $uniqueItemId) {
-            $images = ImageParse::where('item_id', $uniqueItemId)->orderBy('position')->get();
-            $new_position = 1;
-            foreach ($images as $img) {
-                $update_target = ImageParse::find($img->id);
-                if ($update_target->position !== $new_position) {
-                    $update_target->position = $new_position;
-                    $update_target->save();
-                }
-                $new_position++;
-            }
-        }
-        //return response()->json(['status' => 'success', 'message' => 'Image positions reordered successfully.']);
-        return;
-    }
-    public function language_parse($input_text)
-    {   
-        //TODO create language translator
-        error_log( 'Parsing Text: '.$input_text);
-        //$this->language_parse("test");
-        
-        $translater_text= "translated";
-        return $translater_text;
-    }
+    {return $this->FunctionController->item_images_reorder();}
     public function remove_dublication_from_specification()
-    {
-        error_log('METHOD remove_dublication_from_specification');
-        $data_specification = Specification::all();
-        $uniqueSpecifications = [];
-        foreach ($data_specification as $specification) {
-            $key = $specification->item_id . '_' . $specification->value_id . '_' . $specification->parameter_id;
-            if (isset($uniqueSpecifications[$key])) {
-                //error_log('Deleting duplicate: ' . json_encode($specification));
-                $specification->delete(); 
-            } else {
-                $uniqueSpecifications[$key] = $specification->id;
-            }
-        }
-        return response()->json(['message' => 'Duplicate specifications removed successfully.']);
-    }
-    
-
-    
-        
+    {return $this->FunctionController->remove_dublication_from_specification();}
     
 }

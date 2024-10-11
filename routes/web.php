@@ -3,10 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\LiveController;
+
 
 //Route::get('/', function () {return view('welcome');});
-
-
 
 //ALL IN NAVIGATION TOP
 Route::get('/', function () {return view('index');});
@@ -14,40 +14,23 @@ Route::get('/phpinfo', function () {return view('phpinfo');});
 Route::get('/privacy-policy', function () {return view('privacy');});
 //Route::get('/category', function () {return view('category');});
 Route::get('/category/{category_name_or_id}',[MainController::class, 'category_spec']);
-
-Route::get('/category',[MainController::class, 'category_unspec']);
-
 Route::get('/view/{item_id}',[MainController::class, 'view_item']);
 //Route::get('/category/{category}',[MainController::class, 'category']);
 Route::get('/cart',[MainController::class, 'cart']);
-    //ADMIN NAVIGATION
-    Route::get('/categories',[MainController::class, 'categories']);
-    Route::get('/specifications',[MainController::class, 'specifications']);
 
-    Route::get('/create',[MainController::class, 'create']); //<- validation done
-
-    Route::get('/update/view/{item_id}',[MainController::class, 'view_item_update']);
+//ADMIN NAVIGATION
+Route::get('/categories',[MainController::class, 'categories']);
+Route::get('/specifications',[MainController::class, 'specifications']);
+Route::get('/create',[MainController::class, 'create']); //<- validation done
+Route::get('/update/view/{item_id}',[MainController::class, 'view_item_update']);
 
 //LIVE
-
-
-Route::get('/reload/specifications/{item_id}', [MainController::class, 'reloadSpecifications']);
-
-
-
-Route::get('/Live_view_update_big_pick/{item_id}',[MainController::class, 'Live_view_update_big_pick']);
-
-Route::get('/live_reload_all_images/{item_id}', [MainController::class, 'Live_reload_all_images']);
-
-Route::get('/Live_reload_update_specification/{item_id}', [MainController::class, 'Live_reload_update_specification']);
-
-Route::get('/Live_specification_add_form/{item_id}',[MainController::class, 'Live_specification_add_form']);
-
-
+//Route::get('/reload/specifications/{item_id}', [MainController::class, 'reloadSpecifications']);
+Route::get('/Live_view_update_big_pick/{item_id}',[LiveController::class, 'Live_view_update_big_pick']);
+Route::get('/live_reload_all_images/{item_id}', [LiveController::class, 'Live_reload_all_images']);
+Route::get('/Live_reload_update_specification/{item_id}', [LiveController::class, 'Live_reload_update_specification']);
+Route::get('/Live_specification_add_form/{item_id}',[LiveController::class, 'Live_specification_add_form']);
 //Route::get('Live_reload_update_images/{item_id}',[MainController::class, 'Live_reload_update_images']);
-
-
-
 
 //FUNCTIONAL ROUTES
     //TABLE CATEGORY
