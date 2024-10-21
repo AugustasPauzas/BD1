@@ -35,6 +35,11 @@
 <!-- CSS -->
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+
+<div id="responseMessage" class="the_message">
+    <span id="success_messageText"></span>
+    <button id="closeMessage" style="background: transparent; border: none; color: white; margin-left: 10px; cursor: pointer;">&times;</button>
+</div>
 <?php
 /*
 if (isset($_COOKIE['privacyAccepted']) && $_COOKIE['privacyAccepted'] == 'true') {

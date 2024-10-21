@@ -48,9 +48,11 @@ $(document).ready(function() {
                 if (response.success) {
                     // On success, remove the image container
                     imageContainer.remove();
-                    
+                    displayMessage(response.message, 1);
+
                     console.log('Image deleted successfully');
                 } else {
+                    displayMessage("Error", 1);
                     //alert('Failed to delete the image.');
                 }
             },
@@ -190,10 +192,14 @@ $(document).ready(function() {
                 _token: $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response) {
+                displayMessage( response.message, 1);
+
                 console.log('Success:', response);
                 reloadSpecifications(itemId); 
             },
             error: function(xhr, status, error) {
+                displayMessage("Error", 2);
+
                 console.error('Error:', xhr.responseText); 
             }
         });
@@ -218,9 +224,12 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log('Success:', response);
+                displayMessage( response.message, 1);
+
                 //reloadSpecifications(itemId); // Reload after success
             },
             error: function(xhr, status, error) {
+                displayMessage("Error", 2);
                 console.error('Error:', xhr.responseText); 
             }
         });
@@ -290,6 +299,7 @@ $(document).ready(function() {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') 
                     },
                     success: function(response) {
+                        displayMessage( response.message, 1);
                         //alert('Item Updated successfully!');
                         //form.trigger('reset');
                         //$('.text-danger').text(''); 
@@ -385,6 +395,9 @@ $(document).ready(function() {
         })
         .then(data => {
             // Handle success
+            displayMessage( data.message, 1);
+
+            /*
             document.getElementById('success_messageText').innerText = data.message; // Display success message
             const responseMessage = document.getElementById('responseMessage');
             responseMessage.style.display = 'block'; 
@@ -393,15 +406,16 @@ $(document).ready(function() {
             setTimeout(() => {
                 responseMessage.style.display = 'none';
             }, 5000);
-    
             // Add click event to close button
             document.getElementById('closeMessage').onclick = function() {
                 responseMessage.style.display = 'none'; 
             };
-    
+
             // clear the form fields
             document.getElementById('parameter_name').value = '';
             document.getElementById('value_name').value = '';
+                            */
+
         })
         .catch(error => {
             // Handle error
@@ -433,12 +447,19 @@ $(document).ready(function() {
                 })
                 .then(response => {
                     if (!response.ok) {
+                        displayMessage("Error", 2);
+
                         throw new Error('Network response was not ok ' + response.statusText);
+
+
                     }
                     return response.json(); // Parse JSON 
+
                 })
                 .then(data => {
                     // success
+                    displayMessage( data.message, 1);
+                    /*
                     document.getElementById('success_messageText').innerText = data.message; // Display success message
                     const responseMessage = document.getElementById('responseMessage');
                     responseMessage.style.display = 'block'; // Show the message
@@ -452,7 +473,7 @@ $(document).ready(function() {
                     document.getElementById('closeMessage').onclick = function() {
                         responseMessage.style.display = 'none'; // Hide the message
                     };
-    
+                    */
                     // Optionally, clear the form fields if needed
                     //form.reset(); // DONT DO IT :(
                 })
@@ -463,6 +484,8 @@ $(document).ready(function() {
                     if (responseMessage) {
                         responseMessage.innerHTML = 'An error occurred. Please try again.'; // Display error message
                     }
+                    displayMessage("Error", 2);
+
                 });
             };
     
@@ -555,6 +578,7 @@ $(document).ready(function() {
 
                 },
                 error: function(xhr) {
+                    displayMessage("Error", 2);
                     console.error('Error reloading:', xhr.responseText); 
                     alert('An error occurred while reloading: ' + xhr.responseText);
                 }
@@ -624,6 +648,8 @@ $(document).ready(function() {
 
 
 
+
+    
 
 
 
@@ -699,6 +725,8 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     // Display success message
+                    displayMessage(response.message, 1);
+
                     $('#message').html('<p>' + response.message + '</p>');
 
                     var newImage = `
@@ -751,6 +779,7 @@ $(document).ready(function() {
                 }
             },
             error: function(xhr, status, error) {
+                displayMessage("Error", 2);
                 console.log(xhr.responseText);
             }
         });
@@ -1000,3 +1029,199 @@ function updateFilterUrl() {
 }
 
 
+
+// CART functions HERE
+$(document).on('click', '.cart_remove_item', function(event) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+
+    var itemId = $(this).data('item-id'); // Get the item ID from the clicked element
+
+    $.ajax({
+        url: '/remove_item_from_cart/' + itemId, // AJAX request URL
+        type: 'GET',
+        dataType: 'json', // Ensure you expect a JSON response
+        success: function(response) {
+            displayMessage(response.message, 1);
+            reload_cart();
+        },
+        error: function(xhr) {
+            console.error('Error removing item:', xhr.responseText); // Log any errors
+            displayMessage("Error", 2);
+        }
+    });
+});
+
+$(document).on('click', '.reload_cart', function() {
+    
+    reload_cart();
+});
+
+function reload_cart() {
+
+    setTimeout(function() {
+        $.ajax({
+            url: '/Live_cart', // The URL to fetch updated cart content
+            type: 'GET',
+            success: function(response) {
+                $('#cart-container').html(response.view); 
+
+
+            },
+            error: function(xhr) {
+                displayMessage("Error", 2);
+                console.error('Error loading cart:', xhr.responseText); 
+                //alert('Failed to reload cart.'); // Handle errors
+            }
+        });
+    }, 10); // Delay of 100ms
+
+}
+
+
+
+$(document).on('click', '.add_quantity_item_cart', function(event) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    var itemId = $(this).data('item-id'); // Get the item ID from the clicked element
+    $.ajax({
+        url: '/ajax_cart_increase_quantity/' + itemId, // AJAX request URL
+        type: 'GET',
+        dataType: 'json', // Ensure you expect a JSON response
+        success: function(response) {
+            // Call the reload_cart function upon success
+            reload_cart();
+        },
+        error: function(xhr) {
+            displayMessage("Error", 2);
+            console.error('Error removing item:', xhr.responseText); // Log any errors
+        }
+    });
+});
+
+$(document).on('click', '.decrease_quantity_item_cart', function(event) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    var itemId = $(this).data('item-id'); // Get the item ID from the clicked element
+    $.ajax({
+        url: '/ajax_cart_decrease_quantity/' + itemId, // AJAX request URL
+        type: 'GET',
+        dataType: 'json', // Ensure you expect a JSON response
+        success: function(response) {
+            // Call the reload_cart function upon success
+            reload_cart();
+        },
+        error: function(xhr) {
+            displayMessage("Error", 2);
+            console.error('Error removing item:', xhr.responseText); // Log any errors
+        }
+    });
+});
+
+
+function displayMessage(message, type) {
+    const messageContainer = document.getElementById('responseMessage');
+    const messageText = document.getElementById('success_messageText');
+    const closeButton = document.getElementById('closeMessage');
+    messageContainer.classList.remove('the_success_message', 'the_error_message');
+
+    if (type === 1) {
+        messageContainer.classList.add('the_success_message');
+    } else if (type === 2) {
+        messageContainer.classList.add('the_error_message');
+    }
+    messageText.textContent = message;
+    
+    const timerSpan = document.createElement('span');
+    timerSpan.style.marginLeft = '10px';
+    messageText.appendChild(timerSpan);
+    
+    let timeRemaining = 6; // Time in seconds
+    
+    function updateTimer() {
+        timerSpan.textContent = ` (${timeRemaining.toFixed(1)}s)`;
+    }
+    updateTimer();
+    messageContainer.style.display = 'block';
+
+    closeButton.addEventListener('click', function() {
+        messageContainer.style.display = 'none';
+        clearTimeout(closeTimer); 
+        clearInterval(timerInterval); 
+    });
+    
+    const closeTimer = setTimeout(function() {
+        messageContainer.style.display = 'none';
+    }, 6000);
+    
+    const timerInterval = setInterval(function() {
+        timeRemaining -= 1; 
+        updateTimer();
+        
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval); 
+        }
+    }, 1000);
+}
+
+
+$(document).ready(function() {
+    $('#ajax_add_rule').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        var formData = $(this).serialize(); // Serialize form data
+
+        $.ajax({
+            url: '/ajax_create_rule', // Use route helper
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                // Handle success (you can update the UI or display a message)
+                console.log(response);
+                displayMessage(response.message, 1);
+                reload_rule();
+                //alert("Form submitted successfully!");
+            },
+            error: function(xhr) {
+                // Handle error (you can display error messages here)
+                console.log(xhr.responseText);
+                displayMessage("Error", 2);
+                //alert("An error ");
+            }
+        });
+    });
+});
+
+function reload_rule() {
+    setTimeout(function() {
+        $.ajax({
+            url: '/Live_rule', // The URL to fetch updated cart content
+            type: 'GET',
+            success: function(response) {
+                $('#rule-container').html(response.view); 
+            },
+            error: function(xhr) {
+                displayMessage("Error", 2);
+                console.error('Error loading cart:', xhr.responseText); 
+                //alert('Failed to reload cart.'); // Handle errors
+            }
+        });
+    }, 10);
+
+}
+
+$(document).on('click', '.delete_rule', function(event) {
+    event.preventDefault(); 
+    var ruleId = $(this).data('rule-id'); 
+    $.ajax({
+        url: '/ajax_delete_rule/' + ruleId, 
+        type: 'GET',
+        dataType: 'json', // Ensure you expect a JSON response
+        success: function(response) {
+            // Call the reload_cart function upon success
+            displayMessage(response.message, 1);
+            reload_rule();
+        },
+        error: function(xhr) {
+            displayMessage("Error", 2);
+            console.error('Error removing item:', xhr.responseText); // Log any errors
+        }
+    });
+});

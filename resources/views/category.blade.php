@@ -235,7 +235,7 @@
                             </div>
                             <p class="one_line_clamp default_padding"><strong>{{$i->name}}</strong></p>
                             <p ><strong class="remain_center price_p">{{$i->price}}<span class="Price_small_p"></span> €</strong>    </p>
-                            <a class="no_ancor_decoration" href="/add/cart/item/{{$i->id}}">
+                            <a class="no_ancor_decoration" href="/add/item/cart/{{$i->id}}">
                             <div class="radius_bottom_5_px cart_button">
                                 <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
                             </div>    

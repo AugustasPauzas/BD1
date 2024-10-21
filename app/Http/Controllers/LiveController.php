@@ -11,6 +11,11 @@ use App\Models\Value;
 use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
+use App\Models\Rule;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 use Illuminate\Support\Facades\DB;
 
@@ -105,4 +110,57 @@ class LiveController extends Controller
     
         return view('partials.Live_specification_add_form', compact('data_item', 'data_specifications_table_all_items'));
     }
+
+    public function Live_cart() {
+        error_log("METHOD Live_cart");
+        
+        if (Auth::check()) {
+            error_log("The user is logged in");
+            // Handle logged-in user cart items here if needed
+        } else {
+            error_log("The user is NOT logged in");
+            
+            // Get cart items from cookie
+            $cart_items = json_decode(Cookie::get('cart_items', '[]'), true) ?? [];
+            $item_ids = array_keys($cart_items); // Use keys for item IDs
+            
+            error_log("json encode: " . json_encode($cart_items));
+            
+            $data_images = DB::table('image_parse')
+                ->join('image', 'image_parse.image_id', '=', 'image.id')
+                ->select('image_parse.*', 'image.image_location')
+                ->where('image_parse.position', 1)
+                ->get();
+    
+            $query = DB::table('item')
+                ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
+            
+            if (!empty($item_ids)) {
+                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+            }
+            
+            $cookie_data = $query->get();
+            
+            error_log("The user is NOT logged in: " . json_encode($cookie_data));
+            
+            // Return view with cart items and images
+            return response()->json([
+                'view' => view('partials.Live_cart', compact('data_images', 'cart_items', 'cookie_data'))->render(),
+                'message' => 'Item Cart Reloaded'
+            ]);        }
+    }
+    public function Live_rule() {
+        error_log("METHOD Live_cart");
+        
+        $data_parameter = Parameter::all();
+        $data_category = Category::all();
+        $data_rule = Rule::all();
+        // Return view with cart items and images
+        return response()->json([
+            'view' => view('partials.Live_rule', compact('data_parameter', 'data_category', 'data_rule'))->render(),
+            'message' => 'Rules Reloaded'
+        ]);        
+    }
+    
+    
 }

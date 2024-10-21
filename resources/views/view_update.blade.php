@@ -22,8 +22,8 @@
             </div>
         </div>
     </div>
-    
     <br>
+
     
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
         <div class="row no_sides_margin">
@@ -275,10 +275,7 @@
                 </form>
                 
             </div> <!--specifications_add_form_container END HERE -->
-            <div id="responseMessage" class="the_success_message">
-                <span id="success_messageText"></span>
-                <button id="closeMessage" style="background: transparent; border: none; color: white; margin-left: 10px; cursor: pointer;">&times;</button>
-            </div>
+
         </div>
         <hr>
         <div class="row no_margin_sides hide_on_md">

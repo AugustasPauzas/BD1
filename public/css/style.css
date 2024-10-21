@@ -20,20 +20,26 @@
     --var_svg_color_nav: rgb(155, 255, 41);
 
 }
-.the_success_message{
+.the_message{
     position: fixed; 
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
     top: 5%; 
     left: 50%; 
     transform: translateX(-50%); 
     z-index: 1000; 
     display: none; 
-    background: #28a745; 
-    color: white; 
     padding: 10px; 
     border-radius: 5px; 
     width: auto;
+}
+.the_success_message{
+    background: #28a746bd; 
+    color: white; 
+}
+.the_error_message{
+    background: #a72833bd; 
+    color: white; 
 }
 #responseMessage {
     transition: opacity 0.5s ease;
@@ -989,4 +995,11 @@ background-color: #555; /* Darker handle on hover */
 }
 .accept_btn:hover {
     background-color: #0056b3;
+}
+
+.delete_rule{
+    color: rgb(184, 0, 0);
+}
+.delete_rule:hover{
+    color: rgb(253, 0, 0);
 }

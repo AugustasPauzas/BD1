@@ -136,7 +136,8 @@
     
                                 </div>
                                 <div class="col-lg-6 default_margin">
-                                    <form>
+                                    <form action="{{ url('add_item_too_cart/' . $data_item->id) }}" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <div class="input-group ">
                                                 <div class="input-group-prepend">
@@ -149,10 +150,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
                                     
-                                    <!-- Include your script -->
-                                    <script src="{{ asset('js/item_quantity.js') }}"></script>
+                                    
+
                                     
                                 </div>
                                 
@@ -160,7 +160,7 @@
     
                             <div class="row no_margin_sides">
     
-                                <button type="button" class="btn btn-success btn large_padding ">
+                                <button type="submit" class="btn btn-success btn large_padding ">
                                     
                                     <strong>Add To Cart </strong>
     
@@ -173,7 +173,7 @@
                                     </svg>
     
                                 </button>  
-      
+                                </form>
        
     
                             </div>
@@ -233,7 +233,7 @@
     
                                         </div>
     
-                                        <a class="no_ancor_decoration text-center" href="/add/cart/item/{{$i->id}}">
+                                        <a class="no_ancor_decoration text-center" href="/add/item/cart/{{$i->id}}">
                                         <div class="radius_bottom_5_px cart_button">
                                             <strong>Add To <img class="extra_small_svg" src="{{ url('/svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
                                         </div>    
