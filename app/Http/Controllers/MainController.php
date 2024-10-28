@@ -46,14 +46,12 @@ class MainController extends Controller
 
     }
 
-
     public function rule(){
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_rule = Rule::all();
         return view('rule', compact('data_parameter','data_category','data_rule'));
     }
-
 
     public function view_item($item_id){
         try {
@@ -301,7 +299,7 @@ class MainController extends Controller
     public function cart()
     {
         error_log("METHOD cart");
-        
+        $data_items_id=[];
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')
@@ -328,17 +326,18 @@ class MainController extends Controller
             if (!empty($item_ids)) {
                 $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
                 $cookie_data = $query->get();
+                $data_items_id = $cookie_data->pluck('item_id')->toArray();
+
             }
             else {
                 $cookie_data = [];
             }
-                    $data_items_id = $cookie_data->pluck('item_id')->toArray();
 
             //error_log("The user is NOT logged in" . json_encode($cookie_data));
         }
         //error_log("cart rules:" . $data_rules);
         error_log("cart items: " . json_encode($cookie_data));
-        error_log("ids only: " . json_encode($data_items_id));
+        //error_log("ids only: " . json_encode($data_items_id));
 
         $data_specifications = Specification::whereIn('item_id', $data_items_id)
         ->join('parameter', 'specification.parameter_id', '=', 'parameter.id')

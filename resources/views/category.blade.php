@@ -3,6 +3,7 @@
 
 @extends ('layouts.default_body')
 @section('content')
+<script type="text/javascript" src="{{ asset('js/category_JS.js') }}"></script>
 
 <div class="default_container_margin">
 
@@ -245,7 +246,18 @@
                     </a>
                     @endforeach
                     @if (!$oneItemFound)
-                        <p>No items Found</p>
+                    <br>
+                    <p class="text_align_center">
+                        <svg class="extra_extra_large_svg grey_svg_stroke" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M7.88124 16.2441C8.37391 15.8174 9.02309 15.5091 9.72265 15.3072C10.4301 15.103 11.2142 15 12 15C12.7858 15 13.5699 15.103 14.2774 15.3072C14.9769 15.5091 15.6261 15.8174 16.1188 16.2441" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="9" cy="10" r="1.25" fill="#33363F" stroke="#33363F" stroke-width="0.5" stroke-linecap="round"/>
+                            <circle cx="15" cy="10" r="1.25" fill="#33363F" stroke="#33363F" stroke-width="0.5" stroke-linecap="round"/>
+                        </svg>                     
+                    </p>        
+
+                    <p class="text_align_center font_120"> <strong>No Items Found </strong></p>
+                    <br>
                     @endif
                     </div>
                     <div>

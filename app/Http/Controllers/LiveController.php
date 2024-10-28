@@ -113,41 +113,66 @@ class LiveController extends Controller
 
     public function Live_cart() {
         error_log("METHOD Live_cart");
+        $data_items_id=[];
+        $data_images = DB::table('image_parse')
+        ->join('image', 'image_parse.image_id', '=', 'image.id')
+        ->select('image_parse.*', 'image.image_location')
+        ->where('image_parse.position', 1)
+        ->get();
+        $data_rules = Rule::all();
         
         if (Auth::check()) {
             error_log("The user is logged in");
             // Handle logged-in user cart items here if needed
-        } else {
+        } 
+        else {
             error_log("The user is NOT logged in");
-            
-            // Get cart items from cookie
-            $cart_items = json_decode(Cookie::get('cart_items', '[]'), true) ?? [];
+            $cart_items = json_decode(Cookie::get('cart_items', '[]'), true) ;//?? [];
+
             $item_ids = array_keys($cart_items); // Use keys for item IDs
             
-            error_log("json encode: " . json_encode($cart_items));
-            
-            $data_images = DB::table('image_parse')
-                ->join('image', 'image_parse.image_id', '=', 'image.id')
-                ->select('image_parse.*', 'image.image_location')
-                ->where('image_parse.position', 1)
-                ->get();
-    
+            error_log("json encode: ". json_encode($cart_items));
+
             $query = DB::table('item')
                 ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
             
             if (!empty($item_ids)) {
                 $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+                $cookie_data = $query->get();
+                $data_items_id = $cookie_data->pluck('item_id')->toArray();
+
             }
-            
-            $cookie_data = $query->get();
-            
+            else {
+                $cookie_data = [];
+            }
             error_log("The user is NOT logged in: " . json_encode($cookie_data));
             
             // Return view with cart items and images
-            return response()->json([
-                'view' => view('partials.Live_cart', compact('data_images', 'cart_items', 'cookie_data'))->render(),
-                'message' => 'Item Cart Reloaded'
-            ]);        }
+      
+        }
+
+        $data_specifications = Specification::whereIn('item_id', $data_items_id)
+        ->join('parameter', 'specification.parameter_id', '=', 'parameter.id')
+        ->join('value', 'specification.value_id', '=', 'value.id')
+        ->join('item', 'specification.item_id', '=', 'item.id')
+        ->join('category', 'item.category_id', '=', 'category.id') // Join category table with item table
+        ->select(
+            'item.id as item_id',
+            'item.name as item_name',
+            'parameter.id as parameter_id',
+            'parameter.parameter_name',
+            'value.id as value_id',
+            'value.value_name',
+            'category.id as category_id',
+            'category.category as category_name' // Assuming 'category' column holds the name
+        )
+        ->get();
+
+        return response()->json([
+            'view' => view('partials.Live_cart', compact('data_images', 'cart_items', 'cookie_data', 'data_specifications', 'data_rules'))->render(),
+            'message' => 'Item Cart Reloaded'
+        ]);  
+
     }
     public function Live_rule() {
         error_log("METHOD Live_cart");

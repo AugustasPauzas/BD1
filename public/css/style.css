@@ -103,7 +103,10 @@ footer {
     animation: fade_in 0.7s ease-in-out forwards; 
 }
 
-
+.remain_end {
+    justify-content: end;
+    text-align: end;
+}
 .remain_center {
     display: flex;
     justify-content: center;
@@ -164,6 +167,10 @@ text-decoration: none !important;
 
 .default_large_margin{
     margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+.default_large_margin_bottom{
     margin-bottom: 12px;
 
 }
@@ -382,6 +389,17 @@ text-decoration: none !important;
     stroke: rgb(54, 54, 54);
 }
 
+.grey_svg{
+    fill: rgb(54, 54, 54);
+    stroke: rgb(54, 54, 54);
+}
+.grey_svg_fill{
+    fill: rgb(54, 54, 54);
+}
+.grey_svg_stroke{
+    stroke: rgb(54, 54, 54);
+}
+
 .extra_small_svg{
     height: 24px;
     width: 24px;
@@ -393,6 +411,18 @@ text-decoration: none !important;
 .medium_svg{
     height: 48px;
     width: 48px;
+}
+.large_svg{
+    height: 64px;
+    width: 64px;
+}
+.extra_large_svg{
+    height: 64px;
+    width: 64px;
+}
+.extra_extra_large_svg{
+    height: 128px;
+    width: 128px;
 }
 
 .image_svg_wrapper {
@@ -949,10 +979,8 @@ background-color: #555; /* Darker handle on hover */
     width: 80%;
     background-color: #f8f9fa;
     padding: 15px;
-    text-align: center;
     z-index: 1000;
     display: none;
-    justify-content: space-between;
     align-items: center;
     animation: fade_in 0.3s ease-in-out forwards; 
 
@@ -973,7 +1001,7 @@ background-color: #555; /* Darker handle on hover */
     visibility: visible; 
 }
 .privacy_banner p {
-    margin: 0;
+    margin: 1;
     font-size: 14px;
     color: #333;
 }
@@ -994,8 +1022,21 @@ background-color: #555; /* Darker handle on hover */
     border-radius: 5px;
 }
 .accept_btn:hover {
-    background-color: #0056b3;
+    background-color: #006bb3;
 }
+.reject_btn {
+    background-color: #5f5f5f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.reject_btn:hover {
+    background-color: #444444;
+}
+
 
 .delete_rule{
     color: rgb(184, 0, 0);

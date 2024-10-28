@@ -86,11 +86,21 @@ $VarWebsiteLocation = "Pramonės pr. 20";
 
 
     <div id="privacy_banner" class="privacy_banner default_radius grey_border under_shadow_top under_shadow">
-        <p>
-            We use cookies to ensure you get the best experience on our website. 
-            <a href="/privacy-policy" target="_blank">Learn more</a>
-        </p>
-        <button id="accept_btn" class="accept_btn">Accept</button>
+        <div class="w-100 ">
+            <div class="row">
+                <div class="col-lg-8">
+                            <p>
+                                We use cookies to ensure you get the best experience on our website. 
+                                <a href="/privacy-policy" target="_blank">Learn more</a>
+                            </p>      
+                            </div>
+                            <div class="col-lg-4 remain_end ">
+                            <button id="reject_btn" class="reject_btn">Reject</button> <!-- New Reject button -->
+                            <button id="accept_btn" class="accept_btn">Accept</button>   
+                            </div>
+            </div>
+            
+        </div>
     </div>
     <script>
     
@@ -123,10 +133,16 @@ document.getElementById('accept_btn').addEventListener('click', function() {
     document.getElementById('privacy_banner').style.display = 'none';
 });
 
-// Check if the user has already accepted
+// Function to handle rejection of the privacy banner
+document.getElementById('reject_btn').addEventListener('click', function() {
+    setCookie('privacyAccepted', 'false', 365); // Set cookie to 'false' on reject
+    document.getElementById('privacy_banner').style.display = 'none';
+});
+
+// Check if the user has already accepted or rejected
 window.onload = function() {
-    // If the cookie 'privacyAccepted' is not set to 'true', show the banner
-    if (getCookie('privacyAccepted') !== 'true') {
+    // If the cookie 'privacyAccepted' is neither 'true' nor 'false', show the banner
+    if (getCookie('privacyAccepted') !== 'true' && getCookie('privacyAccepted') !== 'false') {
         document.getElementById('privacy_banner').style.display = 'flex';
     }
 };

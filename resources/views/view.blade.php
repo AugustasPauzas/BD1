@@ -2,6 +2,10 @@
 @extends ('layouts.default_body')
 @section('content')
 
+
+<script type="text/javascript" src="{{ asset('js/view_JS.js') }}"></script>
+
+
 <div class="default_container_margin">
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
 
@@ -44,7 +48,7 @@
     
     <div class="container no_padding ">
         <div class="row no_margin_sides ">
-            <div  class=" col-xl-10 other_item no_padding">
+            <div  class=" col-xl-10 other_item no_padding default_large_margin_bottom">
                 <div class="default_padding default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
                     <div class="row no_margin_sides">
                         <div id="sourceDiv" class="col-md-6">
@@ -183,7 +187,7 @@
     
                 </div>
             </div>
-            <div  class="col-xl-2 no_padding full_height">
+            <div  class="col-xl-2 no_padding full_height default_large_margin_bottom">
                 <div class="row no_margin_sides ">
                     <div class="col  default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
                         <div id="targetDiv" class="recomended_item_container custom-scroll">
@@ -259,7 +263,7 @@
     <div class="container no_padding">
         <div class="row no_margin_sides">
     
-            <div class="col-md-6 no_padding">
+            <div class="col-md-6 no_padding default_large_margin_bottom">
             <div class="default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
                 <p class="text-center"> <strong>Full Specification</strong></p> 
                 <div class="row no_margin_sides no_padding">
@@ -320,7 +324,25 @@
             <div class="col-md-6 no_padding">
             <div class="default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
                 <p class="text-center"> <strong>Costumer Reviews</strong></p>  
-    
+                <p class="text-center"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="large_svg grey_svg" viewBox="0 0 24 24">
+
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <g id="SVGRepo_iconCarrier">
+                        
+                        <path d="M12 6c0-.55-.45-1-1-1H5.82l.66-3.18.02-.23c0-.31-.13-.59-.33-.8L5.38 0 .44 4.94C.17 5.21 0 5.59 0 6v6.5c0 .83.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.91l2.26-5.29c.07-.17.11-.36.11-.55V6zm10.5 4h-6.75c-.62 0-1.15.38-1.38.91l-2.26 5.29c-.07.17-.11.36-.11.55V18c0 .55.45 1 1 1h5.18l-.66 3.18-.02.24c0 .31.13.59.33.8l.79.78 4.94-4.94c.27-.27.44-.65.44-1.06v-6.5c0-.83-.67-1.5-1.5-1.5z"/>
+                        
+                        </g>
+                        
+                        </svg>    
+                        <p></p>
+                </p>  
+                <p class="text-center"> Be The first Too Review This item</p>  
+
+
                 
     
                 
