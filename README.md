@@ -4,7 +4,7 @@
 
 ## Išskirtinės funkcijos
 
-- Vartotojas gauna pranešimą, jei krepšelyje esantys produktai yra pasiekiami ir gali būti įsigyti.
+- Vartotojas gauna pranešimą, jei krepšelyje esantys produktai yra suderinami
 
 ## Naudojamos technologijos
 

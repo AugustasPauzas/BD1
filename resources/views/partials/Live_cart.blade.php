@@ -34,8 +34,11 @@ $total_price=0;
                         </a>
                     </div>
                 </div>
-                <div class="col-9 default_padding default_margin two_line_clamp">
-                    {{$i->name}}
+                <div class="col-9 default_padding  ">
+                    <p class=" default_margin_sides two_line_clamp">
+                        {{$i->name}}
+                    </p>
+                    
 
                 </div>                            
             </div>
@@ -48,8 +51,12 @@ $total_price=0;
                             $theQuantity=0;
                         @endphp 
                         {{--   <span>{{$i->quantity}}</span> TO DO fix the oversup  --}}
-                        <a class="decrease_quantity_item_cart" data-item-id="{{$i->item_id}}" href="#/{{$i->item_id}}">
-                        - 
+                        <a class="decrease_quantity_item_cart default_margin_sides" data-item-id="{{$i->item_id}}" href="#/{{$i->item_id}}">
+                            <svg class="extra_extra_small_svg"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 " stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                            </svg>
                         </a>
                         @if (count($cart_items) > 0)
                         @foreach ($cart_items as $itemId => $quantity)
@@ -63,8 +70,12 @@ $total_price=0;
                         @else
                             <p>dB quant.</p>
                         @endif
-                        <a class="add_quantity_item_cart" data-item-id="{{$i->item_id}}" href="#/{{$i->item_id}}">
-                          +   
+                        <a class="add_quantity_item_cart default_margin_sides" data-item-id="{{$i->item_id}}" href="#/{{$i->item_id}}">
+                            <svg class="extra_extra_small_svg"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                            </svg>
                         </a>
                         
                     </div>
@@ -140,19 +151,21 @@ $total_price=0;
                         --}}
                         
                         @if ($ii->parameter_id_1 ==  $iii->parameter_id || $ii->parameter_id_2 ==  $iii->parameter_id)
-                            @if($iii->category_id != $category 
-                            && $iii->category_id == $ii->category_id_1  
-                            || $iii->category_id == $ii->category_id_2  
-                            )
+                            @if( $iii->category_id == $ii->category_id_1  || $iii->category_id == $ii->category_id_2  )
                                 @if ($category != $iii->category_id &&  ($category == $ii->category_id_1 || $category == $ii->category_id_2) )
 
 
                                 <P>{{--$iii--}}</P>
                                 @if ($value == $iii->value_id  )
-                                    <strong style="color: green">
+                                    <strong >
+                                        <svg class="green_checker_svg extra_small_svg" viewBox="0 0 24 24" fill="none" >
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier"> <path d="M4 12.6111L8.92308 17.5L20 6.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                                        </svg>
                                         Compatable With 
-                                        <a href="view/{{$iii->item_id}}">
-                                            <span style="color: rgb(18, 95, 18)">
+                                        <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
+                                            <span class="p_cart_compatable">
                                                 {{$iii->item_name}}
 
                                             </span>
@@ -162,16 +175,22 @@ $total_price=0;
                                         
                                     </strong>
                                 @else
-                                    <strong style="color: red">Not Compatable With 
-                                        <a href="view/{{$iii->item_id}}">
-                                            <span style="color: rgb(196, 40, 40)">
+                                    <strong style="color: rgb(0, 0, 0)">
+                                        <svg class="red_cross_svg extra_small_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" />
+                                        </svg>                                        
+                                        Not Compatable With 
+                                        <?xml version="1.0" encoding="utf-8"?>
+
+                                        <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
+                                            <span class="p_cart_incompatable">
                                                 {{$iii->item_name}}
                                                 {{$iii->category_name}}
 
                                             </span>
                                         </a>
                                         Try Looking For
-                                        <a href="category/{{$iii->category_id}}?fa[]={{$iii->parameter_id}}:{{$value}}">
+                                        <a class="no_ancor_decoration p_cart_incompatable"  href="category/{{$iii->category_id}}?fa[]={{$iii->parameter_id}}:{{$value}}">
                                             {{$value_name}}
                                             {{$iii->category_name}}
                                         </a>
@@ -242,7 +261,7 @@ $total_price=0;
 
 <div class="row no_margin_sides default_radius">
     <div class="col-12 text-end">
-        <a href="cart/continue">
+        <a href="cart/step-2">
             <button type="button" class="btn btn-success btn">
                 Next Step
                 <?xml version="1.0" encoding="utf-8"?>

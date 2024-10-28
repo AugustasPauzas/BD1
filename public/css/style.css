@@ -381,6 +381,13 @@ text-decoration: none !important;
 .view_item_cart_svg_color{
     stroke: white !important;
 }
+.green_checker_svg{
+    stroke: green;
+}
+.red_cross_svg{
+    fill: rgb(165, 0, 0);
+    stroke: none;
+}
 
 .delivery_svg_color{
     fill: rgb(54, 54, 54);
@@ -399,7 +406,10 @@ text-decoration: none !important;
 .grey_svg_stroke{
     stroke: rgb(54, 54, 54);
 }
-
+.extra_extra_small_svg{
+    height: 16px;
+    width: 16px;
+}
 .extra_small_svg{
     height: 24px;
     width: 24px;
@@ -1043,4 +1053,17 @@ background-color: #555; /* Darker handle on hover */
 }
 .delete_rule:hover{
     color: rgb(253, 0, 0);
+}
+
+.p_cart_incompatable{
+    color: rgb(133, 0, 0);
+}
+.p_cart_incompatable:hover{
+    color: rgb(87, 11, 11);
+}
+.p_cart_compatable{
+    color: rgb(30, 32, 156);
+}
+.p_cart_compatable:hover{
+    color: rgb(28, 30, 141);
 }

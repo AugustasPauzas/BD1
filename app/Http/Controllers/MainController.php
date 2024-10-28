@@ -298,8 +298,11 @@ class MainController extends Controller
 
     public function cart()
     {
+
         error_log("METHOD cart");
         $data_items_id=[];
+        $cookie_data = [];
+        $cart_items = [];
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')

@@ -43,7 +43,7 @@
             */
     
             @endphp
-            {{--  --}}
+            {{--  
             <div class="col-12">
                 <div class="default_padding default_margin ">
 
@@ -96,7 +96,7 @@
 
                 </div>
             </div>
-           
+            --}}
         </div>
         <div class="row">
         </div>

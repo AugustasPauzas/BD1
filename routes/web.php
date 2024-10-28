@@ -20,6 +20,8 @@ Route::get('/category/{category_name_or_id}',[MainController::class, 'category_s
 Route::get('/view/{item_id}',[MainController::class, 'view_item']);
 //Route::get('/category/{category}',[MainController::class, 'category']);
 Route::get('/cart',[MainController::class, 'cart']);
+Route::get('/cart/step-2', function () {return view('cart_step_2');});
+
 //ADMIN NAVIGATION
 Route::get('/categories',[MainController::class, 'categories']);
 Route::get('/specifications',[MainController::class, 'specifications']);
