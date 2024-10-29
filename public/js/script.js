@@ -670,4 +670,35 @@ function displayMessage(message, type) {
     }, 1000);
 }
 
+// REUSED
+$(document).on('click', '#like_the_item', function(event) {
+    event.preventDefault(); 
 
+    var itemId = $(this).data('item-id');
+
+    $.ajax({
+        url: '/add/like/item/' + itemId, // AJAX request URL
+        type: 'GET',
+        dataType: 'json', // Ensure you expect a JSON response
+        success: function(response) {
+            //displayMessage(response.message, 1);
+            //event.preventDefault(); 
+        },
+        error: function(xhr) {
+            console.error('Error removing item:', xhr.responseText); // Log any errors
+            //displayMessage("Error", 2);
+            window.location.href = '/register'; // Replace with your desired URL
+
+        }
+    });
+});
+
+$(document).on('click', '#liked_item_svg', function() {
+    var $this = $(this);
+    var $reaction = $this.find('.reaction');
+    $this.toggleClass('liked_item_svg');
+    $reaction.addClass('active');
+    setTimeout(function() {
+        $reaction.removeClass('active');
+    }, 10); 
+});

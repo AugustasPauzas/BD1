@@ -16,6 +16,7 @@ use App\Models\Image;
 use App\Models\ImageParse;
 use App\Models\Rule;
 use App\Models\Cart;
+use App\Models\LikeItem;
 
 
 use Illuminate\Support\Facades\Storage;
@@ -68,6 +69,12 @@ class MainController extends Controller
             $data_all_item = $data_all_item->filter(fn($item) => $item->category_id === $data_item->category_id);
             $data_all_item = $data_all_item->shuffle()->take(6);
 
+            $data_like = collect();
+            if (Auth::check()) {
+                $user_id = Auth::id();
+                $data_like = LikeItem::where('user_id', $user_id)->get();
+            }
+    
 
             $data_parameter = Parameter::all();
             $data_category = Category::all();
@@ -103,7 +110,17 @@ class MainController extends Controller
             
             //echo $data_item;
             //echo $data_specification;
-            return view('view', ['data_item' => $data_item,'data_all_item' => $data_all_item, 'data_parameter' => $data_parameter, 'data_category' => $data_category, 'data_value' => $data_value, 'data_specification' => $data_specification,'data_all_image' => $data_all_image, 'data_image' => $data_image, 'data_specifications_table' => $data_specifications_table]);
+            return view('view', [
+            'data_like' => $data_like,
+            'data_item' => $data_item,
+            'data_all_item' => $data_all_item, 
+            'data_parameter' => $data_parameter, 
+            'data_category' => $data_category, 
+            'data_value' => $data_value, 
+            'data_specification' => $data_specification,
+            'data_all_image' => $data_all_image, 
+            'data_image' => $data_image, 
+            'data_specifications_table' => $data_specifications_table]);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 
             echo "Fatal Error, Item Not Found";
@@ -421,7 +438,7 @@ class MainController extends Controller
         ->join('parameter', 'specification.parameter_id', '=', 'parameter.id')
         ->join('value', 'specification.value_id', '=', 'value.id')
         ->join('item', 'specification.item_id', '=', 'item.id')
-        ->join('category', 'item.category_id', '=', 'category.id') // Join category table with item table
+        ->join('category', 'item.category_id', '=', 'category.id') 
         ->select(
             'item.id as item_id',
             'item.name as item_name',
@@ -430,7 +447,7 @@ class MainController extends Controller
             'value.id as value_id',
             'value.value_name',
             'category.id as category_id',
-            'category.category as category_name' // Assuming 'category' column holds the name
+            'category.category as category_name' 
         )
         ->get();
 
@@ -465,6 +482,11 @@ class MainController extends Controller
         //Looking for scr option
         $searchTerm = request()->query('src'); 
 
+        $data_like = collect();
+        if (Auth::check()) {
+            $user_id = Auth::id();
+            $data_like = LikeItem::where('user_id', $user_id)->get();
+        }
 
         // DONT DELETE function too call FA
         /*
@@ -595,6 +617,7 @@ class MainController extends Controller
                 ->orderBy('position')->get();
     
             return view('category', [
+                'data_like' => $data_like,
                 'data_category' => $data_category,
                 'data_parameter' => $data_parameter,
                 'data_item' => $filtered_items,

@@ -104,6 +104,7 @@
     
     <div class="container">
         <div class="row  ">
+
             <div class="col-lg-2 ">
                 <div class="primary_background_color default_padding default_large_margin default_radius under_shadow">
                     <p ><strong class="remain_center"></strong>  </p>
@@ -224,9 +225,13 @@
                                 $oneItemFound = true;
                                 @endphp
     
-                                <a href="{{ route('add.like', ['item_id' => $i->id]) }}">
+                                <a id="like_the_item" class="" href="{{ route('add.like', ['item_id' => $i->id]) }}" data-item-id="{{$i->id}}">
                                     <div class="heart_div default_radius">
-                                        <svg class="heart_svg extra_small_svg" viewBox="-0.96 -0.96 17.92 17.92" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                                        <svg id="liked_item_svg" 
+                                        class=" heart_svg extra_small_svg 
+                                        @foreach ($data_like as $like) @if($i->id == $like->item_id) liked_item_svg @endif @endforeach"
+                                        viewBox="-0.96 -0.96 17.92 17.92" fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                             <g id="SVGRepo_iconCarrier">

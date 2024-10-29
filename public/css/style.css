@@ -489,14 +489,21 @@ text-decoration: none !important;
 }
 .heart_svg{
     opacity: 0.6; 
-    fill: rgba(255, 255, 255, 0) !important;
+    fill: rgba(255, 255, 255, 0) ;
     transition: fill 0.3s ease, color 0.3s ease; 
 }
 .heart_svg:hover{
     transition: fill 0.3s ease, color 0.3s ease; 
-    fill: rgba(255, 60, 60, 0.801) !important;
+    fill: rgba(255, 60, 60, 0.801) ;
 }
-
+.liked_item_svg{
+    opacity: 1; 
+    fill: rgba(255, 60, 60, 0.801) !important;;
+}
+.liked_item_svg:hover{
+    opacity: 0.1; 
+    fill: rgba(255, 60, 60, 0.801) !important;;
+}
 
 
 .item_list {
