@@ -6,7 +6,7 @@
 
 - Vartotojas gauna pranešimą, jei krepšelyje esantys produktai yra suderinami
 
-## Kaip paleisti per windows platforma?
+## Kaip paleisti per Windows platforma?
 
 1. Nusikopijuoti Kodą
 ```bash
@@ -37,6 +37,7 @@ $ php artisan migrate
 ```bash
 $ php artisan serve
 ``` 
+
     7.2 2 Būdas
         Paleidžiamas run.bat failas esantis BD1 aplanke
     
