@@ -10,6 +10,7 @@
 
 
 <p> 1. Nusikopijuoti Kodą </p>
+
 ```bash
 $ git clone https://github.com/AugustasPauzas/BD1
 ```
