@@ -15,40 +15,40 @@
     <div class="">
         <form id="ajax_add_rule" action="ajax_add_rule_html" method="POST" class="row gx-2 align-items-center">
             @csrf
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <select class="form-select" name="category_id_1">
                     @foreach ($data_category as $i)
                         <option value="{{$i->id}}">{{$i->category}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <select class="form-select" name="parameter_id_1">
                     @foreach ($data_parameter as $i)
                         <option value="{{$i->id}}">{{$i->parameter_name}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <select class="form-select" id="status" name="operation">
                     <option value="1">=</option>
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <select class="form-select" name="category_id_2">
                     @foreach ($data_category as $i)
                         <option value="{{$i->id}}">{{$i->category}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <select class="form-select" name="parameter_id_2">
                     @foreach ($data_parameter as $i)
                         <option value="{{$i->id}}">{{$i->parameter_name}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 default_margin_bottom">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>

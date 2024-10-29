@@ -12,6 +12,8 @@ use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
 use App\Models\Rule;
+use App\Models\Cart;
+
 
 
 
@@ -439,14 +441,36 @@ class AjaxController extends Controller
     
         if (Auth::check()) {
             error_log("The user is logged in");
-            // TODO: Handle logic for logged-in users (if needed)
-        } else {
+            
+            $user_id = Auth::id();
+            
+            // Find the cart item for the logged-in user
+            $cartItem = Cart::where('user_id', $user_id)
+                ->where('item_id', $item_id)
+                ->first();
+        
+            if ($cartItem) {
+                // Increase the quantity by 1
+                $cartItem->quantity += 1; 
+                $cartItem->save(); 
+                
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Item quantity increased successfully',
+                    'new_quantity' => $cartItem->quantity 
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Item not found in the cart',
+                ]);
+            }
+        } 
+        else {
             error_log("The user is NOT logged in");
     
-            // Get cart items from the cookie
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true) ?? [];
             
-            // Check if the item exists in the cart and increase its quantity
             if (isset($cartItems[$item_id])) {
                 // Increase the quantity by 1
                 $cartItems[$item_id] += 1;
@@ -455,14 +479,12 @@ class AjaxController extends Controller
                 $cartItems[$item_id] = 1;
             }
     
-            // Queue the updated cart items in the cookie for 48 hours
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 48);
             
-            // Return a JSON response indicating success
             return response()->json([
                 'status' => 'success',
                 'message' => 'Item quantity increased successfully',
-                'cart' => $cartItems, // Optionally return updated cart items
+                'cart' => $cartItems,
             ]);
         }
     }
@@ -472,14 +494,44 @@ class AjaxController extends Controller
     
         if (Auth::check()) {
             error_log("The user is logged in");
-            // TODO: Handle logic for logged-in users (if needed)
-        } else {
+            
+            $user_id = Auth::id();
+
+            $cartItem = Cart::where('user_id', $user_id)
+                ->where('item_id', $item_id)
+                ->first();
+        
+            if ($cartItem) {
+                // Decrease the quantity by 1
+                if ($cartItem->quantity > 1) {
+                    $cartItem->quantity -= 1; 
+                    $cartItem->save(); 
+                    
+                    return response()->json([
+                        'status' => 'success',
+                        'message' => 'Item quantity decreased successfully',
+                        'new_quantity' => $cartItem->quantity 
+                    ]);
+                } else {
+                    $cartItem->delete();
+                    
+                    return response()->json([
+                        'status' => 'success',
+                        'message' => 'Item removed from the cart successfully',
+                    ]);
+                }
+            } else {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Item not found in the cart',
+                ]);
+            }
+        } 
+         else {
             error_log("The user is NOT logged in");
     
-            // Get cart items from the cookie
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true) ?? [];
             
-            // Check if the item exists in the cart and decrease its quantity
             if (isset($cartItems[$item_id])) {
                 // Decrease the quantity by 1
                 $cartItems[$item_id] -= 1;
@@ -493,11 +545,10 @@ class AjaxController extends Controller
             // Queue the updated cart items in the cookie for 48 hours
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 48);
             
-            // Return a JSON response indicating success
             return response()->json([
                 'status' => 'success',
                 'message' => 'Item quantity decreased successfully',
-                'cart' => $cartItems, // Optionally return updated cart items
+                'cart' => $cartItems,
             ]);
         }
     }

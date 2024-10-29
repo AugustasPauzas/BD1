@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="container primary_background_color default_padding default_margin default_radius under_shadow">
+<div class="container default_container_margin primary_background_color default_padding default_margin default_radius under_shadow">
 
     <h1>Privacy Policy</h1>
     <p>Last updated: October 07, 2024</p>

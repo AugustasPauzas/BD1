@@ -26,23 +26,23 @@ $VarWebsiteLogo = "/images/logo64.png";
 
        <li class="nav-item">
           <a class="nav-link"  href="{{ url('/category/all_items') }}">All Items</a>
-         </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
-         </li>         
-         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/create') }}">Create Item</a>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/rule') }}">Create Rule</a>
-         </li>
-
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/FAQ') }}">F.A.Q.</a>
         </li>
+        @auth
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
+        </li>         
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/create') }}">Create Item</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/rule') }}">Create Rule</a>
+        </li>
+        @endauth
  
       </ul>
-  
   
       <ul class="navbar-nav ml-auto">
 
@@ -71,9 +71,8 @@ $VarWebsiteLogo = "/images/logo64.png";
         
         
       @auth
-
-        @else
-        @endauth
+      @else
+      @endauth
 
         
   

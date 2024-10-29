@@ -15,6 +15,7 @@ use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
 use App\Models\Rule;
+use App\Models\Cart;
 
 
 use Illuminate\Support\Facades\Storage;
@@ -47,6 +48,11 @@ class MainController extends Controller
     }
 
     public function rule(){
+
+        if (!Auth::check()){
+            return redirect('/login');
+        }
+        
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_rule = Rule::all();
@@ -106,6 +112,10 @@ class MainController extends Controller
     }
     public function view_item_update ($item_id)
     {
+        if (!Auth::check()){
+            return redirect('/login');
+        }
+
         try {
             $data_item = Item::findOrFail($item_id);
 
@@ -177,6 +187,9 @@ class MainController extends Controller
 
     public function categories()
     {
+        if (!Auth::check()){
+            return redirect('/login');
+        }
         //echo "CONTROLLER WORKS";
         $data = Category::all();
         //$data = "bbbb";
@@ -185,6 +198,9 @@ class MainController extends Controller
     }
     public function create()
     {
+        if (!Auth::check()){
+            return redirect('/login');
+        }
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_value = Value::all();
@@ -201,7 +217,27 @@ class MainController extends Controller
             error_log("The user logged in");
             // NOTE change for live controller 2
             // TODO: Handle logic for logged-in users (if needed)
-        } else {
+            $user_id = Auth::id();
+            $cartItem = Cart::where('user_id', $user_id)
+            ->where('item_id', $item_id)
+            ->first();
+
+            if ($cartItem) {
+                // Delete the cart item
+                $cartItem->delete();
+                
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Item removed successfully',
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Item not found in the cart',
+                ]);
+            }
+        } 
+        else {
             error_log("The user is NOT logged in");
     
             // Get cart items from the cookie
@@ -226,8 +262,19 @@ class MainController extends Controller
     {
         if (Auth::check()) {
             error_log("The user is logged in");
-            //TODO
 
+            $user_id = Auth::id(); 
+            $quantity = 1; 
+            $cartItem = Cart::where('user_id', $user_id)->where('item_id', $item_id)->first();
+        
+            if ($cartItem) {
+                $cartItem->quantity += $quantity;
+                $cartItem->save();
+            } 
+            else {
+                Cart::create(['user_id' => $user_id,'item_id' => $item_id,'quantity' => $quantity,]);
+            }
+            error_log("Item added to cart successfully");
         } 
         else {
             error_log("The user is NOT logged in");
@@ -241,8 +288,8 @@ class MainController extends Controller
                 $cartItems[$item_id] = 1;
             }
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24);
-            return redirect('/cart');
         }
+        return redirect('/cart');
 
     }
 
@@ -276,7 +323,17 @@ class MainController extends Controller
 
         if (Auth::check()) {
             error_log("The user is logged in");
-            //TODO
+            $user_id = Auth::id(); 
+            $cartItem = Cart::where('user_id', $user_id)->where('item_id', $item_id)->first();
+        
+            if ($cartItem) {
+                $cartItem->quantity += $quantity;
+                $cartItem->save();
+            } 
+            else {
+                Cart::create(['user_id' => $user_id,'item_id' => $item_id,'quantity' => $quantity,]);
+            }
+            error_log("Item added to cart successfully");
 
         } 
         else {
@@ -312,14 +369,32 @@ class MainController extends Controller
 
         if (Auth::check()) {
             error_log("The user is logged in");
+        
+            $user_id = Auth::id();
+            $cart_items = Cart::select('item_id', 'quantity')
+            ->where('user_id', $user_id)
+            ->get();
+    
+            $cart_items = $cart_items->pluck('quantity', 'item_id')->toArray();
+            $item_ids = array_keys($cart_items);
 
-        } 
+            $query = DB::table('item')
+                ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
+        
+            if (!empty($item_ids)) { // Changed this line
+                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+                $cookie_data = $query->get();
+                $data_items_id = $item_ids; // Simplified this line
+            }
+        }
+        
         else {
             error_log("The user is NOT logged in");
             $cart_items = json_decode(Cookie::get('cart_items', '[]'), true);
             
             $item_ids = array_keys($cart_items); // Use keys for item IDs
-            
+
+            error_log("json encode item_Ids: ". json_encode($item_ids));
             error_log("json encode: ". json_encode($cart_items));
             
             $query = DB::table('item')
@@ -336,7 +411,7 @@ class MainController extends Controller
                 $cookie_data = [];
             }
 
-            //error_log("The user is NOT logged in" . json_encode($cookie_data));
+            error_log("The user is NOT logged in" . json_encode($cookie_data));
         }
         //error_log("cart rules:" . $data_rules);
         error_log("cart items: " . json_encode($cookie_data));

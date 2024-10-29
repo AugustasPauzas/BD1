@@ -81,7 +81,9 @@ $total_price=0;
                     </div>
                 </div>
                 <div class="col-4 default_padding default_margin ">
-                    {{$i->price}}€
+                    {{ number_format($i->price, 2) }}€
+
+
                     @php
                         $total_price=$total_price+ ($i->price*$theQuantity)
                     @endphp
@@ -253,7 +255,7 @@ $total_price=0;
 <div class="row no_margin_sides default_radius ">
     <div class="col-lg-7"></div>
     <div class="col-lg-5">
-        <p ><strong class="remain_center">Total:  {{$total_price}}€</strong>  </p>
+        <p ><strong class="remain_center">Total: {{ number_format($total_price, 2) }}€</strong>  </p>
     </div>
 </div>
 

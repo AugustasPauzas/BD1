@@ -12,6 +12,7 @@ use App\Models\Item;
 use App\Models\Image;
 use App\Models\ImageParse;
 use App\Models\Rule;
+use App\Models\Cart;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -114,6 +115,8 @@ class LiveController extends Controller
     public function Live_cart() {
         error_log("METHOD Live_cart");
         $data_items_id=[];
+        $cookie_data = [];
+        $cart_items = [];
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')
@@ -123,7 +126,23 @@ class LiveController extends Controller
         
         if (Auth::check()) {
             error_log("The user is logged in");
-            // Handle logged-in user cart items here if needed
+        
+            $user_id = Auth::id();
+            $cart_items = Cart::select('item_id', 'quantity')
+            ->where('user_id', $user_id)
+            ->get();
+    
+            $cart_items = $cart_items->pluck('quantity', 'item_id')->toArray();
+            $item_ids = array_keys($cart_items);
+
+            $query = DB::table('item')
+                ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
+        
+            if (!empty($item_ids)) { // Changed this line
+                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+                $cookie_data = $query->get();
+                $data_items_id = $item_ids; // Simplified this line
+            }
         } 
         else {
             error_log("The user is NOT logged in");

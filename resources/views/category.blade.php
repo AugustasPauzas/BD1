@@ -127,7 +127,10 @@
                                  </div>
     
                             <input type="hidden" id="category_identifier" value="{{ $specified_category_id_or_name }}">
-    
+                            <div class="d-flex">
+                                <a id="apply_filter" href="#" class="btn btn-outline-primary flex-fill">Apply</a>
+                            </div>
+                            
                         </div>
                         
                         <!--  Parameter Filters-->
@@ -135,8 +138,7 @@
                         $displayedParameters = []; 
                         @endphp
                         
-                        <a id="apply_filter" href="" class="btn btn-outline-primary">apply</a>
-     
+
     
                         @foreach ($item_filter_parameters as $i)
                             @if (!in_array($i->parameter_name, $displayedParameters))  
@@ -222,7 +224,7 @@
                                 $oneItemFound = true;
                                 @endphp
     
-                                <a href="add/like/item/{{$i->id}}">
+                                <a href="{{ route('add.like', ['item_id' => $i->id]) }}">
                                     <div class="heart_div default_radius">
                                         <svg class="heart_svg extra_small_svg" viewBox="-0.96 -0.96 17.92 17.92" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -235,7 +237,7 @@
                                 </a>
                             </div>
                             <p class="one_line_clamp default_padding"><strong>{{$i->name}}</strong></p>
-                            <p ><strong class="remain_center price_p">{{$i->price}}<span class="Price_small_p"></span> €</strong>    </p>
+                            <p ><strong class="remain_center price_p">{{ number_format($i->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
                             <a class="no_ancor_decoration" href="/add/item/cart/{{$i->id}}">
                             <div class="radius_bottom_5_px cart_button">
                                 <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 

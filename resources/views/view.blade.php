@@ -7,8 +7,10 @@
 
 
 <div class="default_container_margin">
+    @auth
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
 
+        
         <div class="row no_sides_margin">
             <div class="col-8">
                 <p>Item ID: {{$data_item->id}}</p>
@@ -32,11 +34,12 @@
                 </div>
                 
             </div>
-    
         </div>
+        
     </div>
-    <br>
     
+    <br>
+    @endauth
     
     <div class="container">
     <p class="no_margin_bottom font_85 secondary_text"> <a class='no_ancor_decoration' href="{{ url('/') }}">Home</a> | 
@@ -53,6 +56,8 @@
                     <div class="row no_margin_sides">
                         <div id="sourceDiv" class="col-md-6">
                             <div  class=" image_svg_wrapper default_margin">
+                                  
+                                {{--@include('partials.Live_view_update_big_pick') --}}
                                 @if($data_image->isNotEmpty())
                                 <div class="image-container big_square_image">
                                     <img id="replace_image_item_view" class="default_radius full_width_image big_square_image tertiary_background_color grey_border" src="{{ asset($data_image->first()->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
@@ -134,7 +139,7 @@
     
                             <div class="row ">
                                 <div class="col-lg-6 default_margin">
-                                    <p><strong>Price</strong>  <span class="price_p"><strong>{{$data_item->price}} €</strong></span> <span class="font_75 secondary_text">/pcs</span> </p>
+                                    <p><strong>Price</strong>  <span class="price_p"><strong>{{ number_format($data_item->price, 2) }} €</strong></span> <span class="font_75 secondary_text">/pcs</span> </p>
     
                                     
     
@@ -216,7 +221,7 @@
                                             <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
                                             @endif
                 
-                                            <a href="add/like/item/{{$i->id}}">
+                                            <a href="{{ route('add.like', ['item_id' => $i->id]) }}">
                                                 <div class="heart_div no_radius">
                                                     <svg class="heart_svg extra_small_svg" viewBox="-0.96 -0.96 17.92 17.92" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -231,7 +236,7 @@
                                             <a class="no_ancor_decoration" href="/view/{{$i->id}}">
                                             <div class="reccom_text_over_image ">
                                                 <p class="one_line_clamp text-center no_padding no_margin_bottom"><strong>{{$i->name}}</strong></p>
-                                                <p class="no_margin_bottom" ><strong class="text-center remain_center price_p no_padding ">{{$i->price}}<span class="Price_small_p"></span> €</strong>    </p>
+                                                <p class="no_margin_bottom" ><strong class="text-center remain_center price_p no_padding ">{{ number_format($i->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
                                             </div>                                            
                                             </a>
     

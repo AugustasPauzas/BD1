@@ -170,6 +170,10 @@ text-decoration: none !important;
     margin-bottom: 12px;
 
 }
+.default_margin_bottom{
+    margin-bottom: 6px;
+
+}
 .default_large_margin_bottom{
     margin-bottom: 12px;
 
@@ -644,9 +648,6 @@ text-decoration: none !important;
 }
 @media only screen and (max-width: 768px) {
     .hide_on_mb {
-        display: none;
-    }
-    .hide_on_md {
         display: none;
     }
 }

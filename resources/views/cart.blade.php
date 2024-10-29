@@ -71,7 +71,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3 default_large_margin_bottom">
+            <div class="col-lg-3 default_large_margin_bottom hide_on_lg">
                 <div class="primary_background_color default_padding default_margin default_radius under_shadow">
                     <p ><strong class="remain_center">You Might Also Like</strong>  </p>
                     <div class="full_width_image secondary_background_color default_padding default_margin default_radius ">
@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-lg-9">
 
                 <div class=" primary_background_color default_padding default_margin default_radius under_shadow">
                     <p ><strong class="remain_center"></strong>  </p>
@@ -131,9 +131,17 @@
                             </div>
                         </div>
                     </div>
-
-
-
+                     {{--
+                    <p>cart_items</p>
+                    <p>{{ json_encode($cart_items, JSON_PRETTY_PRINT) }}</p>
+                                    
+                    <p>cookie_data</p>
+                     <p>{{ json_encode($cookie_data, JSON_PRETTY_PRINT) }}</p>
+                   
+                     --}}
+                    
+                    
+                    
                 <div id="cart-container">
                     {{-- CART View start here --}}
                     @include('partials.Live_cart')  

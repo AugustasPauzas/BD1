@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LiveController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\LikeItemController;
 
 
 //Route::get('/', function () {return view('welcome');});
@@ -14,6 +15,10 @@ Route::get('/', function () {return view('index');});
 Route::get('/phpinfo', function () {return view('phpinfo');});
 Route::get('/privacy-policy', function () {return view('privacy');});
 Route::get('/rule',[MainController::class, 'rule']);
+Route::get('/FAQ', function () {return view('faq');});
+
+
+
 
 //Route::get('/category', function () {return view('category');});
 Route::get('/category/{category_name_or_id}',[MainController::class, 'category_spec']);
@@ -66,17 +71,18 @@ Route::post('/ajax_create_rule', [AjaxController:: class,'ajax_create_rule'])->n
 
 Route::get('/ajax_delete_rule/{rule_id}', [AjaxController:: class,'ajax_delete_rule'])->name('ajax_delete_rule');
 
-
-
-
 Route::post('/ajax_update_specification_parameter', [AjaxController::class, 'ajax_update_specification_parameter'])->name('ajax_update_specification_parameter');
-
 
 route::post('/add_new_category',[MainController::class, 'add_new_category']);
 route::post('/add_new_value',[MainController::class, 'add_new_value']);
 route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
 Route::post('/add_new_image/{item_id}', [MainController::class, 'add_new_image']);
 Route::get('/delete/item/image/{item_id}/{image_parse_id}', [MainController::class, 'delete_image']);
+
+//Liked items 
+Route::get('/like-item',[LikeItemController::class, 'view_like']);
+Route::get('/add/like/item/{item_id}',[LikeItemController::class, 'add_like'])->name('add.like');
+
 
 
 Route::get('/dashboard', function () {

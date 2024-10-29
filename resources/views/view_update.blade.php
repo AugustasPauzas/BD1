@@ -167,6 +167,8 @@
     
     
                 <div id="data-container">
+                    @include('partials.Live_images_reload')  
+                    {{--
                     @foreach($data_image as $image)
                     <div class="image-container update_add_images_item full_height" data-image-id="{{ $image->image_parse_id }}">
                         <div class="image_svg_wrapper square_image">
@@ -212,6 +214,7 @@
                     
                     </div>
                     @endforeach
+                    --}}
                 </div>
                 <br>
                 <div class="row">
@@ -253,6 +256,8 @@
           <hr>
           <div class="row no_margin_sides  default_padding default_radius default_margin">
             <div id="specifications_add_form_container">
+                @include('partials.Live_specification_add_form')  
+                {{--
                 <form class="no_margin_bottom" id="ajax_add_specification" enctype="multipart/form-data" method="POST" action="{{ url('/ajax_add_specification') }}">
                     @csrf
                     <div class="row">
@@ -277,7 +282,7 @@
                     </div>
                     <input type="hidden" name="item_id" value="{{ $data_item->id }}">
                 </form>
-                
+                --}}
             </div> <!--specifications_add_form_container END HERE -->
 
         </div>
@@ -290,7 +295,9 @@
     
          
     <div id="specificationsContainer">
-    
+
+        @include('partials.Live_specifications')  
+        {{-- 
         @php
         $grouped_specifications = [];
         foreach ($data_specifications_table as $item) {
@@ -377,7 +384,7 @@
             </div>
             @endforeach
         </div>
-    
+        --}}
     </div>
     
     
