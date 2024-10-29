@@ -33,7 +33,8 @@ $ git clone https://github.com/AugustasPauzas/BD1
 $ php artisan migrate
 ```  
 
-7. Paleisti Serverį
+
+<p> 7. Paleisti Serverį </p>
 <p> 7.1 1 Būdas</p>
 <p> Į konsolę rašome </p>
     
