@@ -32,14 +32,14 @@ $ php artisan migrate
 ```  
 
 7. Paleisti Serverį
-    7.1 1 Būdas
-        Į konsolę rašome
-```bash
-$ php artisan serve
-``` 
-
-    7.2 2 Būdas
-        Paleidžiamas run.bat failas esantis BD1 aplanke
+<p> 7.1 1 Būdas</p>
+    
+    Į konsolę rašome
+    ```bash
+    $ php artisan serve
+    ``` 
+<p> 7.1 1 Būdas</p>
+    Paleidžiamas run.bat failas esantis BD1 aplanke
     
 
 
