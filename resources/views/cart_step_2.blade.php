@@ -26,7 +26,7 @@
                     </g>
                     </svg>                              
             </p>
-            <p class="text_align_center font_120"> <strong>Under Constructiuon</strong></p>
+            <p class="text_align_center font_120"> <strong>Under Construction</strong></p>
 
             <br>
             <br>

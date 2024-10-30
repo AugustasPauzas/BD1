@@ -330,6 +330,7 @@
     
             <div class="col-md-6 no_padding">
             <div class="default_padding  default_margin default_margin_sides primary_background_color default_margin default_radius under_shadow">
+                {{-- 
                 <p class="text-center"> <strong>Costumer Reviews</strong></p>  
                 <p class="text-center"> 
                     <svg xmlns="http://www.w3.org/2000/svg" class="large_svg grey_svg" viewBox="0 0 24 24">
@@ -348,6 +349,7 @@
                         <p></p>
                 </p>  
                 <p class="text-center"> Be The first Too Review This item</p>  
+                --}}
                 <p class="text_align_center">
                     <svg class="extra_extra_large_svg grey_svg_stroke default_padding" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -366,7 +368,7 @@
                         </g>
                         </svg>                              
                 </p>
-                <p class="text_align_center font_120"> <strong>Under Constructiuon</strong></p>
+                <p class="text_align_center font_120"> <strong>Under Construction</strong></p>
 
 
 

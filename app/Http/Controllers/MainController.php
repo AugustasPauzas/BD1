@@ -447,7 +447,7 @@ class MainController extends Controller
             'value.id as value_id',
             'value.value_name',
             'category.id as category_id',
-            'category.category as category_name' 
+            'category.category as category_name' // Assuming 'category' column holds the name
         )
         ->get();
 
