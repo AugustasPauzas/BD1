@@ -50,8 +50,12 @@ class MainController extends Controller
 
     public function rule(){
 
-        if (!Auth::check()){
+        //ADMIN CHECK
+        if (!Auth::check()) {
             return redirect('/login');
+        }
+        if (Auth::user()->level < 2) {
+            return redirect('/login'); 
         }
         
         $data_parameter = Parameter::all();
@@ -129,10 +133,13 @@ class MainController extends Controller
     }
     public function view_item_update ($item_id)
     {
-        if (!Auth::check()){
-            return redirect('/login');
+        //ADMIN CHECK
+        if (!Auth::check()) {
+            return redirect('/view/'.$item_id); 
         }
-
+        if (Auth::user()->level < 2) {
+            return redirect('/view/'.$item_id); 
+        }
         try {
             $data_item = Item::findOrFail($item_id);
 
@@ -204,9 +211,14 @@ class MainController extends Controller
 
     public function categories()
     {
-        if (!Auth::check()){
+        //ADMIN CHECK
+        if (!Auth::check()) {
             return redirect('/login');
         }
+        if (Auth::user()->level < 2) {
+            return redirect('/login'); 
+        }
+
         //echo "CONTROLLER WORKS";
         $data = Category::all();
         //$data = "bbbb";
@@ -215,9 +227,14 @@ class MainController extends Controller
     }
     public function create()
     {
-        if (!Auth::check()){
+        //ADMIN CHECK
+        if (!Auth::check()) {
             return redirect('/login');
         }
+        if (Auth::user()->level < 2) {
+            return redirect('/login'); 
+        }
+
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_value = Value::all();
@@ -642,6 +659,9 @@ class MainController extends Controller
         return view('category', ['category' => $category, 'data_category' => $data_category]);
     }
     public function add_new_category(Request $request){
+
+
+
         $validatedData = $request->validate([
             'category' => 'required|string|max:255',
             'category_full' => 'required|string|max:255',
@@ -681,6 +701,14 @@ class MainController extends Controller
 
     public function delete_image($item_id, $image_parse_id)
     {
+        //ADMIN CHECK // because GET
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
+        if (Auth::user()->level < 2) {
+            return redirect('/login'); 
+        }
+
         error_log('FUNCTION delete_image'); 
         $imageParse = ImageParse::find($image_parse_id);
         

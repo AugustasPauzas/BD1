@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="DxKpvd3GSa204IADqyGO" name="Page-1">
+        <mxGraphModel dx="2351" dy="1964" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Sistema" style="swimlane;fontStyle=1;align=center;horizontal=1;startSize=30;collapsible=0;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="421" y="245" width="533" height="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="P.1 Prisijungimo sistema" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="281" y="50" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="P.1.1 Atsijungimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="19" y="38" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;dashed=1;" parent="3" source="31" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="3" source="32" target="126" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="3" source="32" target="128" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="3" source="32" target="130" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="P.2 Naudotojo duomenų redagavimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="281" y="128" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="P.3 Paskyros šalinimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="281" y="207" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="3" source="33" target="133" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="Include" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="3" source="33" target="135" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="P.4 Įsiminti prekę" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="276" y="292" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="P.2.1 Elektroninio pašto adreso redagavimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="22" y="116" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="P.2.2 Naudoto vardo redagavimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="22" y="189" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="P.2.3 Slaptažodžio keitimas" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="82" y="250" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="P.4.1 Pridėti prekę prie įsimintų prekių" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="22" y="348" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="P.4.2 Peržiūrėti įsimintas prekes" style="ellipse;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="161" y="412" width="160" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="1" source="29" target="31" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="1" source="29" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="1" source="29" target="30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" parent="1" source="29" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Prisijungęs &lt;br&gt;Naudotojas" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="1027" y="407" width="30" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

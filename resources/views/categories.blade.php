@@ -7,7 +7,7 @@
 
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
         <p ><strong class="remain_center">Add New Category</strong>  </p>
-    
+        
         <form action="add_new_category" method="post">
             @csrf
             <div class="row align-items-end">
