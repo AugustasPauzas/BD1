@@ -1,0 +1,301 @@
+<mxfile host="65bd71144e">
+    <diagram id="mzO_CvgGdJ5bJuFoguiS" name="Page-1">
+        <mxGraphModel dx="1404" dy="1483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="2" target="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-200" y="20"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="29">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Administratorius" style="html=1;dashed=0;whitespace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-260" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;exitX=0.84;exitY=0.869;exitDx=0;exitDy=0;entryX=0.831;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;rounded=0;" parent="1" source="3" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Sistemos&lt;br&gt;back end" style="shape=ellipse;html=1;dashed=0;whitespace=wrap;aspect=fixed;perimeter=ellipsePerimeter;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="160" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="70">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="71">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="80" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="72">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="81" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="73">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Prisijungęs&lt;br&gt;naudotojas" style="html=1;dashed=0;whitespace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="6" target="47">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="-50"/>
+                            <mxPoint x="180" y="-50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="6" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="6" target="52">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="-50"/>
+                            <mxPoint x="820" y="-50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="49">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="-50"/>
+                            <mxPoint x="340" y="-50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="64" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="-50"/>
+                            <mxPoint x="661" y="-50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.587;entryY=-0.06;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="66">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="-50"/>
+                            <mxPoint x="990" y="-50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="Naudotojas" style="html=1;dashed=0;whitespace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="-140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;exitX=0.167;exitY=0.018;exitDx=0;exitDy=0;exitPerimeter=0;rounded=0;" parent="1" source="14" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="Duomenų&lt;br&gt;bazė" style="html=1;dashed=0;whitespace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Pateikia &lt;br&gt;informaciją" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;spacing=2;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="185" y="312" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Gauna užklausą,&lt;br&gt;saugo informaciją" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;spacing=2;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="335" y="309" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="Prideda, redaguoja&lt;br&gt;prekes" style="edgeStyle=none;html=1;" edge="1" parent="1" source="26">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="80" y="-140" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="A.1&amp;nbsp;Prekių valdymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="-160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Šaldo paskyras,&lt;br&gt;keičia roles" style="edgeStyle=none;html=1;" edge="1" parent="1" source="27">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="80" y="-60" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="A.2&amp;nbsp;Paskyrų valdymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="-80" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Tikrina užsakymus,&lt;br&gt;keičia statusą" style="edgeStyle=none;html=1;" edge="1" parent="1" source="28">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="80" y="20" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="A.3&amp;nbsp;Užsakymų valdymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Prideda, redaguoja&lt;br&gt;taisykles" style="edgeStyle=none;html=1;" edge="1" parent="1" source="29">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="80" y="180" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="A.5&amp;nbsp;Suderinamumo taisyklių valdymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Prideda, redaguoja&lt;br&gt;kategorijas" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="80" y="100" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="A.4&amp;nbsp;Kategorijų valdymas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="80" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80" y="-140" as="sourcePoint"/>
+                        <mxPoint x="240" y="220" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="120" as="sourcePoint"/>
+                        <mxPoint x="290" y="-70" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="300" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="980" y="120" as="sourcePoint"/>
+                        <mxPoint x="530" y="70" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="300" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="Peržiūri su preke &lt;br&gt;susijusia informaciją" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="47">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="U.1&amp;nbsp;Prekių peržiūra" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Prideda prekes &lt;br&gt;į krepšelį" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="49">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="U.2&amp;nbsp;Krepšelio formavimas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Suveda pristatymo &lt;br&gt;informaciją" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="50">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="U.3&amp;nbsp;Užsakymo formavimas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="Peržiūri pateikta&lt;br&gt;užsakymą, mato&lt;br&gt;būseną" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="661" y="120" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="U.4&amp;nbsp;Užsakymo peržiūra" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="601" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="52">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="Registruojasi &lt;br&gt;arba prisijungia" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="59">
+                    <mxGeometry x="-0.225" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="U.5&amp;nbsp;Registracijos sistema" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="Mato filtruota&lt;br&gt;prekių sąrašą" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="66">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="980" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="U.6 Prekių filtravimas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="920" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="500" as="sourcePoint"/>
+                        <mxPoint x="690" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="520" y="350"/>
+                            <mxPoint x="520" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" value="Naudotojas gali&lt;br&gt;atsijungti" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="70">
+                    <mxGeometry y="-20" relative="1" as="geometry">
+                        <mxPoint x="520" y="260" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="70" value="P.1&amp;nbsp;Prisijungimo sistema" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="240" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="Naudotojas keičia&lt;br&gt;savo informaciją" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="71">
+                    <mxGeometry y="-20" relative="1" as="geometry">
+                        <mxPoint x="520" y="340" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="71" value="P.2&amp;nbsp;Naudotojo duomenų redagavimas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="320" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="Naudotojas&lt;br&gt;ištrina savo paskyra" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="72">
+                    <mxGeometry y="-20" relative="1" as="geometry">
+                        <mxPoint x="520" y="420" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" value="P.3 Paskyros šalinimas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="400" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="Naudotojas&lt;br&gt;įsimina prekę" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="73">
+                    <mxGeometry y="-20" relative="1" as="geometry">
+                        <mxPoint x="520" y="500" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="P.4&amp;nbsp;Įsiminti prekę" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="480" width="130" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

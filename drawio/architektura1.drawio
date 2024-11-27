@@ -1,0 +1,635 @@
+<mxfile host="65bd71144e">
+    <diagram id="yG9zDVficsGJ1vfVRRgx" name="Page-1">
+        <mxGraphModel dx="2210" dy="1505" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="23" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="5" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="AjaxController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" parent="1" vertex="1">
+                    <mxGeometry x="-150" y="388.5" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="6" target="14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-245.5" y="75" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="app" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="-295" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;endFill=0;" edge="1" parent="1" source="12" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="12" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="12" target="76">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="bootstrap&#10;" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="6" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="14" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="14" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Htpp" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-295" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="15" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Models" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-145" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="17" target="19">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Controllers" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-295" y="228" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="19" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="19" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Auth" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-295" y="391" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Controller.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-6" y="388.5" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="24" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="24" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="FunctionController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="138" y="391" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="26" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="LikeItemController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="282" y="391" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="28" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="LiveController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="426" y="391" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="32" target="33">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="MainController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="391" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="ProfileController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="714" y="388.5" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="37" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="AuthenticatedSessionController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-300" y="554" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="39" target="41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="ConfirmablePasswordController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-101" y="554" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="41" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="NewPasswordController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="83" y="554" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="43" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="PasswordController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="246" y="554" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="RegisteredUserController.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="409" y="554" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="49" target="51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="Cart.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-147.5" y="225.5" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="51" target="53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Category.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-6" y="225.5" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="53" target="55">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Image.php" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                    <mxGeometry x="138" y="228" width="104" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="55" target="57">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="ImageParse.php" link="ImageParse.php" id="55">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="282" y="228" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="60" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="57" target="59">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Item.php" link="Item.php" id="57">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="426" y="228" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="62" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="59" target="61">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="LikeItem.php" link="LikeItem.php" id="59">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="570" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="65" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="61" target="64">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Parameter.php" link="Parameter.php" id="61">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="714" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="67" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="64" target="66">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Rule.php" link="Rule.php" id="64">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="859" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="69" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="66" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Specification.php" link="Specification.php" id="66">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1007" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="71" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="68" target="70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="User.php" link="User.php" id="68">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1158" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="Value.php" link="Value.php" id="70">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1305" y="231" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="74" value="cache" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="6" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="76" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="Config" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="217" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="78" target="91">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="207" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="78" target="80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="Drawio" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="428.5" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="80" target="81">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="db.drawio" link="Item.php" id="80">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="426" y="73" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="85" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="81" target="84">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="sysArch.drawio" link="Item.php" id="81">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                        <mxGeometry x="570" y="73" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="87" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="84" target="86">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="useCaseAdmin.drawio" link="Item.php" id="84">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                        <mxGeometry x="714" y="70.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="89" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="86" target="88">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="useCaseReg.drawio" link="Item.php" id="86">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                        <mxGeometry x="858" y="70.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="useCaseuser.drawio" link="Item.php" id="88">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                        <mxGeometry x="1002" y="70.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="94" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="91" target="93">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="91" target="97">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="database" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1474" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="93" target="95">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="migrations" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1474" y="65.5" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <UserObject label="*" link="Value.php" id="95">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1474" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="100" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="97" target="99">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="97" target="133">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="public" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1624" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="99" target="101">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="99" target="110">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="css" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1624" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="101" target="103">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="101" target="112">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="images" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1774" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="103" target="105">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="103" target="118">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="js" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="2052" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="105" target="108">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="105" target="131">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="svg" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="2964" y="70.5" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="biuld&#10;" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3124" y="73" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <UserObject label="style.css" link="Value.php" id="110">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1621.5" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="117" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="112" target="116">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="item" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="1774" y="228" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <UserObject label="*.png" link="Value.php" id="116">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="1921.5" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="122" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="118" target="121">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="cart_JS.js" link="Value.php" id="118">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2049.5" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="124" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="121" target="123">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="category_JS.js" link="Value.php" id="121">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2201.5" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="126" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="123" target="125">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="rule_view_JS.js" link="Value.php" id="123">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2353.5" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="128" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="125" target="127">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="script.js" link="script.js" id="125">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2503" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="130" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="127" target="129">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="view_JS.js" link="script.js" id="127">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2657" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="view_update_JS.js" link="script.js" id="129">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2812" y="225.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="*.svg" link="script.js" id="131">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="2961.5" y="221" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="136" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="133" target="135">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="152" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="133" target="151">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="resources" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3289" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="135" target="137">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="135" target="198">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="routes" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3508" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="142" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="137" target="141">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="storage" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3655.5" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="139" target="143">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label=".env&#10;" link="script.js" id="139">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3949" y="-91.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="144" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="141" target="139">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="tests" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3801" y="-89" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="143" target="146">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="artisan" link="script.js" id="143">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4107" y="-91.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="150" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="146" target="149">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="README.md" link="script.js" id="146">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4275" y="-91.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="run.bat" link="script.js" id="149">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4442" y="-91.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="154" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="151" target="153">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="151" value="views" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3289" y="68" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="153" target="155">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="auth" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3289" y="225.5" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="158" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="155" target="157">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="components" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3441" y="225.5" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="157" target="159">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="157" target="169">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="layouts" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="3593" y="223.5" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="159" target="161">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="159" target="188">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="partials" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="4190.5" y="225" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value="profile" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532810/folder.svg;imageBackground=#FFFFFF;labelBackgroundColor=#FFFFFF;labelBorderColor=none;fontColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="4339.5" y="225" width="99" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="165" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="163" target="164">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="163" target="161">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="cart.blade.php" link="script.js" id="163">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4481.5" y="225" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="167" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="164" target="166">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="categories.blade.php" link="script.js" id="164">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4630.5" y="225" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="178" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="166" target="177">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="category.blade.php" link="script.js" id="166">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4785.5" y="225" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="172" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="169" target="171">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="default_body.blade.php" link="script.js" id="169">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3590.5" y="377" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="174" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="171" target="173">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="N_footer.blade.php" link="script.js" id="171">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3742.5" y="377" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="176" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="173" target="175">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="N_head.blade.php" link="script.js" id="173">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3889" y="377" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="N_navigation.blade.php" link="script.js" id="175">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4036" y="377" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="180" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="177" target="179">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="create.blade.php" link="script.js" id="177">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4949.5" y="225" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="182" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="179" target="181">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="index.blade.php" link="index.blade.php" id="179">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="5109.5" y="224.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="184" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="181" target="183">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="rule.blade.php" link="rule.blade.php" id="181">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="5265.5" y="222.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="187" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="183" target="186">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="view_update.blade.php" link="rule.blade.php" id="183">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="5426.5" y="222" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="view.blade.php" link="view.blade.php" id="186">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="5592.5" y="222.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="191" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="188" target="190">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Live_cart.blade.php" link="script.js" id="188">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4188" y="376.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="193" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="190" target="192">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Live_images_reload.blade.php" link="script.js" id="190">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4334.5" y="376.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="195" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="192" target="194">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Live_rule.blade.php" link="script.js" id="192">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4481.5" y="377" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="197" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="194" target="196">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="Live_specification_add_form.blade.php" link="script.js" id="194">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4653" y="376.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="Live_specifications.blade.php" link="script.js" id="196">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="4857" y="376.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="202" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;endArrow=none;endFill=0;startSize=14;endSize=14;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;" edge="1" parent="1" source="198" target="201">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="auth.php" link="script.js" id="198">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3505.5" y="60.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="web.php" link="script.js" id="201">
+                    <mxCell style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://www.svgrepo.com/show/532778/file-minus-alt.svg;" vertex="1" parent="1">
+                        <mxGeometry x="3653" y="60.5" width="104" height="104" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

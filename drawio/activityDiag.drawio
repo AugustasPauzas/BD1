@@ -1,0 +1,1023 @@
+<mxfile host="65bd71144e">
+    <diagram name="A5" id="WuRNKjXlpoFZZhmc7bS6">
+        <mxGraphModel dx="1515" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-0"/>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-1" parent="ZHkQhpniQ8MBHrn48HET-0"/>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-3" value="&lt;b&gt;A.5&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-9" target="ZHkQhpniQ8MBHrn48HET-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-11" target="ZHkQhpniQ8MBHrn48HET-26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-11" value="Taisyklių sąrašas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-15" target="ZHkQhpniQ8MBHrn48HET-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="432.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-15" target="ZHkQhpniQ8MBHrn48HET-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ZHkQhpniQ8MBHrn48HET-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="130" y="420" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="570" as="sourcePoint"/>
+                        <mxPoint x="185" y="629" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-17" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-18" target="ZHkQhpniQ8MBHrn48HET-26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-70" y="426.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-20" target="ZHkQhpniQ8MBHrn48HET-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-70" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-35" y="535" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-23" target="ZHkQhpniQ8MBHrn48HET-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="135" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="135" y="530" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-25" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-26" target="ZHkQhpniQ8MBHrn48HET-27">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="90" y="325"/>
+                            <mxPoint x="90" y="325"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-26" value="Taisyklių redagavimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="-80" y="310" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-27" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;strokeColor=#171D19;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="100" y="245" width="5" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-28" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-29" target="ZHkQhpniQ8MBHrn48HET-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="268"/>
+                            <mxPoint x="260" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-29" value="Redaguojamą taisyklė" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="130" y="250" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-30" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-31" target="ZHkQhpniQ8MBHrn48HET-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="348"/>
+                            <mxPoint x="260" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-31" value="Šalinama taisyklė" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="130" y="340" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-32" value="" style="endArrow=classic;html=1;strokeColor=#171D19;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.133;exitY=0.162;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="ZHkQhpniQ8MBHrn48HET-27" target="ZHkQhpniQ8MBHrn48HET-29">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="310" as="sourcePoint"/>
+                        <mxPoint x="150" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ZHkQhpniQ8MBHrn48HET-33" value="" style="endArrow=classic;html=1;strokeColor=#171D19;exitX=0;exitY=0.217;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" target="ZHkQhpniQ8MBHrn48HET-31">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="357.33000000000004" as="sourcePoint"/>
+                        <mxPoint x="120" y="357.47" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CiEH1bZNBSd1RxkpqDzp-2" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1" source="CiEH1bZNBSd1RxkpqDzp-0" target="ZHkQhpniQ8MBHrn48HET-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="310"/>
+                            <mxPoint x="260" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CiEH1bZNBSd1RxkpqDzp-0" value="Pridedama nauja taisyklė" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry x="130" y="292.5" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="CiEH1bZNBSd1RxkpqDzp-1" value="" style="endArrow=classic;html=1;strokeColor=#171D19;exitX=0;exitY=0.217;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="ZHkQhpniQ8MBHrn48HET-1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="309.6700000000001" as="sourcePoint"/>
+                        <mxPoint x="130" y="309.7266666666667" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A4" id="GkoSLrl3QhC19EkBxoUx">
+        <mxGraphModel dx="2014" dy="765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-0"/>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-1" parent="jwEcTa55kt-Ts-Qqel1P-0"/>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-3" value="&lt;b&gt;A.4&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-9" target="jwEcTa55kt-Ts-Qqel1P-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-0" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-11" target="jwEcTa55kt-Ts-Qqel1P-30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-11" value="kategorijų sąrašas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-15" target="jwEcTa55kt-Ts-Qqel1P-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="432.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-15" target="jwEcTa55kt-Ts-Qqel1P-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jwEcTa55kt-Ts-Qqel1P-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="130" y="420" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="570" as="sourcePoint"/>
+                        <mxPoint x="185" y="629" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-17" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-18" target="jwEcTa55kt-Ts-Qqel1P-30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-70" y="426.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-20" target="jwEcTa55kt-Ts-Qqel1P-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-70" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-35" y="535" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-23" target="jwEcTa55kt-Ts-Qqel1P-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="135" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="135" y="530" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="jwEcTa55kt-Ts-Qqel1P-30" target="GlRarm2IEdkhLW5yuDBg-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jwEcTa55kt-Ts-Qqel1P-30" value="kategorijų redagavimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="-80" y="310" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;strokeColor=#171D19;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="100" y="285" width="5" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-11" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="GlRarm2IEdkhLW5yuDBg-3" target="jwEcTa55kt-Ts-Qqel1P-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="303"/>
+                            <mxPoint x="260" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-3" value="Redaguojamą kategorija" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="120" y="285" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="GlRarm2IEdkhLW5yuDBg-5" target="jwEcTa55kt-Ts-Qqel1P-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="348"/>
+                            <mxPoint x="260" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-5" value="Pridedama nauja kategorija" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry x="120" y="330" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-8" value="" style="endArrow=classic;html=1;strokeColor=#171D19;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.217;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1" source="GlRarm2IEdkhLW5yuDBg-1" target="GlRarm2IEdkhLW5yuDBg-3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="310" as="sourcePoint"/>
+                        <mxPoint x="150" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GlRarm2IEdkhLW5yuDBg-9" value="" style="endArrow=classic;html=1;strokeColor=#171D19;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.217;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="jwEcTa55kt-Ts-Qqel1P-1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="347.33000000000004" as="sourcePoint"/>
+                        <mxPoint x="120" y="347.47" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A3" id="ImtjT2T_jUlFJavgKv0h">
+        <mxGraphModel dx="2014" dy="765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-0"/>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-1" parent="vVjc1Zi3DScxM7Fn75Ln-0"/>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-3" value="&lt;b&gt;A.3&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="588.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-9" target="vVjc1Zi3DScxM7Fn75Ln-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-11" target="vVjc1Zi3DScxM7Fn75Ln-26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="109.57000000000016" y="234.58000000000004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-11" value="Užsakymų sąrašas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-15" target="vVjc1Zi3DScxM7Fn75Ln-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="432.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-15" target="vVjc1Zi3DScxM7Fn75Ln-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vVjc1Zi3DScxM7Fn75Ln-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="130" y="420" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="570" as="sourcePoint"/>
+                        <mxPoint x="185" y="629" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;entryX=0.418;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-18" target="6napg362-D90HLMoarDd-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-70" y="426.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-20" target="vVjc1Zi3DScxM7Fn75Ln-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-70" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-35" y="535" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-23" target="vVjc1Zi3DScxM7Fn75Ln-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="135" y="629" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="135" y="530" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="vVjc1Zi3DScxM7Fn75Ln-26" target="6napg362-D90HLMoarDd-0">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vVjc1Zi3DScxM7Fn75Ln-26" value="Užsakymo peržiūra" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="125" y="220" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="6napg362-D90HLMoarDd-0" target="6napg362-D90HLMoarDd-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-0" value="Užkraunami užsakymo duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="125" y="310" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-6" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="6napg362-D90HLMoarDd-2" target="6napg362-D90HLMoarDd-5">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="20" y="375"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-2" value="Užsakymo redagavimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="-70" y="310" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="vVjc1Zi3DScxM7Fn75Ln-1" source="6napg362-D90HLMoarDd-5" target="vVjc1Zi3DScxM7Fn75Ln-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6napg362-D90HLMoarDd-5" value="Keičiamas užsakymo statusas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="vVjc1Zi3DScxM7Fn75Ln-1">
+                    <mxGeometry x="125" y="360" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A2" id="SU6o0NzTcMXWdsDROrOZ">
+        <mxGraphModel dx="1653" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-0"/>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-1" parent="mQLXBJm8VLt0dZfQf4GN-0"/>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-3" value="&lt;b&gt;A.2&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-9" target="mQLXBJm8VLt0dZfQf4GN-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-11" target="mQLXBJm8VLt0dZfQf4GN-28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="109.57000000000016" y="234.58000000000004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-11" value="Redagavimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-15" target="mQLXBJm8VLt0dZfQf4GN-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="382.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-15" target="mQLXBJm8VLt0dZfQf4GN-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="mQLXBJm8VLt0dZfQf4GN-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="130" y="370" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="520" as="sourcePoint"/>
+                        <mxPoint x="185" y="579" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-17" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-18" target="mQLXBJm8VLt0dZfQf4GN-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-70" y="376.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-20" target="mQLXBJm8VLt0dZfQf4GN-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-70" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="-35" y="485" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-23" target="mQLXBJm8VLt0dZfQf4GN-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="135" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="135" y="480" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9Vrqn8SLvXT-ylIeHp2B-1" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="mQLXBJm8VLt0dZfQf4GN-1" source="mQLXBJm8VLt0dZfQf4GN-28" target="mQLXBJm8VLt0dZfQf4GN-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mQLXBJm8VLt0dZfQf4GN-28" value="Rolės keitimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="mQLXBJm8VLt0dZfQf4GN-1">
+                    <mxGeometry x="125" y="220" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A1.4" id="WjEil8X5FhfHuFmF72Fa">
+        <mxGraphModel dx="1820" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-0"/>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-1" parent="FslRY6diqVBR6W6Py1ca-0"/>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-3" value="&lt;b&gt;A.1.4&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-9" target="FslRY6diqVBR6W6Py1ca-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.086;entryY=0.493;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-11" target="FslRY6diqVBR6W6Py1ca-28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-11" value="Redagavimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-15" target="FslRY6diqVBR6W6Py1ca-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="382.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-15" target="FslRY6diqVBR6W6Py1ca-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="FslRY6diqVBR6W6Py1ca-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="130" y="370" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="520" as="sourcePoint"/>
+                        <mxPoint x="185" y="579" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-17" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-18" target="FslRY6diqVBR6W6Py1ca-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-70" y="376.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-20" target="FslRY6diqVBR6W6Py1ca-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-70" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="-35" y="485" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-23" target="FslRY6diqVBR6W6Py1ca-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="135" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="135" y="480" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-27" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-28" target="FslRY6diqVBR6W6Py1ca-34">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="135" y="256"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-28" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;strokeColor=#171D19;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="110" y="205" width="5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-31" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-32" target="FslRY6diqVBR6W6Py1ca-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="220"/>
+                            <mxPoint x="260" y="403"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-32" value="Specifikacijos punkto pridėjimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="135" y="201.5" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-33" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-34" target="FslRY6diqVBR6W6Py1ca-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="260"/>
+                            <mxPoint x="260" y="403"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="FslRY6diqVBR6W6Py1ca-34" value="Specifikacijos punkto šalinimas užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="FslRY6diqVBR6W6Py1ca-1">
+                    <mxGeometry x="135" y="240.5" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="PbzierRHRGP0-IOvowhI-0" value="" style="endArrow=classic;html=1;strokeColor=#171D19;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.123;exitY=0.194;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="FslRY6diqVBR6W6Py1ca-1" source="FslRY6diqVBR6W6Py1ca-28" target="FslRY6diqVBR6W6Py1ca-32">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="110" y="220" as="sourcePoint"/>
+                        <mxPoint x="160" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A1.3" id="gImNBnVmfZGvcKuPMcjc">
+        <mxGraphModel dx="1820" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-0"/>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-1" parent="lr4Gg1xMb04QbLTXBFjV-0"/>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-3" value="&lt;b&gt;A.1.3&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-9" target="lr4Gg1xMb04QbLTXBFjV-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-5" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.086;entryY=0.493;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-11" target="C5U95ozOHr2Jbc5mxhuA-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-11" value="Redagavimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-15" target="lr4Gg1xMb04QbLTXBFjV-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="382.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-15" target="lr4Gg1xMb04QbLTXBFjV-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lr4Gg1xMb04QbLTXBFjV-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="130" y="370" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="520" as="sourcePoint"/>
+                        <mxPoint x="185" y="579" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-17" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-18" target="lr4Gg1xMb04QbLTXBFjV-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-70" y="376.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-20" target="lr4Gg1xMb04QbLTXBFjV-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-20" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-70" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="-35" y="485" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="lr4Gg1xMb04QbLTXBFjV-23" target="lr4Gg1xMb04QbLTXBFjV-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-23" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="135" y="579" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lr4Gg1xMb04QbLTXBFjV-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="135" y="480" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-4" target="C5U95ozOHr2Jbc5mxhuA-6">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="120" y="195"/>
+                            <mxPoint x="120" y="195"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-4" target="C5U95ozOHr2Jbc5mxhuA-7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-11" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-4" target="C5U95ozOHr2Jbc5mxhuA-8">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="120" y="275"/>
+                            <mxPoint x="120" y="275"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;strokeColor=#171D19;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="110" y="181" width="5" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-15" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-6" target="lr4Gg1xMb04QbLTXBFjV-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="195"/>
+                            <mxPoint x="260" y="403"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-6" value="Nuotraukos ištrinimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="135" y="180" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-13" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-7" target="lr4Gg1xMb04QbLTXBFjV-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="236"/>
+                            <mxPoint x="260" y="402"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-7" value="Nuotraukos pridėjimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="135" y="221" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-12" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lr4Gg1xMb04QbLTXBFjV-1" source="C5U95ozOHr2Jbc5mxhuA-8" target="lr4Gg1xMb04QbLTXBFjV-15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="275"/>
+                            <mxPoint x="260" y="402"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="C5U95ozOHr2Jbc5mxhuA-8" value="Nuotraukos pozicijos keitimo užklausa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lr4Gg1xMb04QbLTXBFjV-1">
+                    <mxGeometry x="135" y="260" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A1.2" id="IyicJCmQCzfMpeFe2kcg">
+        <mxGraphModel dx="1653" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="doAySk1hL9kbPohqSKtj-0"/>
+                <mxCell id="doAySk1hL9kbPohqSKtj-1" parent="doAySk1hL9kbPohqSKtj-0"/>
+                <mxCell id="doAySk1hL9kbPohqSKtj-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-3" value="&lt;b&gt;A.1.2&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-9" target="doAySk1hL9kbPohqSKtj-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-11" target="doAySk1hL9kbPohqSKtj-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-11" value="Suvedami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-15" target="XowSIBWJwY7bdGBvAMRc-2">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="382.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-15" target="doAySk1hL9kbPohqSKtj-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="doAySk1hL9kbPohqSKtj-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="130" y="278.5" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-17" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="0.0169" relative="1" as="geometry">
+                        <mxPoint x="185" y="440" as="sourcePoint"/>
+                        <mxPoint x="185" y="499" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="XowSIBWJwY7bdGBvAMRc-1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-20" target="doAySk1hL9kbPohqSKtj-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-20" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-70" y="285" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-21" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-22" target="doAySk1hL9kbPohqSKtj-23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-22" value="Atvaizduojami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-70" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-23" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="-35" y="405" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="XowSIBWJwY7bdGBvAMRc-4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="doAySk1hL9kbPohqSKtj-1" source="doAySk1hL9kbPohqSKtj-25" target="doAySk1hL9kbPohqSKtj-22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="doAySk1hL9kbPohqSKtj-25" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="135" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="XowSIBWJwY7bdGBvAMRc-2" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="doAySk1hL9kbPohqSKtj-1">
+                    <mxGeometry x="135" y="400" width="100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="A1.1" id="-ZvPO9S60rTev2JBysGi">
+        <mxGraphModel dx="1404" dy="364" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-0"/>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-1" parent="lt8ZQ9ceXnQY1ySYefTD-0"/>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-2" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-3" value="&lt;b&gt;A.1.1&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-4" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-5" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-6" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="458.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-7" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="80" y="121.05" width="200" height="458.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-8" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-9" target="lt8ZQ9ceXnQY1ySYefTD-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-9" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-10" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-11" target="lt8ZQ9ceXnQY1ySYefTD-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-11" value="Suvedami nauji duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-12" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-15" target="lt8ZQ9ceXnQY1ySYefTD-24">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint x="185" y="382.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-13" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-15" target="lt8ZQ9ceXnQY1ySYefTD-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-14" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lt8ZQ9ceXnQY1ySYefTD-13">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-15" value="Ar duomenys teisingi?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="130" y="278.5" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-16" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-24" target="lt8ZQ9ceXnQY1ySYefTD-23">
+                    <mxGeometry x="0.0169" y="5" relative="1" as="geometry">
+                        <mxPoint x="185" y="447.5" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-17" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-18" target="lt8ZQ9ceXnQY1ySYefTD-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-18" value="Klaidos pranešimas" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-70" y="285" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-19" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-20" target="lt8ZQ9ceXnQY1ySYefTD-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-20" value="Užkraunamas naujos prekės puslapis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-70" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="-35" y="405" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-22" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="lt8ZQ9ceXnQY1ySYefTD-1" source="lt8ZQ9ceXnQY1ySYefTD-23" target="lt8ZQ9ceXnQY1ySYefTD-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-23" value="Užkraunami naujos prekės duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="135" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lt8ZQ9ceXnQY1ySYefTD-24" value="Išsaugomi duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="lt8ZQ9ceXnQY1ySYefTD-1">
+                    <mxGeometry x="135" y="400" width="100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="0w3-WGdQ5Dfw9Yzq9S5W" name="A1">
+        <mxGraphModel dx="1653" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="39" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-120" y="80" width="400" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="&lt;b&gt;A.1&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-120" y="80" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;b&gt;Naudotojas&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-120" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="&lt;b&gt;Sistema&lt;/b&gt;" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="100" width="200" height="21.05" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="-120" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="whiteSpace=wrap;html=1;align=center;strokeColor=#171D19;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="121.05" width="200" height="518.95" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="1" source="45" target="46">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;strokeColor=#171D19;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="140" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="1" source="46" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Teikia užklausą į prekės valdymo sistemą" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="210" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="1" source="49" target="51">
+                    <mxGeometry x="-0.1818" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="49" target="53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="NE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="55">
+                    <mxGeometry x="-0.442" y="-1" relative="1" as="geometry">
+                        <mxPoint x="8" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="Naudotojas Prisijungęs?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="262.5" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="NE" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="1" source="51" target="54">
+                    <mxGeometry x="-0.6" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="62" value="TAIP" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="1" source="51" target="61">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Administratorius?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="382.5" width="110" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="1" source="53" target="58">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Prisijungimo&lt;br&gt;puslapis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="270" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="edgeStyle=none;html=1;strokeColor=#171D19;" edge="1" parent="1" source="54" target="58">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Prisijungimo&lt;br&gt;puslapis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="390" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-35" y="340" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#171D19;" edge="1" parent="1" source="61" target="63">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="Užkraunami duomenys" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="135" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#171D19;" edge="1" parent="1" source="63" target="66">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Prekės duomenų redagavimo puslapis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="499" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+                    <mxGeometry x="-35" y="600" width="30" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
