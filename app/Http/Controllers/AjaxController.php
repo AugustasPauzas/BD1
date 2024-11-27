@@ -601,4 +601,7 @@ class AjaxController extends Controller
        return response()->json(['message' => 'Rule deleted successfully']);
     }
 
+
+
+
 }

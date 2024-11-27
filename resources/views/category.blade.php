@@ -252,6 +252,36 @@
                         </div>                    
                     </a>
                     @endforeach
+
+                    @if ($oneItemFound)
+                    <nav>
+                        <ul class="pagination justify-content-center extra_big_padding_top">
+
+                            <li class="page-item {{ request()->query('page', 1) == 0 ? 'active' : '' }}">
+                                <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => 1]) }}">
+                                    <
+                                </a>
+                            </li>
+
+                            @for ($countPage = 1; $countPage <= $max_page; $countPage++)
+                                <li class="page-item {{ request()->query('page', 1) == $countPage ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => $countPage]) }}">
+                                        {{ $countPage }}
+                                    </a>
+                                </li>
+                            @endfor
+                            <li class="page-item {{ request()->query('page', 1) == 0 ? 'active' : '' }}">
+                                <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => $countPage-1]) }}">
+                                    >
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    @endif
+                    
+                
+
+
                     @if (!$oneItemFound)
                     <br>
                     <p class="text_align_center">

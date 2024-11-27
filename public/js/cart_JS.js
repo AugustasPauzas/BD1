@@ -74,3 +74,4 @@ function reload_cart() {
     }, 5); 
 
 }
+

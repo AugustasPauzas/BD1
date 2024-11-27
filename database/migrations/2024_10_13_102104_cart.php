@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('cart', function (Blueprint $table) {
             
             $table->id();
-            $table->integer('category_id_1');
-            $table->integer('category_id_2');
-            $table->integer('operation');
-            $table->integer('parameter_id_1');
-            $table->integer('parameter_id_2');
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->integer('quantity');
             $table->timestamps();
 
             });

@@ -134,10 +134,10 @@ $total_price=0;
 
                 
 
-                @if ($category && $category == $ii->category_id_2)
+                @if ( $category == $ii->category_id_2)
                     @php $category_target = $ii->category_id_1 @endphp
                 @endif
-                @if ($category && $category == $ii->category_id_1 )
+                @if ( $category == $ii->category_id_1 )
                     @php $category_target = $ii->category_id_2 @endphp
                 @endif
                 
@@ -151,12 +151,9 @@ $total_price=0;
                                     <p>category: {{$category}} ; item cat ID = {{$iii->category_id}} ; category id's {{$ii->category_id_1}} and {{$ii->category_id_2}}</p>
 
                         --}}
-                        
                         @if ($ii->parameter_id_1 ==  $iii->parameter_id || $ii->parameter_id_2 ==  $iii->parameter_id)
                             @if( $iii->category_id == $ii->category_id_1  || $iii->category_id == $ii->category_id_2  )
                                 @if ($category != $iii->category_id &&  ($category == $ii->category_id_1 || $category == $ii->category_id_2) )
-
-
                                 <P>{{--$iii--}}</P>
                                 @if ($value == $iii->value_id  )
                                     <strong >
@@ -169,12 +166,9 @@ $total_price=0;
                                         <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
                                             <span class="p_cart_compatable">
                                                 {{$iii->item_name}}
-
                                             </span>
                                         </a>    
                                         {{$iii->category_name}}
-
-                                        
                                     </strong>
                                 @else
                                     <strong style="color: rgb(0, 0, 0)">
@@ -183,12 +177,10 @@ $total_price=0;
                                         </svg>                                        
                                         Not Compatable With 
                                         <?xml version="1.0" encoding="utf-8"?>
-
                                         <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
                                             <span class="p_cart_incompatable">
                                                 {{$iii->item_name}}
                                                 {{$iii->category_name}}
-
                                             </span>
                                         </a>
                                         Try Looking For
@@ -196,15 +188,9 @@ $total_price=0;
                                             {{$value_name}}
                                             {{$iii->category_name}}
                                         </a>
-                                            
-                                    
                                     </strong>
-
-
                                 @endif
-
                                 @endif
-
 
                             @endif
                         @endif

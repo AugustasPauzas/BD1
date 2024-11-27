@@ -295,8 +295,7 @@ class MainController extends Controller
     public function add_item_too_cart_no_quan($item_id)
     {
         if (Auth::check()) {
-            error_log("The user is logged in");
-
+            //error_log("The user is logged in");
             $user_id = Auth::id(); 
             $quantity = 1; 
             $cartItem = Cart::where('user_id', $user_id)->where('item_id', $item_id)->first();
@@ -308,11 +307,10 @@ class MainController extends Controller
             else {
                 Cart::create(['user_id' => $user_id,'item_id' => $item_id,'quantity' => $quantity,]);
             }
-            error_log("Item added to cart successfully");
+            //error_log("Item added to cart successfully");
         } 
         else {
-            error_log("The user is NOT logged in");
-        
+            //error_log("The user is NOT logged in");
             // Retrieve cart items from cookies
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true);
         
@@ -321,10 +319,9 @@ class MainController extends Controller
             } else {
                 $cartItems[$item_id] = 1;
             }
-            Cookie::queue('cart_items', json_encode($cartItems), 60 * 24);
+            Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 7) ;
         }
         return redirect('/cart');
-
     }
 
 
@@ -590,7 +587,7 @@ class MainController extends Controller
                     error_log("Filter parameter ID: " . $filter['parameter_id']);
                     error_log("Filter value ID: " . $filter['value_id']);
                 }
-                error_log("FINAL Filtered Items: " . json_encode($data_items));
+                //error_log("FINAL Filtered Items: " . json_encode($data_items));
                 $data_item_ids = $data_item->pluck('id'); 
                 $filtered_items = $data_items->whereIn('id', $data_item_ids);
                 $filtered_items = $filtered_items->values(); 
@@ -612,7 +609,8 @@ class MainController extends Controller
             ->orderBy('parameter.parameter_name')
             ->get();
         
-            error_log("all items: " . json_encode($filtered_items));
+            //error_log("all items: " . json_encode($filtered_items));
+
             if ($searchTerm) {
                 error_log("Filtering By Search Name: " . json_encode($searchTerm));
             
@@ -622,7 +620,7 @@ class MainController extends Controller
                 });
             
                 // Log the filtered items
-                error_log("Filtered Items: " . json_encode($filtered_items));
+                //error_log("Filtered Items: " . json_encode($filtered_items));
             } else {
                 error_log("No Search Option by name, skipping");
             }
@@ -632,6 +630,33 @@ class MainController extends Controller
             $data_image = Image::join('image_parse', 'image.id', '=', 'image_parse.image_id')
                 ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') 
                 ->orderBy('position')->get();
+
+            // pagination
+
+            
+            $items_per_page = 8;
+            $page = 1 ;
+
+            $que_page = request()->query('page');
+
+            if ($que_page){
+                $page = $que_page;
+                error_log('METHOD pagination, $page '. $page );
+
+            }
+
+            $item_count = count($filtered_items);
+            $max_page = ceil($item_count / $items_per_page);
+
+            error_log('METHOD pagination, Item Count: '. $item_count );
+            
+            error_log('METHOD pagination, max_page Count: '. $max_page );
+            $page = $page -1 ;
+            $filtered_items = $filtered_items->slice($items_per_page * $page, $items_per_page)->values();
+        
+
+
+            // pagination end
     
             return view('category', [
                 'data_like' => $data_like,
@@ -643,7 +668,8 @@ class MainController extends Controller
                 'data_item_all_category' =>$data_item_all_category,
                 'item_filter_parameters' => $item_filter_parameters,
                 'filter_array' => $filters,
-                'search_term' => $searchTerm
+                'search_term' => $searchTerm,
+                'max_page' => $max_page
             ]);
         } catch (\Exception $e) {
             error_log('Error in category_spec: ' . $e->getMessage());
