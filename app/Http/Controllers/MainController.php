@@ -631,9 +631,26 @@ class MainController extends Controller
                 ->select('image.*', 'image_parse.id as image_parse_id', 'image_parse.item_id', 'image_parse.position') 
                 ->orderBy('position')->get();
 
-            // pagination
+            // order 
+            $filtered_items = $filtered_items->sortBy('name');
+            $filtered_items = $filtered_items->sortByDesc('name');
 
-            
+            $orderReq = request()->query('order');
+            if ($orderReq){
+                if ($orderReq == "AlphAcen")
+                    $filtered_items = $filtered_items->sortBy('name');
+                if ($orderReq == "AlphDesc")
+                    $filtered_items = $filtered_items->sortByDesc('name');
+                    if ($orderReq == "PriAcen")
+                    $filtered_items = $filtered_items->sortBy('price');
+                if ($orderReq == "PriDesc")
+                    $filtered_items = $filtered_items->sortByDesc('price');
+
+
+            }
+            //order end
+
+            // pagination
             $items_per_page = 8;
             $page = 1 ;
 
@@ -645,6 +662,12 @@ class MainController extends Controller
 
             }
 
+            $Icount = request()->query('Icount');
+
+            if ($Icount){
+                $items_per_page = $Icount;
+            }
+
             $item_count = count($filtered_items);
             $max_page = ceil($item_count / $items_per_page);
 
@@ -654,9 +677,8 @@ class MainController extends Controller
             $page = $page -1 ;
             $filtered_items = $filtered_items->slice($items_per_page * $page, $items_per_page)->values();
         
-
-
             // pagination end
+
     
             return view('category', [
                 'data_like' => $data_like,

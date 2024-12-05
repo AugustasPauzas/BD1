@@ -192,9 +192,61 @@
     
     
             <div class="col-lg-10  ">
-    
+
                 <div class="item_parent_container primary_background_color default_padding default_large_margin default_radius under_shadow">
                     
+                    @if (true)
+
+
+                    <div class="d-flex">
+                        <div class="ms-auto">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ request()->query('order') == 'AlphAcen' ? 'Alphabeticly Acen.' : '' }}
+                                            {{ request()->query('order') == 'AlphDesc' ? 'Alphabeticly Desc.' : '' }}
+                                            {{ request()->query('order') == 'PriAcen' ? 'Price Acen.' : '' }}
+                                            {{ request()->query('order') == 'PriDesc' ? 'Price Desc.' : '' }}
+                                            {{ request()->query('order') == '' ? 'Alphabeticly Acen.' : '' }}
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly Acen.</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Desc.</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">Price Acen.</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">Price Desc.</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ request()->query('Icount') == '8' ? '8' : '' }}
+                                            {{ request()->query('Icount') == '12' ? '12' : '' }}
+                                            {{ request()->query('Icount') == '24' ? '24' : '' }}
+                                            {{ request()->query('Icount') == '48' ? '48' : '' }}
+                                            {{ request()->query('Icount') == '' ? '8' : '' }}
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '8']) }}">8</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '12']) }}">12</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '24']) }}">24</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '48']) }}">48</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    @endif
+                    
+
+
                     <div id="itemsContainer">
                     @php
                     $oneItemFound = false;
