@@ -6,6 +6,8 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\LiveController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\LikeItemController;
+use App\Http\Controllers\Step2Controller;
+use App\Http\Controllers\OrderController;
 
 
 //Route::get('/', function () {return view('welcome');});
@@ -18,6 +20,11 @@ Route::get('/rule',[MainController::class, 'rule']);
 Route::get('/FAQ', function () {return view('faq');});
 
 
+Route::post('/ordersubmit', [Step2Controller::class, 'orderSubmit'])->name('ordersubmit');
+
+Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
+Route::get('/order/{order_group}', [OrderController::class, 'order'])->name('order');
+
 
 
 //Route::get('/category', function () {return view('category');});
@@ -25,7 +32,10 @@ Route::get('/category/{category_name_or_id}',[MainController::class, 'category_s
 Route::get('/view/{item_id}',[MainController::class, 'view_item']);
 //Route::get('/category/{category}',[MainController::class, 'category']);
 Route::get('/cart',[MainController::class, 'cart']);
-Route::get('/cart/step-2', function () {return view('cart_step_2');});
+
+
+Route::get('/cart/step-2',[Step2Controller::class, 'Step2Load']);
+//Route::get('/cart/step-2', function () {return view('cart_step_2');});
 
 //ADMIN NAVIGATION
 Route::get('/categories',[MainController::class, 'categories']);
@@ -68,6 +78,10 @@ Route::post('/ajax_add_only_value_form',[AjaxController::class, 'ajax_add_only_v
 Route::post('/ajax_update_view_delete_value',[AjaxController::class, 'ajax_update_view_delete_value']);
 Route::post('ajax_item_image_upload', [AjaxController:: class,'ajax_item_image_upload']);
 Route::post('/ajax_create_rule', [AjaxController:: class,'ajax_create_rule'])->name('ajax_create_rule');
+
+
+
+
 
 Route::get('/ajax_delete_rule/{rule_id}', [AjaxController:: class,'ajax_delete_rule'])->name('ajax_delete_rule');
 
