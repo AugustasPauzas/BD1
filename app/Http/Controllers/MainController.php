@@ -379,8 +379,8 @@ class MainController extends Controller
                 $cartItems[$item_id] = $quantity;
             }
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24);
-            return redirect('/cart');
         }
+        return redirect('/cart');
 
     }
 

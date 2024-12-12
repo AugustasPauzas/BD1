@@ -8,12 +8,17 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\LikeItemController;
 use App\Http\Controllers\Step2Controller;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\IndexController;
+
 
 
 //Route::get('/', function () {return view('welcome');});
 
 //ALL IN NAVIGATION TOP
-Route::get('/', function () {return view('index');});
+//Route::get('/', function () {return view('index');});
+
+Route::get('/', [IndexController::class, 'returnIndex']);
+
 Route::get('/phpinfo', function () {return view('phpinfo');});
 Route::get('/privacy-policy', function () {return view('privacy');});
 Route::get('/rule',[MainController::class, 'rule']);
