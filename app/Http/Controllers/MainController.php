@@ -706,6 +706,8 @@ class MainController extends Controller
         $data_category = Category::all();
         return view('category', ['category' => $category, 'data_category' => $data_category]);
     }
+
+    /*
     public function add_new_category(Request $request){
 
 
@@ -719,6 +721,9 @@ class MainController extends Controller
         
         return redirect('/categories'); 
     }
+    */
+
+
     //TABLE VALUE
     public function add_new_value(Request $request){
         $validatedData = $request->validate([

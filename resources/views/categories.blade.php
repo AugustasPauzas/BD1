@@ -3,12 +3,17 @@
 
 
 
+
+<script type="text/javascript" src="{{ asset('js/categories_JS.js') }}"></script>
+
+
+
 <div class="default_container_margin">
 
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
         <p ><strong class="remain_center">Add New Category</strong>  </p>
         
-        <form action="add_new_category" method="post">
+        <form id="add_new_category_form" method="post">
             @csrf
             <div class="row align-items-end">
                 <!-- Category Name Input -->
@@ -28,7 +33,6 @@
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
             </div>
-    
         </form>
         
         
@@ -37,6 +41,20 @@
     
     </div>
     <br>
+    <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
+
+        <div id="categories_list">
+
+
+
+            @include('partials.Live_categories')  
+
+        </div>
+    </div>
+
+    <!--
+    <br>
+
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
     
             <p ><strong class="remain_center">Category Table</strong>  </p>
@@ -69,5 +87,8 @@
     
         
     </div>
+    -->
+
+
 </div>
 @endsection

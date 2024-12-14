@@ -9,6 +9,7 @@ use App\Http\Controllers\LikeItemController;
 use App\Http\Controllers\Step2Controller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CategoriesController;
 
 
 
@@ -29,6 +30,20 @@ Route::post('/ordersubmit', [Step2Controller::class, 'orderSubmit'])->name('orde
 
 Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
 Route::get('/order/{order_group}', [OrderController::class, 'order'])->name('order');
+
+//categories
+Route::get('/update_category_name/{category_id}',[CategoriesController::class, 'update_category_name']);
+Route::get('/Live_categories',[CategoriesController::class, 'Live_categories']);
+Route::post('/add_new_category',[CategoriesController::class, 'add_new_category']);
+Route::post('/update_category_name', [categoriesController::class, 'update_category_name'])->name('update_category_name');
+Route::post('/update_category_name_full', [categoriesController::class, 'update_category_name_full'])->name('update_category_name_full');
+
+Route::post('/category_status_set_active/{category_id}', [categoriesController::class, 'category_status_set_active'])->name('category_status_set_active');
+Route::post('/category_status_set_inactive/{category_id}', [categoriesController::class, 'category_status_set_inactive'])->name('category_status_set_inactive');
+Route::post('/category_set_image', [categoriesController::class, 'category_set_image'])->name('category_set_image');
+
+
+
 
 
 
@@ -92,7 +107,7 @@ Route::get('/ajax_delete_rule/{rule_id}', [AjaxController:: class,'ajax_delete_r
 
 Route::post('/ajax_update_specification_parameter', [AjaxController::class, 'ajax_update_specification_parameter'])->name('ajax_update_specification_parameter');
 
-route::post('/add_new_category',[MainController::class, 'add_new_category']);
+
 route::post('/add_new_value',[MainController::class, 'add_new_value']);
 route::post('/add_new_parameter',[MainController::class, 'add_new_parameter']);
 Route::post('/add_new_image/{item_id}', [MainController::class, 'add_new_image']);
