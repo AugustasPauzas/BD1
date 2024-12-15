@@ -1,19 +1,18 @@
 $(document).on('submit', '#add_new_category_form', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
-    var formData = $(this).serialize(); // Serialize the form data
+    var formData = $(this).serialize(); 
 
     $.ajax({
-        url: '/add_new_category', // The route for form submission
+        url: '/add_new_category', 
         type: 'POST',
         data: formData,
-        dataType: 'json', // Expect JSON response
+        dataType: 'json', 
         success: function(response) {
-            displayMessage(response.message, 1); // Display a success message
+            displayMessage(response.message, 1); 
             reload_categories_list()
         },
         error: function(xhr) {
-            // Handle validation errors
             if (xhr.status === 422) {
                 var errors = xhr.responseJSON.errors;
                 var message = Object.values(errors).map(function(error) {

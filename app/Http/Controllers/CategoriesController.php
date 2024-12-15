@@ -70,15 +70,17 @@ class CategoriesController extends Controller
         error_log("METHOD add_new_category");
 
 
+        error_log("request: ". json_encode($request));
 
         $validatedData = $request->validate([
             'category' => 'required|string|max:255',
             'category_full' => 'required|string|max:255',
         ]);
+        $validatedData['status'] = 0;
+        $validatedData['image_location'] = "";
     
         Category::create($validatedData);
         
-        //return redirect('/categories'); 
 
         return response()->json(['message' => 'Category added successfully']);
 
