@@ -36,8 +36,8 @@
                             <label for="status">Status</label>
                             <div class=" input-group">
                                 <select class="form-group form-select" id="status" name="status">
-                                    <option value="2" selected>Not Public</option>
-                                    <option value="1">Public</option>
+                                    <option value="1" >Not Public</option>
+                                    <option value="2" selected>Public</option>
                                 </select>
                                 <span class="text-danger error-status"></span>
                             </div>                        

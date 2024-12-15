@@ -1179,3 +1179,43 @@ background-color: #555; /* Darker handle on hover */
         width: 100%;  
     }
   }
+
+
+  .image_with_status {
+    position: relative;
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+
+
+
+
+.image_with_status_container {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+}
+
+.image_with_status_container img {
+    display: block;
+    width: 100%; 
+    height: auto;
+}
+
+.status_text {
+    position: absolute;
+    bottom: 5px; 
+    left: 5px;
+    background-color: rgba(192, 0, 0, 0.87); 
+    color: #fff; 
+    padding: 5px 10px; 
+    text-align: center;
+}
+
+
+.disabled_link {
+    pointer-events: none;
+    color: gray; 
+    text-decoration: none; 
+}

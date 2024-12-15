@@ -69,9 +69,18 @@ class MainController extends Controller
 
             $data_item = Item::findOrFail($item_id); 
 
+            $data_all_item = Item::all()
+            ->filter(fn($item) => $item->id !== (int)$item_id)
+            ->filter(fn($item) => $item->category_id === $data_item->category_id)
+            ->filter(fn($item) => $item->status == 2)
+            ->shuffle()
+            ->take(6);
+
+            /* //old status not added
             $data_all_item = Item::all()->filter(fn($item) => $item->id !== (int)$item_id);
             $data_all_item = $data_all_item->filter(fn($item) => $item->category_id === $data_item->category_id);
             $data_all_item = $data_all_item->shuffle()->take(6);
+            */
 
             $data_like = collect();
             if (Auth::check()) {
@@ -650,8 +659,24 @@ class MainController extends Controller
             }
             //order end
 
+            //removing not public items
+
+
+
+            if (Auth::check()) {
+                if (Auth::user()->level <= 1) 
+                { 
+                    $filtered_items = $filtered_items->filter(fn($item) => $item->status != 1);
+                }
+            }
+            else {
+                $filtered_items = $filtered_items->filter(fn($item) => $item->status != 1);
+            }
+
+            //
+
             // pagination
-            $items_per_page = 8;
+            $items_per_page = 12;
             $page = 1 ;
 
             $que_page = request()->query('page');

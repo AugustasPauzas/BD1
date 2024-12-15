@@ -225,7 +225,7 @@
                                             {{ request()->query('Icount') == '12' ? '12' : '' }}
                                             {{ request()->query('Icount') == '24' ? '24' : '' }}
                                             {{ request()->query('Icount') == '48' ? '48' : '' }}
-                                            {{ request()->query('Icount') == '' ? '8' : '' }}
+                                            {{ request()->query('Icount') == '' ? '12' : '' }}
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                             <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '8']) }}">8</a></li>
@@ -252,12 +252,14 @@
                     $oneItemFound = false;
                     @endphp
                     @foreach ($data_item as $i)
+
                     <a class="no_ancor_decoration" href="/view/{{$i->id}}">
                         <div class="default_radius under_shadow item_list grey_border item_list_margin" data-price="{{ $i->price }}" >
                             <div class="image_svg_wrapper">
-                                @php 
-                                $imageFound=false;
-                                @endphp
+
+                                <div class="image_with_status_container">
+
+                                @php $imageFound=false; @endphp
                                 @foreach ($data_image as $img)
                                     @php 
                                     $imageFound=false;
@@ -273,6 +275,12 @@
                                 @if (!$imageFound)
                                 <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
                                 @endif
+                                @if ($i->status==1)
+                                <p class="status_text default_margin default_radius">Not Public</p>
+                                @endif
+                                </div>
+
+
                                 @php
                                 $oneItemFound = true;
                                 @endphp
@@ -293,8 +301,10 @@
                                     </div>
                                 </a>
                             </div>
+
                             <p class="one_line_clamp default_padding small_margin"><strong>{{$i->name}}</strong></p>
                             <p ><strong class="remain_center small_margin price_p">{{ number_format($i->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
+  
                             <a class="no_ancor_decoration" href="/add/item/cart/{{$i->id}}">
                             <div class="radius_bottom_5_px cart_button">
                                 <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 

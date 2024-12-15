@@ -327,20 +327,37 @@
                             <div class="index_item_base black_border default_radius">
 
 
-                                @php $imageFound=false;@endphp
+                                
                                 <a class="no_anchor_decoration" href="/view/{{$item->id}}">
-                                @foreach ($data_image as $img)
-                                    @php $imageFound=false; @endphp
-                                    @if($item->id== $img->item_id && !$imageFound)
-                                        <img id="replace_image_item_view square_image" class="default_radius full_width_image square_image tertiary_background_color " src="{{ asset($img->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
-                                        @php $imageFound=true;@endphp
-                                        @break
-                                    @endif 
-                                @endforeach  
-                                @if (!$imageFound)
-                                <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
-                                @endif
+                                    @php $imageFound = false; @endphp
+                                    <div class="image_with_status_container">
+                                        @foreach ($data_image as $img)
+                                            @if ($item->id == $img->item_id && !$imageFound)
+                                                <img id="replace_image_item_view square_image" 
+                                                     class="default_radius full_width_image square_image tertiary_background_color" 
+                                                     src="{{ asset($img->image_location) }}" 
+                                                     onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" 
+                                                     alt="Image of {{$item->name}}">
+                                                @php $imageFound = true; @endphp
+                                                @break
+                                            @endif
+                                        @endforeach
+                                
+                                        @if (!$imageFound)
+                                            <img id="replace_image_item_view" 
+                                                 class="default_radius full_width_image image_cover" 
+                                                 src="" 
+                                                 onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" 
+                                                 alt="Default image">
+                                        @endif
+                                
+                                        @if ($item->status==1)
+                                        <p class="status_text default_margin default_radius">Not Public</p>
+                                        @endif
+                                    </div>
                                 </a>
+                                
+                                
 
                                 <p class="one_line_clamp small_margin">{{$item->name}}</p>
                                 <p class="small_margin" ><strong class="remain_center price_p">{{ number_format($item->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
