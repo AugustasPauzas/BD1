@@ -478,7 +478,14 @@ class MainController extends Controller
 
 
         // random items 
-        $data_random_items = Item::all()->random(16);
+        $data_random_items = Item::all();
+
+        if ($data_random_items->count() >= 16) {
+            $data_random_items = $data_random_items->random(16);
+        } else {
+            $data_random_items = $data_random_items->shuffle();
+        }
+        
 
         // end
         
