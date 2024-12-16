@@ -19,288 +19,33 @@
 </div>
 
     <div class="container fade_in_0_5 default_container_margin  primary_background_color default_padding default_margin default_radius under_shadow">
-             
-        <div class="row no_margin_sides ">
-            <div class="col-md-6 no_padding">
-                <div class="row no_margin_sides ">
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/cpu">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/cpu.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>CPU</p>
-                                    </div>
-                                </div>    
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/gpu">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/gpu.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>GPU</p>
-                                    </div>
-                                </div>    
-                                </a>
-                        </div>
-                        
+
+        <div class="full_width">
+            @foreach ($data_category as $category)
+            <div class="index_catg_4_2_1 no_padding">
+                <div class="small_padding">
+                    <div class="black_border  default_radius index_items under_shadow">
+                        <a class="no_ancor_decoration " href="/category/{{$category->category}}">
+                            <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
+                                <div class="col-6 no_padding">
+                                    <img id="replace_image_item_view square_image" class="default_radius full_width_image square_image tertiary_background_color " src="{{ asset($category->image_location) }}"   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="aaaaaa." >
+
+                                </div>
+                                <div class="col-6 index_center_item">
+                                    <p>{{$category->category}}</p>
+                                </div>
+                            </div>    
+                        </a>
                     </div>
                 </div>
+
             </div>
-            <div class="col-md-6 no_padding">
-                <div class="row no_margin_sides ">
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/ram">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/ram.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>RAM</p>
-                                    </div>
-                                </div>    
-                                </a>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/psu">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/psu.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>PSU</p>
-                                    </div>
-                                </div>    
-                                </a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            
-            
 
-
-
+            @endforeach            
         </div>
-
-        <!--row 2 -->
-        <div class="row no_margin_sides ">
-            <div class="col-md-6 no_padding">
-                <div class="row no_margin_sides ">
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/motherboard">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/mb.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>Mother <br> Board</p>
-                                    </div>
-                                </div>    
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/drive">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/ssdhdd.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>SSD <br> HDD</p>
-                                    </div>
-                                </div>    
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 no_padding">
-                <div class="row no_margin_sides ">
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/case">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/case.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>Case</p>
-                                    </div>
-                                </div>    
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm small_padding_top_bottom small_pading_left_right ">
-                        <div class="black_border  default_radius index_items under_shadow">
-                            <a class="no_ancor_decoration " href="/category/fan">
-                                <div class="row no_margin_sides   black_border default_radius index_items under_shadow ">
-                                    <div class="col-6 no_padding">
-                                        <img class="image_width" src="/images/part/fan.webp" alt=".svg">
-                                    </div>
-                                    <div class="col-6 index_center_item">
-                                        <p>Fan</p>
-                                    </div>
-                                </div>    
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        <!--
-        <div class="row no_margin_sides ">
-            
+    </div>
 
 
-            <div class="col-md-6  default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/cpu">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/cpu.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>CPU</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/gpu">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/gpu.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>GPU</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-        
-        </div>
-        
-        <div class="row no_margin_sides ">
-            
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/ram">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/ram.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>RAM</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/psu">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/psu.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>PSU</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-        
-        </div>
-        
-        <div class="row no_margin_sides ">
-            
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/motherboard">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/mb.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>Mother <br> Board</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/drive">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/ssdhdd.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>SSD <br> HDD</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-        
-        </div>
-        
-        <div class="row no_margin_sides ">
-            
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/case">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/case.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>Case</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-            <div class="col-md-6 default_padding">
-                <div class="">
-                <a class="no_ancor_decoration " href="/category/fan">
-                <div class="row no_margin_sides   black_border default_radius index_items under_shadow ">
-                    <div class="col-6 no_padding">
-                        <img class="image_width" src="/images/part/fan.webp" alt=".svg">
-                    </div>
-                    <div class="col-6 index_center_item">
-                        <p>Fan</p>
-                    </div>
-                </div>    
-                </a>
-                </div>
-            </div>  
-        -->
-        </div>
-
-    
-</div>
 
 <div class="container fade_in_0_5 default_container_margin_bottom primary_background_color default_padding default_margin default_radius under_shadow">
     @foreach ($data_category as $category)
