@@ -133,14 +133,11 @@ class CategoriesController extends Controller
         error_log("category id: ". $category_id);
         $category = Category::find($category_id);
         if ($category) {
-            // Set the status to 1 (active)
             $category->status = 1;
-            $category->save(); // Save the updated status
+            $category->save(); 
 
-            // Return a success response
             return response()->json(['message' => 'Category status set to active']);
         } else {
-            // Return an error response if category not found
             return response()->json(['message' => 'Category not found'], 404);
         }
     }
@@ -151,14 +148,11 @@ class CategoriesController extends Controller
         error_log("category id: ". $category_id);
         $category = Category::find($category_id);
         if ($category) {
-            // Set the status to 1 (active)
             $category->status = 0;
-            $category->save(); // Save the updated status
+            $category->save(); 
 
-            // Return a success response
             return response()->json(['message' => 'Category status set to active']);
         } else {
-            // Return an error response if category not found
             return response()->json(['message' => 'Category not found'], 404);
         }
     }
@@ -166,23 +160,18 @@ class CategoriesController extends Controller
 
     public function category_set_image(Request $request)
     {
-        // Validate the uploaded image
         $validatedData = $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:12048',
             'id' => 'required|integer',
         ]);
     
-        // Check if image is uploaded
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
             
-            // Generate a unique file name
             $imageName = time() . '.' . $image->getClientOriginalExtension();
     
-            // Store the image in the 'public/images/categoryImages' folder
             $image->move(public_path('images/categoryImages'), $imageName);
     
-            // Save the image path to the database
             $category = Category::find($request->id);
             $category->image_location = 'images/categoryImages/' . $imageName;
             $category->save();

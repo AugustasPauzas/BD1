@@ -17,7 +17,7 @@ $(document).on('submit', '#add_new_category_form', function(event) {
                 var errors = xhr.responseJSON.errors;
                 var message = Object.values(errors).map(function(error) {
                     return error.join(', ');
-                }).join('<br>');
+                }).join(' ');
                 displayMessage(message, 2);
             } else {
                 displayMessage("Error", 2);
@@ -30,15 +30,15 @@ $(document).on('submit', '#add_new_category_form', function(event) {
 
 
 $(document).on('submit', '#update_category_name', function(event) {
-    event.preventDefault(); // Prevent default form submission
-    var formData = $(this).serialize(); // Serialize the form data
+    event.preventDefault();
+    var formData = $(this).serialize(); 
     $.ajax({
-        url: '/update_category_name', // The route for form submission
+        url: '/update_category_name', 
         type: 'POST',
         data: formData,
-        dataType: 'json', // Expect JSON response
+        dataType: 'json', 
         success: function(response) {
-            displayMessage(response.message, 1); // Display a success message
+            displayMessage(response.message, 1); 
             reload_categories_list();
         },
         error: function(xhr) {
@@ -48,15 +48,15 @@ $(document).on('submit', '#update_category_name', function(event) {
 });
 
 $(document).on('submit', '#update_category_name_full', function(event) {
-    event.preventDefault(); // Prevent default form submission
-    var formData = $(this).serialize(); // Serialize the form data
+    event.preventDefault(); 
+    var formData = $(this).serialize(); 
     $.ajax({
-        url: '/update_category_name_full', // The route for form submission
+        url: '/update_category_name_full', 
         type: 'POST',
         data: formData,
-        dataType: 'json', // Expect JSON response
+        dataType: 'json', 
         success: function(response) {
-            displayMessage(response.message, 1); // Display a success message
+            displayMessage(response.message, 1); 
             reload_categories_list();
         },
         error: function(xhr) {
@@ -96,9 +96,9 @@ $(document).on('click', '#category_status_set_inactive', function(event) {
         url: url, 
         type: 'POST',
         data: formData,
-        dataType: 'json', // Expect JSON response
+        dataType: 'json', 
         success: function(response) {
-            displayMessage(response.message, 1); // Display a success message
+            displayMessage(response.message, 1);
             reload_categories_list();
         },
         error: function(xhr) {
@@ -108,28 +108,25 @@ $(document).on('click', '#category_status_set_inactive', function(event) {
 });
 
 $(document).on('submit', '#category_image_upload', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
-    var formData = new FormData(this); // Create FormData object to send the form data including files
+    var formData = new FormData(this); 
 
     $.ajax({
-        url: '/category_set_image', // The route for form submission
+        url: '/category_set_image', 
         type: 'POST',
-        data: formData, // Send the form data with the image
-        dataType: 'json', // Expect JSON response
-        processData: false, // Prevent jQuery from processing the data
-        contentType: false, // Set content type to false for file uploads
+        data: formData, 
+        dataType: 'json', 
+        processData: false, 
+        contentType: false,
         success: function(response) {
-            // Handle the success response
-            displayMessage(response.message, 1); // Display success message
+            displayMessage(response.message, 1); 
             reload_categories_list();
             if (response.image_path) {
-                // Optionally, display the uploaded image or update the image source on the page
                 $('#category_image_preview').attr('src', '/storage/' + response.image_path);
             }
         },
         error: function(xhr) {
-            // Handle error response
             displayMessage("Error: " + xhr.responseJSON.message, 2);
         }
     });

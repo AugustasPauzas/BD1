@@ -200,7 +200,7 @@ class AjaxController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'ien_code' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0.01',
             'status' => 'required|string',
             'description' => 'required|string',
             'quantity' => 'required|integer|min:0|max:999999',
@@ -222,7 +222,7 @@ class AjaxController extends Controller
         $item = Item::find($request->id);
         $item->update([
             'category_id' => $request->input('category'),
-            'user_id' => 444, // TODO or auth()->id(),
+            //'user_id' => 444, // TODO or auth()->id(),
             'status' => $request->input('status'),
             'name' => $request->input('name'),
             'description' => $request->input('description'),
@@ -253,7 +253,7 @@ class AjaxController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'ien_code' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0.01',
             'status' => 'required|string',
             'description' => 'required|string',
             'quantity' => 'required|integer|min:0|max:999999',

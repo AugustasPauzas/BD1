@@ -403,7 +403,7 @@ class MainController extends Controller
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')
-        ->where('image_parse.position', 1)  // Add this line to filter by position
+        ->where('image_parse.position', 1)  
         ->get();
         $data_rules = Rule::all();
 
@@ -421,10 +421,10 @@ class MainController extends Controller
             $query = DB::table('item')
                 ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
         
-            if (!empty($item_ids)) { // Changed this line
-                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+            if (!empty($item_ids)) { 
+                $query->whereIn('item.id', $item_ids);
                 $cookie_data = $query->get();
-                $data_items_id = $item_ids; // Simplified this line
+                $data_items_id = $item_ids; 
             }
         }
         
@@ -432,7 +432,7 @@ class MainController extends Controller
             error_log("The user is NOT logged in");
             $cart_items = json_decode(Cookie::get('cart_items', '[]'), true);
             
-            $item_ids = array_keys($cart_items); // Use keys for item IDs
+            $item_ids = array_keys($cart_items); 
 
             error_log("json encode item_Ids: ". json_encode($item_ids));
             error_log("json encode: ". json_encode($cart_items));
@@ -470,14 +470,19 @@ class MainController extends Controller
             'value.id as value_id',
             'value.value_name',
             'category.id as category_id',
-            'category.category as category_name' // Assuming 'category' column holds the name
+            'category.category as category_name' 
         )
         ->get();
 
+
+        // random items 
+        $data_random_items = Item::all()->random(16);
+
+        // end
         
 
 
-        return view('cart', compact('data_images','cart_items', 'cookie_data', 'data_rules', 'data_specifications'));
+        return view('cart', compact('data_images','cart_items', 'cookie_data', 'data_rules', 'data_specifications', 'data_random_items'));
 
     }
 

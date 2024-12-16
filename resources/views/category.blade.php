@@ -108,11 +108,10 @@
             <div class="col-lg-2 ">
                 <div class="primary_background_color default_padding default_large_margin default_radius under_shadow">
                     <p ><strong class="remain_center"></strong>  </p>
-                    <div class="parameter-container">
+                    
                         <!-- Price Filter -->
-                        
-                        <div class=" parameter-item parameter-item-price-only">
-    
+                        <div class=" ">
+                        <div class="parameter-item parameter-item-price-only">
                             <p><strong>Price Range</strong></p>
                             <div id="category_price_filter_slider" 
                                  data-min-price="{{ $minPrice }}" 
@@ -126,13 +125,13 @@
                                         <span id="category_price_filter_maxPriceValue">{{ $maxPrice }}</span>
                                     </div>                                
                                  </div>
-    
                             <input type="hidden" id="category_identifier" value="{{ $specified_category_id_or_name }}">
-                            <div class="d-flex">
-                                <a id="apply_filter" href="#" class="btn btn-outline-primary flex-fill">Apply</a>
+                                <div class="d-flex">
+                                    <a id="apply_filter" href="#" class="btn btn-outline-primary flex-fill">Apply</a>
+                                </div>
                             </div>
-                            
-                        </div>
+                        <br>
+                        <div class="screen_max_height_100_category_spec parameter-container">
                         
                         <!--  Parameter Filters-->
                         @php
@@ -140,7 +139,6 @@
                         @endphp
                         
 
-    
                         @foreach ($item_filter_parameters as $i)
                             @if (!in_array($i->parameter_name, $displayedParameters))  
                                 <div class="parameter-item">
@@ -183,8 +181,9 @@
                                 @endphp
                             @endif
                         @endforeach
-    
-    
+
+
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -204,15 +203,15 @@
                                 <div class="col">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ request()->query('order') == 'AlphAcen' ? 'Alphabeticly Acen.' : '' }}
-                                            {{ request()->query('order') == 'AlphDesc' ? 'Alphabeticly Desc.' : '' }}
+                                            {{ request()->query('order') == 'AlphAcen' ? 'Alphabeticly A-Z.' : '' }}
+                                            {{ request()->query('order') == 'AlphDesc' ? 'Alphabeticly Z-A' : '' }}
                                             {{ request()->query('order') == 'PriAcen' ? 'Price Acen.' : '' }}
                                             {{ request()->query('order') == 'PriDesc' ? 'Price Desc.' : '' }}
-                                            {{ request()->query('order') == '' ? 'Alphabeticly Acen.' : '' }}
+                                            {{ request()->query('order') == '' ? 'Alphabeticly A-Z' : '' }}
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly Acen.</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Desc.</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly A-Z</a></li>
+                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Z-A</a></li>
                                             <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">Price Acen.</a></li>
                                             <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">Price Desc.</a></li>
                                         </ul>

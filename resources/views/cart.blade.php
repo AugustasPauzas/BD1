@@ -73,7 +73,54 @@
         <div class="row">
             <div class="col-lg-3 default_large_margin_bottom hide_on_lg">
                 <div class="primary_background_color default_padding default_margin default_radius under_shadow">
-                    <p ><strong class="remain_center">You Might Also Like</strong>  </p>
+                    <p ><strong class="remain_center default_padding">You Might Also Like </strong>  </p>
+
+                    <div class="screen_height_70 custom-scroll">
+                        @foreach ($data_random_items as $ri)
+                        
+                        <div class="item_row_2"> 
+                            <div class="small_padding ">
+
+                                <div class="secondary_background_color default_radius">           
+                                    <a class="no_anchor_decoration" href="/view/{{$ri->id}}">
+                                        @php $imageFound = false; @endphp
+                                        <div class="image_with_status_container">
+                                            @foreach ($data_images as $img)
+                                                @if ($ri->id == $img->item_id && !$imageFound)
+                                                    <img id="replace_image_item_view square_image" 
+                                                        class="default_radius full_width_image square_image tertiary_background_color" 
+                                                        src="{{ asset($img->image_location) }}" 
+                                                        onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" 
+                                                        alt="Image of {{$ri->name}}">
+                                                    @php $imageFound = true; @endphp
+                                                    @break
+                                                @endif
+                                            @endforeach
+                                    
+                                            @if (!$imageFound)
+                                                <img id="replace_image_item_view" 
+                                                    class="default_radius full_width_image image_cover" 
+                                                    src="" 
+                                                    onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';" 
+                                                    alt="Default image">
+                                            @endif
+                                    
+                                        </div>
+                                    </a>
+
+                                    <p class="one_line_clamp small_margin font_75">{{$ri->name}}</p>
+                                    <p class="small_margin font_75" ><strong class="remain_center price_p">{{ number_format($ri->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
+                                
+                                </div>
+
+
+                            </div>                       
+                        </div>
+                
+                        @endforeach
+                    </div>
+
+                    <!--
                     <div class="full_width_image secondary_background_color default_padding default_margin default_radius ">
                         <p class="text_align_center">
                             <svg class="extra_extra_large_svg grey_svg_stroke default_padding" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -96,6 +143,7 @@
                         <p class="text_align_center font_120"> <strong>Under Construction</strong></p>
                         
                     </div>
+                    -->
                 </div>
             </div>
 
