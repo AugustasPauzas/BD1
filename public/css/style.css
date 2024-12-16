@@ -202,11 +202,17 @@ text-decoration: none !important;
     padding-top: 3px;
     padding-bottom: 3px
 }
+.small_padding_top{
+    padding-top: 3px;
+}
 .small_padding {
     padding: 3px;
 }
 .default_padding {
     padding: 5px;
+}
+.default_padding_top {
+    padding-top: 5px;
 }
 .large_padding {
     padding: 20px !important;

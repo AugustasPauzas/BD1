@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" value="" class="form-control" placeholder="">
+                                <input id="email" name="email" type="text" value="" class="form-control" placeholder="">
                                 <span class="text-danger error-email"></span>
                             </div>
 

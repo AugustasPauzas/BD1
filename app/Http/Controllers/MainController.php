@@ -310,7 +310,7 @@ class MainController extends Controller
             $cartItem = Cart::where('user_id', $user_id)->where('item_id', $item_id)->first();
         
             if ($cartItem) {
-                $cartItem->quantity += $quantity;
+                //$cartItem->quantity += $quantity;
                 $cartItem->save();
             } 
             else {
@@ -324,7 +324,7 @@ class MainController extends Controller
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true);
         
             if (isset($cartItems[$item_id])) {
-                $cartItems[$item_id] += $cartItems[$item_id] + 1;
+                //$cartItems[$item_id] += $cartItems[$item_id] + 1;
             } else {
                 $cartItems[$item_id] = 1;
             }
@@ -367,7 +367,8 @@ class MainController extends Controller
             $cartItem = Cart::where('user_id', $user_id)->where('item_id', $item_id)->first();
         
             if ($cartItem) {
-                $cartItem->quantity += $quantity;
+                //removed "+=" -> "="
+                $cartItem->quantity = $quantity;
                 $cartItem->save();
             } 
             else {
@@ -383,7 +384,8 @@ class MainController extends Controller
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true);
         
             if (isset($cartItems[$item_id])) {
-                $cartItems[$item_id] += $quantity;
+                //removed "+=" -> "="
+                $cartItems[$item_id] = $quantity;
             } else {
                 $cartItems[$item_id] = $quantity;
             }

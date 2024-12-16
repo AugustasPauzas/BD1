@@ -142,6 +142,10 @@ class Step2Controller extends Controller
             'postcode.digits_between' => 'The Postcode field must be between 4 and 10 digits.',
         ]);
 
+
+        $validated['name'] = ucfirst(strtolower($validated['name']));
+        $validated['lastname'] = ucfirst(strtolower($validated['lastname']));
+
         error_log("Order Placed By: " . json_encode($validated));
 
         $group = Str::random(7);

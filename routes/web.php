@@ -24,11 +24,13 @@ Route::get('/phpinfo', function () {return view('phpinfo');});
 Route::get('/privacy-policy', function () {return view('privacy');});
 Route::get('/rule',[MainController::class, 'rule']);
 Route::get('/FAQ', function () {return view('faq');});
+Route::get('/orders',function () {return view('orders');});
+
 
 
 Route::post('/ordersubmit', [Step2Controller::class, 'orderSubmit'])->name('ordersubmit');
 
-Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
+//Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
 Route::get('/order/{order_group}', [OrderController::class, 'order'])->name('order');
 
 //categories
@@ -49,6 +51,8 @@ Route::post('/category_set_image', [categoriesController::class, 'category_set_i
 
 //Route::get('/category', function () {return view('category');});
 Route::get('/category/{category_name_or_id}',[MainController::class, 'category_spec']);
+
+
 Route::get('/view/{item_id}',[MainController::class, 'view_item']);
 //Route::get('/category/{category}',[MainController::class, 'category']);
 Route::get('/cart',[MainController::class, 'cart']);

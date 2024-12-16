@@ -34,6 +34,7 @@ $total_price=0;
                         </a>
                     </div>
                 </div>
+                
                 <div class="col-9 default_padding  ">
                     <p class=" default_margin_sides two_line_clamp">
                         {{$i->name}}

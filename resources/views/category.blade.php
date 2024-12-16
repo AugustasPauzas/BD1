@@ -191,62 +191,88 @@
     
     
             <div class="col-lg-10  ">
+                @if (!$data_item->isEmpty())
+                <div class="d-flex">
+                    <div class="ms-auto">
+                        <div class="row">
+                            <div class="col">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ request()->query('order') == 'AlphAcen' ? 'A-Z' : '' }}
+                                        {{ request()->query('order') == 'AlphDesc' ? 'Z-A' : '' }}
+                                        {{ request()->query('order') == 'PriAcen' ? 'Price Acen.' : '' }}
+                                        {{ request()->query('order') == 'PriDesc' ? 'Price Desc.' : '' }}
+                                        {{ request()->query('order') == '' ? 'A-Z' : '' }}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly A-Z</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Z-A</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">Price Acen.</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">Price Desc.</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ request()->query('Icount') == '8' ? '8' : '' }}
+                                        {{ request()->query('Icount') == '12' ? '12' : '' }}
+                                        {{ request()->query('Icount') == '24' ? '24' : '' }}
+                                        {{ request()->query('Icount') == '48' ? '48' : '' }}
+                                        {{ request()->query('Icount') == '' ? '12' : '' }}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '8', 'page' => 1]) }}">8</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '12', 'page' => 1]) }}">12</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '24', 'page' => 1]) }}">24</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '48', 'page' => 1]) }}">48</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+                
+                
+                @endif
+                
 
                 <div class="item_parent_container primary_background_color default_padding default_large_margin default_radius under_shadow">
                     
-                    @if (true)
-
-
-                    <div class="d-flex">
-                        <div class="ms-auto">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ request()->query('order') == 'AlphAcen' ? 'Alphabeticly A-Z.' : '' }}
-                                            {{ request()->query('order') == 'AlphDesc' ? 'Alphabeticly Z-A' : '' }}
-                                            {{ request()->query('order') == 'PriAcen' ? 'Price Acen.' : '' }}
-                                            {{ request()->query('order') == 'PriDesc' ? 'Price Desc.' : '' }}
-                                            {{ request()->query('order') == '' ? 'Alphabeticly A-Z' : '' }}
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly A-Z</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Z-A</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">Price Acen.</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">Price Desc.</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ request()->query('Icount') == '8' ? '8' : '' }}
-                                            {{ request()->query('Icount') == '12' ? '12' : '' }}
-                                            {{ request()->query('Icount') == '24' ? '24' : '' }}
-                                            {{ request()->query('Icount') == '48' ? '48' : '' }}
-                                            {{ request()->query('Icount') == '' ? '12' : '' }}
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '8']) }}">8</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '12']) }}">12</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '24']) }}">24</a></li>
-                                            <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['Icount' => '48']) }}">48</a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                           
-                        </div>
-                    </div>
-                    
-                    
-                    @endif
                     
 
 
                     <div id="itemsContainer">
+
+                        @if (!$data_item->isEmpty())
+                        <nav>
+                            <ul class="pagination default_padding_top justify-content-center ">
+    
+                                <li class="page-item {{ request()->query('page', 1) == 0 ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => 1]) }}">
+                                        <
+                                    </a>
+                                </li>
+    
+                                @for ($countPage = 1; $countPage <= $max_page; $countPage++)
+                                    <li class="page-item {{ request()->query('page', 1) == $countPage ? 'active' : '' }}">
+                                        <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => $countPage]) }}">
+                                            {{ $countPage }}
+                                        </a>
+                                    </li>
+                                @endfor
+                                <li class="page-item {{ request()->query('page', 1) == 0 ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ request()->fullUrlWithQuery(['page' => $countPage-1]) }}">
+                                        >
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        @endif
+
                     @php
                     $oneItemFound = false;
                     @endphp

@@ -70,6 +70,8 @@ $total_price=0;
                         @else
                             <p>dB quant.</p>
                         @endif
+
+                        @if ($i->quantity > $theQuantity)
                         <a class="add_quantity_item_cart default_margin_sides" data-item-id="{{$i->item_id}}" href="#/{{$i->item_id}}">
                             <svg class="extra_extra_small_svg"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -77,6 +79,7 @@ $total_price=0;
                                 <g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
                             </svg>
                         </a>
+                        @endif
                         
                     </div>
                 </div>
@@ -247,6 +250,7 @@ $total_price=0;
 
 <br>
 
+@if (!empty($cookie_data))
 <div class="row no_margin_sides default_radius">
     <div class="col-12 text-end">
         <a href="cart/step-2">
@@ -261,3 +265,4 @@ $total_price=0;
 
     </div>
 </div>
+@endif
