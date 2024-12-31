@@ -11,6 +11,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoriesController;
 
+use App\Http\Controllers\OrdersController;
+
+
 
 
 //Route::get('/', function () {return view('welcome');});
@@ -24,7 +27,10 @@ Route::get('/phpinfo', function () {return view('phpinfo');});
 Route::get('/privacy-policy', function () {return view('privacy');});
 Route::get('/rule',[MainController::class, 'rule']);
 Route::get('/FAQ', function () {return view('faq');});
-Route::get('/orders',function () {return view('orders');});
+
+//Route::get('/orders',function () {return view('orders');});
+
+Route::get('/orders', [OrdersController::class, 'orders'])->name('orders');
 
 
 

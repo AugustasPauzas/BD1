@@ -113,14 +113,14 @@
         <div class="default_padding secondary_background_color default_radius"> 
 
         @if ($orderSingle->status == "1")
-            <p> <strong>Order Reciever Awaiting Payment For The Total</strong> </p>
+            <p> <strong>Order Received Awaiting Payment For The Total</strong> </p>
             
             <div class="text-end">
                 <button type="button" class="btn btn-warning text-end"> <strong>Proceed To Payment</strong></button>
             </div>
         @endif
         @if ($orderSingle->status == "2")
-        <p>Payment Reciever Delivery In Progress</p>
+        <p>Payment Received Delivery In Progress</p>
         @endif
         @if ($orderSingle->status == "3")
         <p>Order Is Out For Delivery</p>

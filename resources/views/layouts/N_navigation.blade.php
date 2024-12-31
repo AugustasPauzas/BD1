@@ -106,6 +106,9 @@ $VarWebsiteLogo = "/images/logo64.png";
                   <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="{{ url('/orders') }}">Orders</a>
+                </li>
+                <li class="nav-item">
                   <form action="{{ route('logout') }}" method="POST">
                       @csrf
                       <button type="" class="btn btn-link nav-link">Logout</button>
