@@ -12,6 +12,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\UserControlController;
 
 
 
@@ -31,6 +32,9 @@ Route::get('/FAQ', function () {return view('faq');});
 //Route::get('/orders',function () {return view('orders');});
 
 Route::get('/orders', [OrdersController::class, 'orders'])->name('orders');
+
+
+Route::get('/users', [UserControlController::class, 'UserControl'])->name('UserControl');
 
 
 

@@ -41,6 +41,9 @@ $VarWebsiteLogo = "/images/logo64.png";
         <li class="nav-item">
           <a class="nav-link"  href="{{ url('/rule') }}">Create Rule</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/users') }}">Users</a>
+        </li>
           @endif
         @endauth
         
