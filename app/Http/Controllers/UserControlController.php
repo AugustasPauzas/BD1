@@ -23,7 +23,8 @@ class UserControlController extends Controller
             return redirect('/login');
         }
         if (Auth::user()->level < 2) {
-            return redirect('/login');        }
+            return redirect('/login');        
+        }
 
         //$user_id = Auth::id();
 

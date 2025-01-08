@@ -33,7 +33,7 @@ Route::get('/FAQ', function () {return view('faq');});
 //Route::get('/orders',function () {return view('orders');});
 
 Route::get('/orders', [OrdersController::class, 'orders'])->name('orders');
-
+Route::get('/orders-admin', [OrdersController::class, 'Orders_Admin'])->name('Orders_Admin');
 
 Route::get('/users', [UserControlController::class, 'UserControl'])->name('UserControl');
 
@@ -44,6 +44,7 @@ Route::get('/User_Change_To_Administrator/{user_id}', [UserRoleController::class
 Route::get('/User_Change_To_Owner/{user_id}', [UserRoleController::class, 'User_Change_To_Owner'])->name('User_Change_To_Owner');
 Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');;
 
+Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');;
 
 
 

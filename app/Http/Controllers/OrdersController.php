@@ -44,4 +44,29 @@ class OrdersController extends Controller
 
         return view('orders', compact('data_orders','unique_groups', 'data_images'));
     }
+
+    public function Orders_admin ()
+    {
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
+        if (Auth::user()->level < 2) {
+            return redirect('/login');        
+        }
+        
+        $user_id = Auth::id();
+
+        $data_orders = Order::all();
+        $data_images = DB::table('image_parse')
+        ->join('image', 'image_parse.image_id', '=', 'image.id')
+        ->select('image_parse.*', 'image.image_location')
+        ->where('image_parse.position', 1) 
+        ->get();
+        $data_items = Item::all();
+        $unique_groups = $data_orders->pluck('group')->unique()->values()->all();
+
+
+
+        return view('orders', compact('data_orders','unique_groups', 'data_images'));
+    }
 }
