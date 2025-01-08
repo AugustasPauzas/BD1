@@ -40,7 +40,6 @@ $(document).ready(function() {
             type: 'GET', 
             success: function(response) {
                 if (response.success) {
-                    // On success, remove the image container
                     imageContainer.remove();
                     displayMessage(response.message, 1);
 
@@ -74,12 +73,11 @@ $(document).ready(function() {
             success: function(response) {
                 console.log('Function reached and image moved right.');
 
-                // image moved, reload the images
                 $.ajax({
                     url: `/live_reload_all_images/${itemId}`, 
                     method: 'GET', 
                     success: function(response) {
-                        $('#data-container').html(response); // Replace the content of #data-container with the new data
+                        $('#data-container').html(response); 
                         console.log('Images reloaded successfully.');
                     },
                     error: function(xhr) {
@@ -102,7 +100,6 @@ $(document).ready(function() {
         event.preventDefault(); 
         const imageParseId = $(this).data('image-parse-id');
         const itemId = $(this).data('item-id'); 
-        // AJAX call to move the image to the left
         $.ajax({
             url: `/ajax_move_image_to_left/${imageParseId}`, 
             method: 'POST', 
@@ -117,7 +114,7 @@ $(document).ready(function() {
                     url: `/live_reload_all_images/${itemId}`, 
                     method: 'GET', 
                     success: function(response) {
-                        $('#data-container').html(response); // Replace the content of #data-container with the new data
+                        $('#data-container').html(response); 
                         console.log('Images reloaded successfully.');
                     },
                     error: function(xhr) {

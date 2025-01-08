@@ -28,6 +28,7 @@
 </script>
 
 <div class="table-responsive">
+  
     <table id="userTable" class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
@@ -91,10 +92,12 @@
             @endforeach
         </tbody>
     </table>
+    <br>
+    <br>
 </div>
 
 
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmationModal" z-indes="9999" tabindex="1111" aria-labelledby="confirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

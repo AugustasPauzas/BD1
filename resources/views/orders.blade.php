@@ -124,6 +124,9 @@
             </div>
         </div>
     @endforeach
+    @if (empty($unique_groups))
+    <p class="text_align_center font_120"> <strong>No Orders</strong></p>
+    @endif
 </div>
 
 

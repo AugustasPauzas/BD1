@@ -109,8 +109,8 @@ $(document).ready(function() {
                     //alert('Item added successfully!');
                     form.trigger('reset');
                     $('.text-danger').text(''); 
-                    var itemId = response.item_id; // or response.id
-                    window.location.href = '/view/' + itemId; // Redirect item's view page
+                    var itemId = response.item_id; 
+                    window.location.href = '/view/' + itemId; 
                 },
                 error: function(xhr) {
                     var errors = xhr.responseJSON.errors; 
@@ -118,7 +118,6 @@ $(document).ready(function() {
                     // Clear previous errors
                     $('.text-danger').text('');
     
-                    // Display validation errors dynamically
                     
                     if (errors.name) $('.error-name').text(errors.name[0]);
                     if (errors.ien_code) $('.error-ien_code').text(errors.ien_code[0]);
@@ -192,17 +191,14 @@ $(document).ready(function() {
         document.getElementById('price').addEventListener('input', function (e) {
 
             this.value = this.value.replace(/,/g, '.');
-            // Remove all characters except digits and dots
             this.value = this.value.replace(/[^0-9.]/g, '');
             
             const parts = this.value.split('.');
             
-            // Allow only one decimal point
             if (parts.length > 2) {
                 this.value = parts[0] + '.' + parts.slice(1).join('');
             }
         
-            // Limit decimal places to 2
             if (parts[1] && parts[1].length > 2) {
                 this.value = parts[0] + '.' + parts[1].slice(0, 2);
             }
@@ -210,7 +206,7 @@ $(document).ready(function() {
             // maximum value of 999999.99
             const maxValue = 999999.99;
             if (parseFloat(this.value) > maxValue) {
-                this.value = maxValue.toFixed(2); // Set to max value if exceeded
+                this.value = maxValue.toFixed(2); 
             }
         });
         // Create item quantity vald.
@@ -221,7 +217,7 @@ $(document).ready(function() {
             const filteredValue = value.replace(/[^0-9]/g, '');
 
             if (filteredValue.length > 6) {
-                this.value = filteredValue.slice(0, 6); // Trim to 6 digits
+                this.value = filteredValue.slice(0, 6); 
             } else {
                 this.value = filteredValue; // Set the filtered value
             }
@@ -253,7 +249,7 @@ $(document).ready(function() {
             displayMessage( data.message, 1);
 
             /*
-            document.getElementById('success_messageText').innerText = data.message; // Display success message
+            document.getElementById('success_messageText').innerText = data.message; 
             const responseMessage = document.getElementById('responseMessage');
             responseMessage.style.display = 'block'; 
     
@@ -275,7 +271,7 @@ $(document).ready(function() {
         .catch(error => {
             // Handle error
             console.error('Error:', error);
-            document.getElementById('responseMessage').innerHTML = 'An error occurred. Please try again.'; // Display error message
+            document.getElementById('responseMessage').innerHTML = 'An error occurred. Please try again.';
         });
     });
     
@@ -297,7 +293,7 @@ $(document).ready(function() {
                     method: 'POST',
                     body: formData,
                     headers: {
-                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Include CSRF token
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value 
                     }
                 })
                 .then(response => {
@@ -308,7 +304,7 @@ $(document).ready(function() {
 
 
                     }
-                    return response.json(); // Parse JSON 
+                    return response.json(); 
 
                 })
                 .then(data => {
@@ -349,12 +345,12 @@ $(document).ready(function() {
         });
     }
 
-    //ADD Value with no parameter input here
+
     function attachFormSubmitListeners2() {
         document.querySelectorAll('.ajax_add_only_value_form').forEach(form => {
-            const existingListener = form.getAttribute('data-listener'); // Check if a listener exists
+            const existingListener = form.getAttribute('data-listener'); 
             if (existingListener) {
-                form.removeEventListener('submit', existingListener); // Remove the existing listener
+                form.removeEventListener('submit', existingListener); 
             }
             const listener = function(event) {
                 event.preventDefault(); 
@@ -365,38 +361,34 @@ $(document).ready(function() {
                     method: 'POST',
                     body: formData,
                     headers: {
-                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Include CSRF token
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value 
                     }
                 })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
-                    return response.json(); // Parse JSON
+                    return response.json();
                     
                     
                 })
                 .then(data => {
                     //  success
-                    document.getElementById('success_messageText').innerText = data.message; // Display success message
+                    document.getElementById('success_messageText').innerText = data.message; 
                     const responseMessage = document.getElementById('responseMessage');
-                    responseMessage.style.display = 'block'; // Show the message
-    
-                    // Hide the message after 5 seconds
+                    responseMessage.style.display = 'block';
+
                     setTimeout(() => {
                         responseMessage.style.display = 'none';
                     }, 5000);
-    
-                    // Add click event to close button
+
                     document.getElementById('closeMessage').onclick = function() {
-                        responseMessage.style.display = 'none'; // Hide the message
+                        responseMessage.style.display = 'none'; 
                     };
-    
-                    // clear the form fields 
+
                     form.reset(); // DONT DO IT :(
                 })
                 .catch(error => {
-                    // Handle error
                     console.error('Error:', error);
                     const responseMessage = document.getElementById('responseMessage');
                     if (responseMessage) {
@@ -447,10 +439,8 @@ $(document).ready(function() {
         const itemId = $(this).data('item-id'); 
     
         try {
-            // Wait for reload to finish before executing more logic
             await reload_specifications_form(itemId);
             console.log('Form reload complete.');
-            // No need to reattach button click listener here as it's already delegated
         } catch (error) {
             console.error('Error during form reload:', error);
         }
@@ -464,22 +454,22 @@ $(document).ready(function() {
                     success: function(response) {
                         $('#specifications_add_form_container').html(response);
                         console.log('Reloaded successfully.');
-                        resolve(); // Resolve the promise when done
+                        resolve(); 
                     },
                     error: function(xhr) {
                         console.error('Error reloading:', xhr.responseText);
                         alert('An error occurred while reloading: ' + xhr.responseText);
-                        reject(xhr.responseText); // Reject the promise on error
+                        reject(xhr.responseText);
                     }
                 });
             }, 5);
         });
     }
-    // Keep the form submit listener attached
+
     function attachFormSubmitListeners3() {
-        $('#specifications_add_form_container').off('submit', '#ajax_add_specification'); // Remove any previously bound handlers
+        $('#specifications_add_form_container').off('submit', '#ajax_add_specification'); 
         $('#specifications_add_form_container').on('submit', '#ajax_add_specification', function(e) {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault(); 
             console.log('Form submitted!');
     
             $.ajax({
@@ -488,7 +478,7 @@ $(document).ready(function() {
                 data: $(this).serialize(),
                 success: function(response) {
                     console.log('Form submitted successfully:', response);
-                    // You can reload the form or clear fields if needed
+
                 },
                 error: function(xhr) {
                     console.error('Form submission error:', xhr.responseText);
@@ -677,17 +667,17 @@ $(document).on('click', '#like_the_item', function(event) {
     var itemId = $(this).data('item-id');
 
     $.ajax({
-        url: '/add/like/item/' + itemId, // AJAX request URL
+        url: '/add/like/item/' + itemId, 
         type: 'GET',
-        dataType: 'json', // Ensure you expect a JSON response
+        dataType: 'json', 
         success: function(response) {
             //displayMessage(response.message, 1);
             //event.preventDefault(); 
         },
         error: function(xhr) {
-            console.error('Error removing item:', xhr.responseText); // Log any errors
+            console.error('Error removing item:', xhr.responseText); 
             //displayMessage("Error", 2);
-            window.location.href = '/register'; // Replace with your desired URL
+            window.location.href = '/register'; 
 
         }
     });

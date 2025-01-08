@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $('#placeorder').on('submit', function(e) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); 
         var form = $(this);
-        var url = form.attr('action'); // Get form's action URL
+        var url = form.attr('action'); 
 
         $.ajax({
             url: url,
@@ -12,15 +12,13 @@ $(document).ready(function() {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response) {
-                console.log(response); // Debugging line
+                console.log(response); 
 
-                // Reset form and clear previous errors
                 form.trigger('reset');
                 $('.text-danger').text('');
                 
-                //alert(response.message); // Show success message
+                //alert(response.message); 
 
-                // Redirect to the specified URL
                 if (response.redirect_url) {
                     window.location.href = response.redirect_url;
                 }
@@ -29,10 +27,8 @@ $(document).ready(function() {
                 if (xhr.responseJSON && xhr.responseJSON.errors) {
                     var errors = xhr.responseJSON.errors;
                     
-                    // Clear previous errors
                     $('.text-danger').text('');
 
-                    // Display validation errors dynamically
                     if (errors.name) $('.error-name').text(errors.name[0]);
                     if (errors.lastname) $('.error-lastname').text(errors.lastname[0]);
                     if (errors.email) $('.error-email').text(errors.email[0]);
@@ -54,15 +50,11 @@ $(document).ready(function() {
 
 
     $(document).ready(function() {
-        // When the country dropdown changes
         $('#country').on('change', function() {
-            // Get the selected country's code
             var countryCode = $(this).val();
             
-            // Update the country code display in the input group
             $('#country-code').text(countryCode);
             
-            // Optionally clear the phone input field when country changes
             $('#phone').val('');
         });
     });

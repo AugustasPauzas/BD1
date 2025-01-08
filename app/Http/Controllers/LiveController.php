@@ -138,17 +138,17 @@ class LiveController extends Controller
             $query = DB::table('item')
                 ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
         
-            if (!empty($item_ids)) { // Changed this line
-                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+            if (!empty($item_ids)) { 
+                $query->whereIn('item.id', $item_ids); 
                 $cookie_data = $query->get();
-                $data_items_id = $item_ids; // Simplified this line
+                $data_items_id = $item_ids; 
             }
         } 
         else {
             error_log("The user is NOT logged in");
             $cart_items = json_decode(Cookie::get('cart_items', '[]'), true) ;//?? [];
 
-            $item_ids = array_keys($cart_items); // Use keys for item IDs
+            $item_ids = array_keys($cart_items); 
             
             error_log("json encode: ". json_encode($cart_items));
 
@@ -156,7 +156,7 @@ class LiveController extends Controller
                 ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
             
             if (!empty($item_ids)) {
-                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+                $query->whereIn('item.id', $item_ids); 
                 $cookie_data = $query->get();
                 $data_items_id = $cookie_data->pluck('item_id')->toArray();
 
@@ -166,7 +166,7 @@ class LiveController extends Controller
             }
             error_log("The user is NOT logged in: " . json_encode($cookie_data));
             
-            // Return view with cart items and images
+
       
         }
 
@@ -174,7 +174,7 @@ class LiveController extends Controller
         ->join('parameter', 'specification.parameter_id', '=', 'parameter.id')
         ->join('value', 'specification.value_id', '=', 'value.id')
         ->join('item', 'specification.item_id', '=', 'item.id')
-        ->join('category', 'item.category_id', '=', 'category.id') // Join category table with item table
+        ->join('category', 'item.category_id', '=', 'category.id') 
         ->select(
             'item.id as item_id',
             'item.name as item_name',
@@ -183,7 +183,7 @@ class LiveController extends Controller
             'value.id as value_id',
             'value.value_name',
             'category.id as category_id',
-            'category.category as category_name' // Assuming 'category' column holds the name
+            'category.category as category_name' 
         )
         ->get();
 
@@ -199,7 +199,6 @@ class LiveController extends Controller
         $data_parameter = Parameter::all();
         $data_category = Category::all();
         $data_rule = Rule::all();
-        // Return view with cart items and images
         return response()->json([
             'view' => view('partials.Live_rule', compact('data_parameter', 'data_category', 'data_rule'))->render(),
             'message' => 'Rules Reloaded'

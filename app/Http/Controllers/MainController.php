@@ -587,15 +587,15 @@ class MainController extends Controller
             }
             else{
                 error_log("Filter not empty, Working " );
-                $data_items = DB::table('item') // Use 'item' as defined in your model
-                ->join('specification', 'item.id', '=', 'specification.item_id') // Join condition
-                ->select('item.*') // Select all columns from item
+                $data_items = DB::table('item') 
+                ->join('specification', 'item.id', '=', 'specification.item_id')
+                ->select('item.*') 
                 ->when(!empty($filters), function ($query) use ($filters) {
-                    // Loop through each filter and add where conditions
+                    
                     $query->where(function ($subQuery) use ($filters) {
                         foreach ($filters as $filter) {
                             if (isset($filter['value_id']) && isset($filter['parameter_id'])) {
-                                // Add a where clause to filter by both parameter_id and value_id
+                                
                                 $subQuery->orWhere(function ($innerQuery) use ($filter) {
                                     $innerQuery->where('specification.value_id', $filter['value_id'])
                                             ->where('specification.parameter_id', $filter['parameter_id']);
@@ -604,7 +604,7 @@ class MainController extends Controller
                         }
                     });
                 })
-                ->distinct('item.id') // Ensure distinct item IDs
+                ->distinct('item.id') // Ensure distinct IDs
                 ->get();
                 foreach ($filters as $filter) {
                     error_log("Filter parameter ID: " . $filter['parameter_id']);
@@ -656,7 +656,7 @@ class MainController extends Controller
 
             // order 
             $filtered_items = $filtered_items->sortBy('name');
-            $filtered_items = $filtered_items->sortByDesc('name');
+            //$filtered_items = $filtered_items->sortByDesc('name');
 
             $orderReq = request()->query('order');
             if ($orderReq){

@@ -443,14 +443,13 @@ class AjaxController extends Controller
             error_log("The user is logged in");
             
             $user_id = Auth::id();
-            
-            // Find the cart item for the logged-in user
+
             $cartItem = Cart::where('user_id', $user_id)
                 ->where('item_id', $item_id)
                 ->first();
         
             if ($cartItem) {
-                // Increase the quantity by 1
+                
                 $cartItem->quantity += 1; 
                 $cartItem->save(); 
                 
@@ -472,7 +471,6 @@ class AjaxController extends Controller
             $cartItems = json_decode(Cookie::get('cart_items', '[]'), true) ?? [];
             
             if (isset($cartItems[$item_id])) {
-                // Increase the quantity by 1
                 $cartItems[$item_id] += 1;
             } else {
                 // If the item doesn't exist in the cart, initialize it with quantity 1
@@ -536,7 +534,6 @@ class AjaxController extends Controller
                 // Decrease the quantity by 1
                 $cartItems[$item_id] -= 1;
     
-                // Remove the item if the quantity is zero or less
                 if ($cartItems[$item_id] <= 0) {
                     unset($cartItems[$item_id]);
                 }

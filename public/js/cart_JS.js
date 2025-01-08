@@ -38,20 +38,20 @@ $(document).on('click', '.decrease_quantity_item_cart', function(event) {
 });
 
 $(document).on('click', '.cart_remove_item', function(event) {
-    event.preventDefault(); // Prevent the default anchor click behavior
+    event.preventDefault();
 
-    var itemId = $(this).data('item-id'); // Get the item ID from the clicked element
+    var itemId = $(this).data('item-id'); 
 
     $.ajax({
-        url: '/remove_item_from_cart/' + itemId, // AJAX request URL
+        url: '/remove_item_from_cart/' + itemId, 
         type: 'GET',
-        dataType: 'json', // Ensure you expect a JSON response
+        dataType: 'json', 
         success: function(response) {
             displayMessage(response.message, 1);
             reload_cart();
         },
         error: function(xhr) {
-            console.error('Error removing item:', xhr.responseText); // Log any errors
+            console.error('Error removing item:', xhr.responseText); 
             displayMessage("Error", 2);
         }
     });

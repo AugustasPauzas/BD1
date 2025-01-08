@@ -33,9 +33,9 @@ class LikeItemController extends Controller
             error_log("The user logged in");
         
             $user_id = Auth::id();
-            $item_id ; // Make sure to get item_id from the request
+            $item_id ; 
     
-            // Check if the like already exists
+
             $like = LikeItem::where('user_id', $user_id)->where('item_id', $item_id)->first();
     
             if ($like) {

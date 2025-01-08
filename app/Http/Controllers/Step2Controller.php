@@ -40,7 +40,7 @@ class Step2Controller extends Controller
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')
-        ->where('image_parse.position', 1)  // Add this line to filter by position
+        ->where('image_parse.position', 1)  
         ->get();
         $data_rules = Rule::all();
 
@@ -58,10 +58,10 @@ class Step2Controller extends Controller
             $query = DB::table('item')
                 ->select('item.id as item_id', 'item.name', 'item.price', 'item.quantity', 'item.status');
         
-            if (!empty($item_ids)) { // Changed this line
-                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+            if (!empty($item_ids)) { 
+                $query->whereIn('item.id', $item_ids); 
                 $cookie_data = $query->get();
-                $data_items_id = $item_ids; // Simplified this line
+                $data_items_id = $item_ids; 
             }
         }
         
@@ -69,7 +69,7 @@ class Step2Controller extends Controller
             error_log("The user is NOT logged in");
             $cart_items = json_decode(Cookie::get('cart_items', '[]'), true);
             
-            $item_ids = array_keys($cart_items); // Use keys for item IDs
+            $item_ids = array_keys($cart_items); 
 
             error_log("json encode item_Ids: ". json_encode($item_ids));
             error_log("json encode: ". json_encode($cart_items));
@@ -79,7 +79,7 @@ class Step2Controller extends Controller
                 //->where('status', '=', 1); 
             
             if (!empty($item_ids)) {
-                $query->whereIn('item.id', $item_ids); // Filter by item IDs in the cart
+                $query->whereIn('item.id', $item_ids); 
                 $cookie_data = $query->get();
                 $data_items_id = $cookie_data->pluck('item_id')->toArray();
 
@@ -105,7 +105,7 @@ class Step2Controller extends Controller
             'value.id as value_id',
             'value.value_name',
             'category.id as category_id',
-            'category.category as category_name' // Assuming 'category' column holds the name
+            'category.category as category_name' 
         )
         ->get();
         
@@ -117,7 +117,7 @@ class Step2Controller extends Controller
     {
         error_log("METHOD ORDER SUBMIT");
         
-        // Validate the request data
+
         $validated = $request->validate([
             'name' => 'required|regex:/^[a-zA-ZĄĆĘĮĖŠąčęįėš\s]+$/',
             'lastname' => 'required|regex:/^[a-zA-ZĄĆĘĮĖŠąčęįėš\s]+$/',
@@ -160,13 +160,13 @@ class Step2Controller extends Controller
             error_log("user id: " . $user_id);
 
             $items = Cart::where('user_id', $user_id)
-            ->select('quantity', 'item_id') // Only fetch these fields
+            ->select('quantity', 'item_id') 
             ->get();
             foreach ($items as $item) {
                 // Find the price for the current item by item_id
                 $itemData = Item::find($item->item_id);
         
-                // If the item is found, add the price to the item, otherwise set the price to 0
+                // If the item is found, add the price to the item
                 if ($itemData) {
                     $item->price = $itemData->price;
                 } else {
@@ -186,9 +186,8 @@ class Step2Controller extends Controller
                     'quantity' => $quantity
                 ];
             }
-            $item_ids = array_column($items, 'item_id'); // Extract item IDs from the $items array
-            // Fetch the prices for these items from the 'Item' table
-            $item_prices = Item::whereIn('id', $item_ids)->get(['id', 'price'])->keyBy('id'); // Key by item id for easy access
+            $item_ids = array_column($items, 'item_id'); 
+            $item_prices = Item::whereIn('id', $item_ids)->get(['id', 'price'])->keyBy('id'); 
             // Add the price to each item in the $items array
             foreach ($items as &$item) {
                 if (isset($item_prices[$item['item_id']])) {
@@ -204,15 +203,13 @@ class Step2Controller extends Controller
 
         $addedItemIds = [];
         foreach ($items as &$item) {
-            // Check if the item_id has already been processed
             if (in_array($item['item_id'], $addedItemIds)) {
-                // If the item_id has already been added, accumulate the quantity instead of skipping
                 $existingItemKey = array_search($item['item_id'], array_column($items, 'item_id'));
                 $items[$existingItemKey]['quantity'] += $item['quantity']; // Add quantities
-                continue; // Skip adding this item again
+                continue; 
             }
         
-            // Log the item being created
+
             error_log("Creating Order for item: " . json_encode($item));
         
             // Create the order
@@ -233,11 +230,9 @@ class Step2Controller extends Controller
                 'price' => $item['price'],
             ]);
         
-            // Add the item_id to the list of added items
             $addedItemIds[] = $item['item_id'];
         }
         
-        // After the loop, check the items to ensure the quantities have been correctly accumulated
         error_log("Updated Items after processing: " . json_encode($items));
         
         
@@ -246,7 +241,7 @@ class Step2Controller extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Order placed successfully!',
-            'redirect_url' => route('order', ['order_group' => $group])  // Pass the group ID here
+            'redirect_url' => route('order', ['order_group' => $group])  
         ], 200);
 
     }

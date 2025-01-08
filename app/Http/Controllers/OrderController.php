@@ -20,7 +20,7 @@ class OrderController extends Controller
         $data_images = DB::table('image_parse')
         ->join('image', 'image_parse.image_id', '=', 'image.id')
         ->select('image_parse.*', 'image.image_location')
-        ->where('image_parse.position', 1)  // Add this line to filter by position
+        ->where('image_parse.position', 1)  
         ->get();
         $data_items = Item::all();
 
