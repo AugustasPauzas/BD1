@@ -127,7 +127,7 @@
                                  </div>
                             <input type="hidden" id="category_identifier" value="{{ $specified_category_id_or_name }}">
                                 <div class="d-flex">
-                                    <a id="apply_filter" href="#" class="btn btn-outline-primary flex-fill">Apply</a>
+                                    <a id="apply_filter" href="" class="btn btn-outline-primary flex-fill">Apply</a>
                                 </div>
                             </div>
                         <br>

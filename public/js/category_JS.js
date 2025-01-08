@@ -49,17 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
     category_price_filter_slider.noUiSlider.on('change', function (values) {
         const minPrice = values[0];
         const maxPrice = values[1];
-
         let currentUrl = window.location.href;
-
         let baseUrl = currentUrl.split('?')[0];
-
-        let existingFilters = currentUrl.split('?')[1] ? currentUrl.split('?')[1].split('&').filter(param => !param.startsWith('minPrice') && !param.startsWith('maxPrice')).join('&') : '';
-
+        let existingFilters = currentUrl.split('?')[1] ? currentUrl.split('?')[1].split('&').filter(param => !param.startsWith('minPrice') && !param.startsWith('maxPrice') && !param.startsWith('page')).join('&') : '';
         if (existingFilters) {
-            window.location.href = `${baseUrl}?${existingFilters}&minPrice=${minPrice}&maxPrice=${maxPrice}`;
+            window.location.href = `${baseUrl}?${existingFilters}&minPrice=${minPrice}&maxPrice=${maxPrice}&page=1`;
         } else {
-            window.location.href = `${baseUrl}?minPrice=${minPrice}&maxPrice=${maxPrice}`;
+            window.location.href = `${baseUrl}?minPrice=${minPrice}&maxPrice=${maxPrice}&page=1`;
         }
     });
 });

@@ -8,7 +8,7 @@
 
 <div class="default_container_margin">
     @auth
-    @if(auth()->user()->level == 2)
+    @if(auth()->user()->level >= 2)
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
 
         

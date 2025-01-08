@@ -31,7 +31,7 @@ $VarWebsiteLogo = "/images/logo64.png";
           <a class="nav-link" href="{{ url('/FAQ') }}">F.A.Q.</a>
         </li>
         @auth
-          @if(auth()->user()->level == 2)
+          @if(auth()->user()->level >= 2)
         <li class="nav-item">
           <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
         </li>         
