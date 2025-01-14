@@ -8,13 +8,14 @@
 
 <div class="container fade_in_0_5 default_container_margin_top primary_background_color default_padding default_margin default_radius under_shadow">
     <br>
-    <h2 class="text-center">Welcome to PCParts</h2>
+    <h2 class="text-center">{{ translate('Welcome to Pcparts') }}</h2>
     <br>
     <p class="text-center">
-        Discover high-quality PC parts and accessories. Whether you're upgrading or building from scratch, we have what you need. 
+        {{ translate(" Discover high-quality PC parts and accessories. Whether you're upgrading or building from scratch, we have what you need.  ") }}
+       
     </p>
     <p class="text-center">
-        <a href="/category/all_items" class="btn btn-primary">Browse All Items</a>
+        <a href="/category/all_items" class="btn btn-primary">{{ translate('Browse All Items') }}</a>
     </p>
 </div>
 
@@ -61,7 +62,7 @@
                     </svg>
 
 
-                <span class="font_120 default_padding  default_radius"> <strong> Newest <a class="no_ancor_decoration" href="/category/{{$category->id}}"> {{$category->category_full}}</a> products</strong> </span>
+                <span class="font_120 default_padding  default_radius"> <strong>{{ translate('Newest') }} <a class="no_ancor_decoration" href="/category/{{$category->id}}"> {{ translate($category->category_full) }}</a> {{ translate('Products') }}</strong> </span>
              </p>
             <div class="row ">
                 @php $count=6 @endphp

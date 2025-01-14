@@ -17,38 +17,49 @@ $VarWebsiteLogo = "/images/logo64.png";
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url('/') }}">Home </a>
+          <a class="nav-link" href="{{ url('/') }}">{{ translate('Home') }} </a>
         </li>
         {{-- 
         <li class="nav-item">
           <a class="nav-link"  href="{{ url('/specifications') }}">Specifications</a>
          </li>--}}
 
+
+
        <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/category/all_items') }}">All Items</a>
+          <a class="nav-link"  href="{{ url('/category/all_items') }}">{{ translate('All Items') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('/FAQ') }}">F.A.Q.</a>
+          <a class="nav-link" href="{{ url('/FAQ') }}">{{ translate('F.A.Q.') }}</a>
         </li>
         @auth
           @if(auth()->user()->level >= 2)
         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/categories') }}">Categories</a>
+          <a class="nav-link"  href="{{ url('/categories') }}">{{ translate('Categories') }}</a>
         </li>         
         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/create') }}">Create Item</a>
+          <a class="nav-link"  href="{{ url('/create') }}">{{ translate('Create Item') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/rule') }}">Create Rule</a>
+          <a class="nav-link"  href="{{ url('/rule') }}">{{ translate('Create Rule') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/users') }}">Users</a>
+          <a class="nav-link"  href="{{ url('/users') }}">{{ translate('Users') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="{{ url('/orders-admin') }}">Orders</a>
+          <a class="nav-link"  href="{{ url('/orders-admin') }}">{{ translate('Orders') }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ url('/language/LT') }}">{{ translate('Language') }}</a>
         </li>
           @endif
         @endauth
+        
+
+
+
+
+
         
       </ul>
 
@@ -74,6 +85,46 @@ $VarWebsiteLogo = "/images/logo64.png";
           </a>
         </li>
         
+
+
+        <li class="nav-item">
+          <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg class="extra_small_svg svg_nav" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="languageIconTitle" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000">
+
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                  
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                  
+                  <g id="SVGRepo_iconCarrier"> <title id="languageIconTitle">{{ translate('Language') }}</title> <circle cx="12" cy="12" r="10"/> <path stroke-linecap="round" d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z"/> <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15"/> </g>
+                  
+                  </svg>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="nav-item">
+                <a class="nav-link" href="" onclick="setLanguageCookie('LT')">LT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" onclick="setLanguageCookie('EN')">EN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" onclick="setLanguageCookie('PL')">PL</a>
+            </li>
+
+
+            <script>
+              function setLanguageCookie(lang) {
+                  document.cookie = `lang=${lang}; path=/; max-age=${60 * 60 * 24 * 30}`; // 30 days
+                  window.location.reload();
+              }
+            </script>
+
+
+            </ul>
+          </div>
+          </li>  
+
+
         
       @auth
       @else
@@ -167,9 +218,9 @@ $VarWebsiteLogo = "/images/logo64.png";
             --}}
 
               <div class="input-group">
-                <input id="search_input" type="search" class="form-control rounded" name="searchTerm" placeholder="Search" autocomplete="off" aria-describedby="search_addon" value="@if (request()->query('src')){{ request()->query('src') }}@endif" />
+                <input id="search_input" type="search" class="form-control rounded" name="searchTerm" placeholder="{{ translate('Search') }}" autocomplete="off" aria-describedby="search_addon" value="@if (request()->query('src')){{ request()->query('src') }}@endif" />
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-primary" id="search_button"  data-url="{{ url('category/all_items') }}">Search</button>
+                    <button type="button" class="btn btn-outline-primary" id="search_button"  data-url="{{ url('category/all_items') }}">{{ translate('Search') }}</button>
                 </div>
               </div>              
 

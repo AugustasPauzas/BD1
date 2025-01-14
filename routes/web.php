@@ -15,6 +15,9 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UserControlController;
 use App\Http\Controllers\UserRoleController;
 
+use App\Http\Controllers\LanguageController;
+
+
 
 
 
@@ -38,13 +41,21 @@ Route::get('/orders-admin', [OrdersController::class, 'Orders_Admin'])->name('Or
 Route::get('/users', [UserControlController::class, 'UserControl'])->name('UserControl');
 
 
+Route::get('/language/{lang}', [LanguageController::class, 'Language'])->name('language');
+Route::get('/language-update/{lang}', [LanguageController::class, 'Language_update'])->name('language-update');
+
+
+Route::post('/update_translation/{lang}', [LanguageController::class, 'update_translation'])->name('update_translation');
+
+
+
 Route::get('/User_Change_To_Blocked/{user_id}', [UserRoleController::class, 'User_Change_To_Blocked'])->name('User_Change_To_Blocked');
 Route::get('/User_Change_To_Regular/{user_id}', [UserRoleController::class, 'User_Change_To_Regular'])->name('User_Change_To_Regular');
 Route::get('/User_Change_To_Administrator/{user_id}', [UserRoleController::class, 'User_Change_To_Administrator'])->name('User_Change_To_Administrator');
 Route::get('/User_Change_To_Owner/{user_id}', [UserRoleController::class, 'User_Change_To_Owner'])->name('User_Change_To_Owner');
-Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');;
+Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');
 
-Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');;
+Route::get('/Live_User_List',[UserRoleController::class, 'Live_User_List'])->name('Live_User_List');
 
 
 
