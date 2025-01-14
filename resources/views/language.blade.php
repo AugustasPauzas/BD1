@@ -84,13 +84,13 @@
             <p>
                 @switch($lang->status)
                     @case(0)
-                        Waiting Translation
+                    {{ translate('Waiting Translation') }}
                         @break
                     @case(1)
-                        Translated
+                    {{ translate('Translated') }}
                         @break
                     @default
-                        Unknown Status
+                    {{ translate('Unknown Status') }}
                 @endswitch
             </p>
             

@@ -21,7 +21,8 @@ $VarWebsiteLocation = "Pramonės pr. 20";
         <div class="col-md-6 mt-md-0 mt-3">
 
             <h5 class="text-uppercase ">{{ $VarWebsiteNameLong }}</h5>
-            <p class="text_center_edges">Welcome to our e-commerce. We’re your go-to destination for top-quality PC parts and accessories. Whether you're building a custom rig or upgrading your current setup, we've got everything you need- from processors and GPUs to the latest peripherals. Enjoy fast shipping, competitive prices, and expert customer support. Happy building!</p>
+            <p class="text_center_edges">
+                {{ translate("Welcome to our e-commerce. We’re your go-to destination for top-quality PC parts and accessories. Whether you're building a custom rig or upgrading your current setup, we've got everything you need- from processors and GPUs to the latest peripherals. Enjoy fast shipping, competitive prices, and expert customer support. Happy building!") }}</p>
         </div>
 
 
@@ -54,7 +55,7 @@ $VarWebsiteLocation = "Pramonės pr. 20";
         <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- kontaktai -->
-            <h5 class="remain_center text-uppercase">Contact information</h5>
+            <h5 class="remain_center text-uppercase">{{ translate('Contact information') }}</h5>
             
             <table class="remain_center">
             <tr class = "list-unstyled">
@@ -90,13 +91,13 @@ $VarWebsiteLocation = "Pramonės pr. 20";
             <div class="row">
                 <div class="col-lg-8">
                             <p>
-                                We use cookies to ensure you get the best experience on our website. 
-                                <a href="/privacy-policy" target="_blank">Learn more</a>
+                                {{ translate('We use cookies to ensure you get the best experience on our website. ') }}
+                                <a href="/privacy-policy" target="_blank">{{ translate('Learn more') }}</a>
                             </p>      
                             </div>
                             <div class="col-lg-4 remain_end ">
-                            <button id="reject_btn" class="reject_btn">Reject</button> <!-- New Reject button -->
-                            <button id="accept_btn" class="accept_btn">Accept</button>   
+                            <button id="reject_btn" class="reject_btn">{{ translate('Reject') }}</button> 
+                            <button id="accept_btn" class="accept_btn">{{ translate('Accept') }}</button>   
                             </div>
             </div>
             
