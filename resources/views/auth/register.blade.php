@@ -16,7 +16,7 @@
             
                 <!-- Name -->
                 <div class="mb-3 extra_big_padding_top">
-                    <label for="name" class="form-label">{{ __('Name') }}</label>
+                    <label for="name" class="form-label">{{ __(translate("Name")) }}</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required autofocus autocomplete="name">
                     @error('name')
                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -25,7 +25,7 @@
             
                 <!-- Email Address -->
                 <div class="mb-3">
-                    <label for="email" class="form-label">{{ __('Email') }}</label>
+                    <label for="email" class="form-label">{{ __(translate("Email")) }}</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required autocomplete="username">
                     @error('email')
                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -34,7 +34,7 @@
             
                 <!-- Password -->
                 <div class="mb-4">
-                    <label for="password" class="form-label">{{ __('Password') }}</label>
+                    <label for="password" class="form-label">{{ __(translate("Password")) }}</label>
                     <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password">
                     @error('password')
                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -43,7 +43,7 @@
             
                 <!-- Confirm Password -->
                 <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
+                    <label for="password_confirmation" class="form-label">{{ __(translate("Confirm Password")) }}</label>
                     <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required autocomplete="new-password">
                     @error('password_confirmation')
                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -52,10 +52,10 @@
             
                 <div class="d-flex justify-content-end mt-4">
                     <a href="{{ route('login') }}" class="text-decoration-none text-muted me-4">
-                        {{ __('Already registered?') }}
+                        {{ __(translate("Already registered?")) }}
                     </a>
                     <button type="submit" class="btn btn-primary">
-                        {{ __('Register') }}
+                        {{ __(translate("Register")) }}
                     </button>
                 </div>
             </form>

@@ -47,7 +47,7 @@ $(document).on('click', '.cart_remove_item', function(event) {
         type: 'GET',
         dataType: 'json', 
         success: function(response) {
-            displayMessage(response.message, 1);
+            //displayMessage(response.message, 1);
             reload_cart();
         },
         error: function(xhr) {
