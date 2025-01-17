@@ -17,7 +17,7 @@
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.144"/>
                                 <g id="SVGRepo_iconCarrier"> <path d="M5 12H19M5 12L11 6M5 12L11 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
                             </svg>                            
-                            {{translate("Previos Step")}}
+                            {{translate("Previous Step")}}
 
 
                         </button>                            

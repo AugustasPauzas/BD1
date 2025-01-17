@@ -35,7 +35,7 @@ class UserRoleController extends Controller
             error_log('user not found:'.$user_id);
         }
 
-        return response()->json(['message' => 'Role Changed successfully']);
+        return response()->json(['message' => translate("Role Changed successfully")]);
 
     }
 
@@ -61,7 +61,7 @@ class UserRoleController extends Controller
             error_log('user not found:'.$user_id);
         }
 
-        return response()->json(['message' => 'Role Changed successfully']);
+        return response()->json(['message' => translate("Role Changed successfully")]);
 
     }
     public function User_Change_To_Administrator ($user_id){
@@ -87,7 +87,7 @@ class UserRoleController extends Controller
         }
         //$data_users = User::all();
 
-        return response()->json(['message' => 'Role Changed successfully']);
+        return response()->json(['message' => translate("Role Changed successfully")]);
 
     }
 
@@ -125,7 +125,7 @@ class UserRoleController extends Controller
         }
         //$data_users = User::all();
 
-        return response()->json(['message' => 'Role Changed successfully']);
+        return response()->json(['message' => translate("Role Changed successfully")]);
 
     }
 
@@ -144,7 +144,7 @@ class UserRoleController extends Controller
 
         return response()->json([
             'view' => view('partials.Live_user_list', compact('data_users'))->render(),
-            'message' => 'Item Cart Reloaded'
+            'message' => 'User List Reloaded'
         ]); 
 
         //return view('users', compact('data_users'));

@@ -18,7 +18,7 @@
                     <a href="/view/{{$data_item->id}}">
                         <button type="button" class="btn btn-primary btn">
                             <svg class="extra_small_svg edit_svg_color" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="returnIconTitle" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" > <title id="returnIconTitle"></title> <path d="M19,8 L19,11 C19,12.1045695 18.1045695,13 17,13 L6,13"/> <polyline points="8 16 5 13 8 10"/> </svg>                        
-                            Return
+                            {{translate("Return")}}
                         </button>                      
                     </a>
     

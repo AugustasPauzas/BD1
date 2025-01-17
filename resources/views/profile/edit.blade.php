@@ -8,7 +8,7 @@
         <div class="col-md-12  primary_background_color default_padding default_margin default_radius under_shadow">
             <div class="default_padding no_margin_sides ">
                 <h2 class="">
-                    {{ __('Profile') }}
+                    {{ __(translate("Profile")) }}
                 </h2>
 
             </div>

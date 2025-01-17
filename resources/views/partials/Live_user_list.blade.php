@@ -69,7 +69,7 @@
                         @if (Auth::user()->id != $user['id']  && $user['level'] < Auth::user()->level)
                         <div class="dropdown">
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select Role
+                            {{translate("Select Role")}}
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             

@@ -332,7 +332,7 @@
   
                             <a class="no_ancor_decoration" href="/add/item/cart/{{$i->id}}">
                             <div class="radius_bottom_5_px cart_button">
-                                <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
+                                <strong>{{ translate('Add To') }} <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
                             </div>    
                             </a>
     

@@ -160,15 +160,15 @@ $VarWebsiteLogo = "/images/logo64.png";
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
+                  <a class="nav-link" href="{{ url('/profile') }}">{{ translate('Profile') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/orders') }}">Orders</a>
+                  <a class="nav-link" href="{{ url('/orders') }}">{{ translate('Orders') }}</a>
                 </li>
                 <li class="nav-item">
                   <form action="{{ route('logout') }}" method="POST">
                       @csrf
-                      <button type="" class="btn btn-link nav-link">Logout</button>
+                      <button type="" class="btn btn-link nav-link">{{ translate('Logout') }}</button>
                   </form>
                 </li>
               </ul>
@@ -177,13 +177,13 @@ $VarWebsiteLogo = "/images/logo64.png";
               
           @else
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/login') }}">Log in</a>
+              <a class="nav-link" href="{{ url('/login') }}">{{ translate('Log in') }}</a>
             </li>
 
 
               @if (Route::has('register'))
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    <a class="nav-link" href="{{ url('/register') }}">{{ translate('Register') }}</a>
                   </li>
               @endif
           @endauth
