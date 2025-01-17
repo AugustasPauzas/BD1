@@ -9,7 +9,7 @@
 
 <div class="container">
 <div class= "row no_margin primary_background_color default_padding default_margin default_radius under_shadow default_large_margin_bottom">
-    <p class="text-center"><strong>Create New Rule</strong></p>
+    <p class="text-center"><strong>{{translate("Create New Rule")}}</strong></p>
 <div class="col">
     
     <div class="">
@@ -49,7 +49,7 @@
                 </select>
             </div>
             <div class="col-md-2 default_margin_bottom">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">{{translate("Submit")}}</button>
             </div>
         </form>
     </div>
@@ -61,7 +61,7 @@
 
 <div class="row default_padding primary_background_color default_padding default_margin default_radius under_shadow ">
 <div class="col ">
-<p><strong>Rule Set:</strong></p>
+<p><strong>{{translate("Rule Set:")}}</strong></p>
 
 
 <div id="rule-container">

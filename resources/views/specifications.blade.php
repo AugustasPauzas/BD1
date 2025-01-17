@@ -7,14 +7,14 @@
         <div class="row no_margin_sides">
             <div class="col-12">
                 <div class="row no_margin_sides  primary_background_color default_padding default_large_margin default_radius under_shadow">
-                    <p ><strong class="remain_center">Specification Table</strong>  </p>
+                    <p ><strong class="remain_center">{{translate("Specification Table")}}</strong>  </p>
                     <table class="table-striped table-hover ">
                         <thead>
                             <tr>
-                              <th scope="col">ID</th>
-                              <th scope="col">Item ID</th>
-                              <th scope="col">Parameter ID</th>
-                              <th scope="col">Value ID</th>
+                              <th scope="col">{{translate("ID")}}</th>
+                              <th scope="col">{{translate("Item ID")}}</th>
+                              <th scope="col">{{translate("Parameter ID")}}</th>
+                              <th scope="col">{{translate("Value ID")}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,13 +36,13 @@
         <div class="row no_margin_sides">
             <div class="col-md-6">
                 <div class="row no_margin_sides primary_background_color default_padding default_large_margin default_radius under_shadow">
-                    <p ><strong class="remain_center">Parameter Table</strong>  </p>
+                    <p ><strong class="remain_center">{{translate("Parameter Table")}}</strong>  </p>
                     <table class="table-striped table-hover ">
                         <thead>
                             <tr>
-                              <th scope="col">ID</th>
-                              <th scope="col">Parameter</th>
-                              <th scope="col">Times Used</th>
+                              <th scope="col">{{translate("ID")}}</th>
+                              <th scope="col">{{translate("Parameter")}}</th>
+                              <th scope="col">{{translate("Times Used")}}</th>
     
                             </tr>
                         </thead>
@@ -60,7 +60,7 @@
                                       }
                                     }
                                   @endphp
-                                  {{$count}} times
+                                  {{$count}} {{translate("times")}}
                               </td>
                             </tr>
                             @endforeach
@@ -75,7 +75,7 @@
                           <input name="parameter_name" type="" class="form-control"  placeholder="Parameter">
                         </div>
                         <div class="col-3">
-                          <button type="submit" class="btn btn-primary mb-3">Add New</button>
+                          <button type="submit" class="btn btn-primary mb-3">{{translate("Add New")}}</button>
                         </div>
                     </form>
                 </div>
@@ -83,13 +83,13 @@
             </div>
             <div class="col-md-6 ">
                 <div class="row no_margin_sides primary_background_color default_padding default_large_margin default_radius under_shadow">
-                    <p ><strong class="remain_center">Value Table</strong>  </p>
+                    <p ><strong class="remain_center">{{translate("Value Table")}}</strong>  </p>
                     <table class="table-striped table-hover ">
                         <thead>
                             <tr>
-                              <th scope="col">ID</th>
-                              <th scope="col">Value</th>
-                              <th scope="col"> Times Used</th>
+                              <th scope="col">{{translate("ID")}}</th>
+                              <th scope="col">{{translate("Value")}}</th>
+                              <th scope="col">{{translate("Times Used")}}</th>
     
                             </tr>
                         </thead>
@@ -107,7 +107,7 @@
                                     }
                                   }
                                 @endphp
-                                {{$count}} times
+                                {{$count}} {{translate("times")}}
                               </td>
                             </tr>
                             @endforeach
@@ -124,7 +124,7 @@
                           <input name="value_name" type="" class="form-control"  placeholder="Value">
                         </div>
                         <div class="col-3">
-                          <button type="submit" class="btn btn-primary mb-3">Add New</button>
+                          <button type="submit" class="btn btn-primary mb-3">{{translate("Add New")}}</button>
                         </div>
                     </form>
                 </div>

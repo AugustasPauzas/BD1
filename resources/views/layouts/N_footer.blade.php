@@ -20,7 +20,7 @@ $VarWebsiteLocation = "Pramonės pr. 20";
         <!-- Column -->
         <div class="col-md-6 mt-md-0 mt-3">
 
-            <h5 class="text-uppercase ">{{ $VarWebsiteNameLong }}</h5>
+            <h5 class="text-uppercase ">{{ translate('Computer Parts') }}</h5>
             <p class="text_center_edges">
                 {{ translate("Welcome to our e-commerce. We’re your go-to destination for top-quality PC parts and accessories. Whether you're building a custom rig or upgrading your current setup, we've got everything you need- from processors and GPUs to the latest peripherals. Enjoy fast shipping, competitive prices, and expert customer support. Happy building!") }}</p>
         </div>

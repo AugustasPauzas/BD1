@@ -32,13 +32,13 @@
     <table id="userTable" class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Level</th>
-                <th>Change Role</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>{{translate("ID")}}</th>
+                <th>{{translate("Name")}}</th>
+                <th>{{translate("Email")}}</th>
+                <th>{{translate("Level")}}</th>
+                <th>{{translate("Change Role")}}</th>
+                <th>{{translate("Created At")}}</th>
+                <th>{{translate("Updated At")}}</th>
             </tr>
         </thead>
         <tbody>
@@ -50,19 +50,19 @@
                     <td>
                         @switch($user['level'])
                             @case(-1)
-                                Blocked
+                            {{translate("Blocked")}}
                                 @break
                             @case(1)
-                                User
+                            {{translate("User")}}
                                 @break
                             @case(2)
-                                Admin
+                            {{translate("Admin")}}
                                 @break
                             @case(3)
-                                Owner
+                            {{translate("Owner")}}
                                 @break
                             @default
-                                Unknown
+                            {{translate("Unknown")}}
                         @endswitch
                     </td>
                     <td>
@@ -74,13 +74,13 @@
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             
                             @if (Auth::user()->level >= 3 )
-                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Transfer Owner">Transfer Owner</a></li>
+                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Transfer Owner">{{translate("Transfer Owner")}}</a></li>
                             
-                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Administrator">Administrator</a></li>
+                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Administrator">{{translate("Administrator")}}</a></li>
                             @endif
                             @if (Auth::user()->level >= 2 )
-                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="User">Regular User</a></li>
-                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Blocked">Blocked User</a></li>
+                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="User">{{translate("Regular User")}}</a></li>
+                            <li><a class="dropdown-item" data-user-id="{{ $user['id']  }}" href="#" data-role="Blocked">{{translate("Blocked User")}}</a></li>
                             @endif
                           </ul>
                         </div>
@@ -101,15 +101,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="confirmationModalLabel">Confirm Action</h5>
+          <h5 class="modal-title" id="confirmationModalLabel">{{translate("Confirm Action")}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to change the role to <span id="roleName"></span>?
+          {{translate("Are you sure you want to change the role to")}} <span id="roleName"></span>?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" id="confirmBtn">Confirm</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate("Cancel")}}</button>
+          <button type="button" class="btn btn-primary" id="confirmBtn">{{translate("Confirm")}}</button>
         </div>
       </div>
     </div>

@@ -9,10 +9,10 @@
     <p class="d-flex justify-content-between align-items-center">
         <a href="/orders">
             <button type="button" class="default_margin btn btn-secondary">
-                <strong>Back</strong>
+                <strong>{{translate("Back")}}</strong>
             </button>
         </a>
-        <strong class="mx-auto">Order information</strong>
+        <strong class="mx-auto">{{translate("Order information")}}</strong>
         
 
     </p>
@@ -23,7 +23,7 @@
     <div class="col-md-6">
         
 
-        <p class="text-center default_margin default_padding"><strong>Items </strong></p>
+        <p class="text-center default_margin default_padding"><strong>{{translate("Items")}}</strong></p>
 
         @foreach ($orders as $order) 
             <div class="secondary_background_color default_margin default_radius">
@@ -65,7 +65,7 @@
                     </p>
                     <p>
                         
-                    <p>Price: {{$order->quantity}} x {{ number_format($order->price, 2) }}€</p>
+                    <p>{{translate("Price:")}} {{$order->quantity}} x {{ number_format($order->price, 2) }}€</p>
                     </p>
                     </div>
                 </div>
@@ -76,57 +76,59 @@
         @foreach ($orders as $order) 
         @php $total = $total + ($order->quantity* $order->price)@endphp
         @endforeach
-        <p class="text-end secondary_background_color default_padding default_margin default_radius"><strong>Total: {{$total}} €</strong></p>
+        <p class="text-end secondary_background_color default_padding default_margin default_radius"><strong>{{translate("Total:")}} {{$total}} €</strong></p>
     </div>
     <div class="col-md-6">
-        <p class="text-center default_margin default_padding"><strong>Reciever </strong></p>
+        <p class="text-center default_margin default_padding"><strong>{{translate("Reciever")}} </strong></p>
         <div class="default_padding secondary_background_color default_radius"> 
         <p>First Name: {{$orderSingle->name}}</p>
         <p>Last Name: {{$orderSingle->lastname}}</p>
         <p>Phone Number: {{$orderSingle->contact_phone}}</p>
         <p>Email: {{$orderSingle->contact_email}}</p>
         </div>
-        <p class="text-center default_margin default_padding"><strong>Delivery Details </strong></p>
+        <p class="text-center default_margin default_padding"><strong>{{translate("Delivery Details")}} </strong></p>
         <div class="default_padding secondary_background_color default_radius"> 
 
-        <p>Country : 
+        <p>{{translate("Country:")}}
             @if ($orderSingle->deliver_country == "+370")
-            Lithuania
+            
+            {{translate("Lithuania")}}
             @endif
             @if ($orderSingle->deliver_country == "+371")
-            Latvia
+            
+            {{translate("Latvia")}}
             @endif
             @if ($orderSingle->deliver_country == "+372")
-            Estonia
+            {{translate("Estonia")}}
             @endif
             @if ($orderSingle->deliver_country == "+48")
-            Poland
+            {{translate("Poland")}}
             @endif
         </p>
-        <p>Postal Code: {{$orderSingle->deliver_postcode}}</p>
-        <p>City: {{$orderSingle->deliver_city}}</p>
-        <p>Delivery Address: {{$orderSingle->deliver_address}}</p>
+        <p>{{translate("Postal Code:")}} {{$orderSingle->deliver_postcode}}</p>
+        <p>{{translate("City:")}} {{$orderSingle->deliver_city}}</p>
+        <p>{{translate("Delivery Address:")}} {{$orderSingle->deliver_address}}</p>
         </div>
 
 
-        <p class="text-center default_margin default_padding"><strong>Status </strong></p>
+        <p class="text-center default_margin default_padding"><strong>{{translate("Status")}} </strong></p>
         <div class="default_padding secondary_background_color default_radius"> 
 
         @if ($orderSingle->status == "1")
-            <p> <strong>Order Received Awaiting Payment For The Total</strong> </p>
+            <p> <strong>{{translate("Order Received Awaiting Payment For The Total")}}</strong> </p>
             
             <div class="text-end">
-                <button type="button" class="btn btn-warning text-end"> <strong>Proceed To Payment</strong></button>
+                <button type="button" class="btn btn-warning text-end"> <strong>{{translate("Proceed To Payment")}}</strong></button>
             </div>
         @endif
         @if ($orderSingle->status == "2")
-        <p>Payment Received Delivery In Progress</p>
+        <p>{{translate("Payment Received Delivery In Progress")}}</p>
         @endif
         @if ($orderSingle->status == "3")
-        <p>Order Is Out For Delivery</p>
+        <p>{{translate("Order Is Out For Delivery")}}</p>
         @endif
         @if ($orderSingle->status == "4")
-        <p>Order Delivered</p>
+        <p>{{translate("Order Delivered")}}</p>
         @endif
         </div>
         <br>

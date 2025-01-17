@@ -165,7 +165,7 @@ $total_price=0;
                                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
                                             <g id="SVGRepo_iconCarrier"> <path d="M4 12.6111L8.92308 17.5L20 6.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
                                         </svg>
-                                        Compatable With 
+                                        {{translate("Compatable With ")}}
                                         <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
                                             <span class="p_cart_compatable">
                                                 {{$iii->item_name}}
@@ -177,8 +177,9 @@ $total_price=0;
                                     <strong style="color: rgb(0, 0, 0)">
                                         <svg class="red_cross_svg extra_small_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" />
-                                        </svg>                                        
-                                        Not Compatable With 
+                                        </svg>     
+                                        {{translate("Not Compatable With ")}}                                   
+                                        
                                         <?xml version="1.0" encoding="utf-8"?>
                                         <a class="no_ancor_decoration" href="view/{{$iii->item_id}}">
                                             <span class="p_cart_incompatable">
@@ -186,9 +187,9 @@ $total_price=0;
                                                 {{$iii->category_name}}
                                             </span>
                                         </a>
-                                        Try Looking For
+                                        {{translate("Try Looking For")}}
                                         <a class="no_ancor_decoration p_cart_incompatable"  href="category/{{$iii->category_id}}?fa[]={{$iii->parameter_id}}:{{$value}}">
-                                            {{$value_name}}
+                                            {{translate($value_name)}}
                                             {{$iii->category_name}}
                                         </a>
                                     </strong>
@@ -234,7 +235,7 @@ $total_price=0;
     <circle cx="15" cy="10" r="1.25" fill="#33363F" stroke="#33363F" stroke-width="0.5" stroke-linecap="round"/>
     </svg>                                
 </p>
-<p class="text_align_center font_120"> <strong>Your cart is empty.</strong></p>
+<p class="text_align_center font_120"> <strong>{{translate("Your cart is empty.")}}</strong></p>
 
 </div>
 @endif
@@ -244,7 +245,7 @@ $total_price=0;
 <div class="row no_margin_sides default_radius ">
     <div class="col-lg-7"></div>
     <div class="col-lg-5">
-        <p ><strong class="remain_center">Total: {{ number_format($total_price, 2) }}€</strong>  </p>
+        <p ><strong class="remain_center">{{translate("Total:")}} {{ number_format($total_price, 2) }}€</strong>  </p>
     </div>
 </div>
 
@@ -255,7 +256,7 @@ $total_price=0;
     <div class="col-12 text-end">
         <a href="cart/step-2">
             <button type="button" class="btn btn-success btn">
-                Next Step
+                {{translate("Next Step")}}
                 <?xml version="1.0" encoding="utf-8"?>
                 <svg class="small_svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 12L20 12M20 12L17 9M20 12L17 15" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

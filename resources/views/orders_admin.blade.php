@@ -19,7 +19,7 @@
 
                     <span>
                         <svg class="small_svg" viewBox="0 0 512 512">
-                            <title>group</title>
+                            <title>{{translate("group")}}</title>
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="icon" fill="#000000" transform="translate(64.000000, 64.000000)">
                                     <path d="M106.666667,1.42108547e-14 L106.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,341.333333 L106.666667,341.333333 L106.666667,384 L1.42108547e-14,384 L1.42108547e-14,1.42108547e-14 L106.666667,1.42108547e-14 Z M384,1.42108547e-14 L384,384 L277.333333,384 L277.333333,341.333333 L341.333333,341.333333 L341.333333,42.6666667 L277.333333,42.6666667 L277.333333,1.42108547e-14 L384,1.42108547e-14 Z M298.666667,256 L298.666667,298.666667 L85.3333333,298.666667 L85.3333333,256 L298.666667,256 Z M298.666667,170.666667 L298.666667,213.333333 L85.3333333,213.333333 L85.3333333,170.666667 L298.666667,170.666667 Z M298.666667,85.3333333 L298.666667,128 L85.3333333,128 L85.3333333,85.3333333 L298.666667,85.3333333 Z" id="Combined-Shape">
@@ -28,7 +28,7 @@
                         </svg>
                     </span>
 
-                    Order Group: 
+                    {{translate("Order Group:")}}
                     <strong>{{$order_group}}</strong>
                     <span class="large_padding_left">
                     @php $order_status=0 @endphp
@@ -51,16 +51,16 @@
                     </svg>
 
                     @if ($order_status == "1")
-                    Awaiting Payment
+                    {{translate("Awaiting Payment")}}
                     @endif
                     @if ($order_status == "2")
-                    Payment Received Delivery In Progress
+                    {{translate("Payment Received Delivery In Progress")}}
                     @endif
                     @if ($order_status == "3")
-                    Order Is Out For Delivery
+                    {{translate("Order Is Out For Delivery")}}
                     @endif
                     @if ($order_status == "4")
-                    Order Delivered
+                    {{translate("Order Delivered")}}
                     @endif
 
 
@@ -110,11 +110,11 @@
                     
                     <div class="d-flex flex-column justify-content-end align-items-end full_height" >
                         <p class="default_padding mb-2">
-                            Total: <strong>{{ $total }} €</strong>
+                            {{translate("Total:")}} <strong>{{ $total }} €</strong>
                         </p>
                         <a class="no_ancor_decoration" href="order/{{ $order_group }}">
                             <button type="button" class="btn btn-success default_margin">
-                                <strong>Review Order</strong>
+                                <strong>{{translate("Review Order")}}</strong>
                             </button>
                         </a>
                     </div>

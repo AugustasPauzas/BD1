@@ -98,7 +98,7 @@
                                         @endif
                                 
                                         @if ($item->status==1)
-                                        <p class="status_text default_margin default_radius">Not Public</p>
+                                        <p class="status_text default_margin default_radius">{{ translate('Not Public') }} </p>
                                         @endif
                                     </div>
                                 </a>
@@ -109,7 +109,7 @@
                                 <p class="small_margin" ><strong class="remain_center price_p">{{ number_format($item->price, 2) }}<span class="Price_small_p"></span> €</strong>    </p>
                                 <a class="no_ancor_decoration" href="/add/item/cart/{{$item->id}}">
                                 <div class="radius_bottom_5_px cart_button">
-                                    <strong>Add To <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
+                                    <strong>{{ translate('Add To') }} <img class="extra_small_svg" src="{{ asset('svg/cart-shopping-svgrepo-com.svg') }}" alt=""></strong> 
                                 </div>    
                                 </a>
 

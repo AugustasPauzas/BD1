@@ -11,26 +11,26 @@
 <div class="default_container_margin">
 
     <div class="container primary_background_color default_padding default_margin default_radius under_shadow">
-        <p ><strong class="remain_center">Add New Category</strong>  </p>
+        <p ><strong class="remain_center">{{translate("Add New Category")}}</strong>  </p>
         
         <form id="add_new_category_form" method="post">
             @csrf
             <div class="row align-items-end">
                 <!-- Category Name Input -->
                 <div class="form-group col-md-5">
-                    <label for="category">Category Name</label>
+                    <label for="category">{{translate("Category Name")}}</label>
                     <input id="category" name="category" type="text" value="{{ old('categoryname') }}" class="form-control" placeholder="Category Name">
                 </div>
         
                 <!-- Full Category Name Input -->
                 <div class="form-group col-md-5">
-                    <label for="category_full">Full Category Name</label>
+                    <label for="category_full">{{translate("Full Category Name")}}</label>
                     <input id="category_full" name="category_full" type="text" value="{{ old('fullcategoryname') }}" class="form-control" placeholder="Full Category Name">
                 </div>
         
                 <!-- Submit Button -->
                 <div class="form-group col-md-2 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">{{translate("Add")}}</button>
                 </div>
             </div>
         </form>

@@ -2,7 +2,7 @@
     @csrf
     <div class="row">
         <div class="col-5">
-            <label for="parameter_name">Parameter</label>
+            <label for="parameter_name">{{translate("Parameter")}}</label>
             <div class="input-group mb-3 no_margin_bottom" style="position: relative;">
                 <input type="text" name="parameter_name" id="parameter_name" class="form-control" value="{{$first_parameter_name = $data_specifications_table_all_items->first()->parameter_name ?? null}}" required onkeyup="parameter_add_filterDropdown()" onfocus="parameter_add_openDropdown()" autocomplete="off" placeholder="Enter Parameter">
                 <ul class="dropdown-menu dropdown-menu-end full_width" id="parameter_add_dropdown_options">
@@ -13,10 +13,10 @@
             </div>
         </div>
         <div class="col-7">
-            <label for="value_name">Value</label>
+            <label for="value_name">{{translate("Value")}}</label>
             <div class="input-group mb-3 no_margin_bottom">
                 <input id="clear_value_after_submit" type="text" placeholder="Enter Value" name="value_name" class="form-control" required>
-                <button type="submit" class="btn btn-success ajax_reload_update_specification ajax_reload_specification_add_form" data-item-id="{{ $data_item->id }}">Create Row</button>
+                <button type="submit" class="btn btn-success ajax_reload_update_specification ajax_reload_specification_add_form" data-item-id="{{ $data_item->id }}">{{translate("Create Row")}}</button>
             </div>
         </div>
     </div>

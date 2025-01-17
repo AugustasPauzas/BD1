@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-lg-3 default_large_margin_bottom hide_on_lg">
                 <div class="primary_background_color default_padding default_margin default_radius under_shadow">
-                    <p ><strong class="remain_center default_padding">You Might Also Like </strong>  </p>
+                    <p ><strong class="remain_center default_padding">{{translate("You Might Also Like")}} </strong>  </p>
 
                     <div class="screen_height_70 custom-scroll">
                         @foreach ($data_random_items as $ri)
@@ -160,7 +160,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    <strong>Item Name</strong> 
+                                    <strong>{{translate("Item Name")}}</strong> 
                                 </div>                            
                             </div>
                         </div>
@@ -168,11 +168,11 @@
                             <div class="row no_margin_sides">
                                 <div class="col-6">
                                     <div class="col_cart_img remain_center ">
-                                        <strong>Quantity</strong>
+                                        <strong>{{translate("Quantity")}}</strong>
                                     </div>
                                 </div>
                                 <div class="col-4  ">
-                                    <strong>Price</strong>
+                                    <strong>{{translate("Price")}}</strong>
                                 </div>   
                                 <div class="col-2  ">
                                 </div>                            

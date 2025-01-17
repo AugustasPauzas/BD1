@@ -14,7 +14,7 @@
             </div>
         </a>
     </div>
-    <p>Position: {{ $image->position }}</p>
+    <p>{{translate("Position:")}} {{ $image->position }}</p>
 </div>
 
 @endforeach

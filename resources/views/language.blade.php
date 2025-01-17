@@ -26,10 +26,10 @@
     <div class="col"> 
         <div class="d-flex justify-content-start mb-3">
             <!-- Button to create a new translation -->
-            <a href="{{ route('language', ['lang' => $lang]) }}" class="btn btn-success mr-2">Create Translation</a>
+            <a href="{{ route('language', ['lang' => $lang]) }}" class="btn btn-success mr-2">{{translate("Create Translation")}}</a>
         
             <!-- Button to update a translation (you may need to adjust this to match your structure) -->
-            <a href="{{ route('language-update', ['lang' => $lang]) }}" class="btn btn-primary">Update Translation</a>
+            <a href="{{ route('language-update', ['lang' => $lang]) }}" class="btn btn-primary">{{translate("Update Translation")}}</a>
         </div>
         
 
@@ -73,7 +73,7 @@
 
             <form action="{{ route('update_translation', $lang->id) }}"  method="POST">
                 @csrf
-                <textarea name="translated_text" class="form-control" placeholder="Enter translation" rows="2">{{ $lang->translated_text }}</textarea>
+                <textarea name="translated_text" class="form-control" placeholder="{{translate("Enter translation")}}" rows="2">{{ $lang->translated_text }}</textarea>
 
 
             

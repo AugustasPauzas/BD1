@@ -8,7 +8,7 @@
     <div class="row">
     <div class="col default_margin">
     <div class="default_padding">
-        <p> liked items here</p>
+        <p> {{ translate('liked items here') }}</p>
     </div>
     </div>
     </div>

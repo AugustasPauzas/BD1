@@ -7,7 +7,7 @@ $rulecount++;
 @endphp
 <p>
 <strong>#{{$rulecount}}</strong>
-Where Category 
+{{translate("Where Category ")}}
 <strong>
 @foreach ($data_category as $ii)
     @if ($ii->id == $i->category_id_1)
@@ -17,7 +17,7 @@ Where Category
 @endforeach
 (ID: {{$i->category_id_1}}) 
 </strong> 
-And Parameter 
+{{translate("And Parameter ")}}
 <strong> 
 @foreach ($data_parameter as $ii)
     @if ($ii->id == $i->parameter_id_1)
@@ -28,7 +28,7 @@ And Parameter
 (ID: {{$i->parameter_id_1}})
 </strong> 
 = 
-Category 
+{{translate("Category")}} 
 
 <strong>
 @foreach ($data_category as $ii)
@@ -39,7 +39,7 @@ Category
 @endforeach 
 (ID: {{$i->category_id_2}})
 </strong> 
-And Parameter 
+{{translate("And Parameter ")}}
 <strong>
     @foreach ($data_parameter as $ii)
         @if ($ii->id == $i->parameter_id_2)
@@ -50,7 +50,8 @@ And Parameter
     (ID: {{$i->parameter_id_2}})
 </strong>
 <a class="delete_rule" href="delete" data-rule-id="{{$i->id}}">
-    delete
+    {{translate("delete")}}
+    
 </a>
 
 </p>

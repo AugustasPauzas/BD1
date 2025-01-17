@@ -23,7 +23,7 @@ $equalrow = 1;
             @csrf
             <div class="input-group mb-3 no_margin_bottom">
                 <input type="text" name="name" class="form-control" value="{{ $parameter_name }}" required>
-                <button type="submit" class="btn btn-primary ajax_reload_update_specification" data-item-id="{{ $data_item->id }}">Update</button>
+                <button type="submit" class="btn btn-primary ajax_reload_update_specification" data-item-id="{{ $data_item->id }}">{{translate("Update")}}</button>
             </div>
             <input type="hidden" name="item_id" value="{{ $data_item->id }}">
             
@@ -58,7 +58,7 @@ $equalrow = 1;
                     @csrf
                     <div class="input-group mb-3 no_margin_bottom">
                         <input type="text" name="name" class="form-control" placeholder="Value"  required>
-                        <button type="submit" class="btn btn-success ajax_reload_update_specification" data-item-id="{{ $data_item->id }}" >Add</button>
+                        <button type="submit" class="btn btn-success ajax_reload_update_specification" data-item-id="{{ $data_item->id }}" >{{translate("Add")}}</button>
                     </div>
                     <input type="hidden" name="item_id" value="{{ $data_item->id }}">
                     <input type="hidden" name="parameter_id" value="{{  $Parameter_ID }}">

@@ -55,7 +55,7 @@ $total_price=0;
                             @endif
                         @endforeach
                         @else
-                            <p>Invalid quant.</p>
+                            <p>{{translate("Invalid quant.")}}</p>
                         @endif
                          x
                         {{ number_format($i->price, 2) }}€
@@ -82,7 +82,7 @@ $total_price=0;
     <circle cx="15" cy="10" r="1.25" fill="#33363F" stroke="#33363F" stroke-width="0.5" stroke-linecap="round"/>
     </svg>                                
 </p>
-<p class="text_align_center font_120"> <strong>Your cart is empty.</strong></p>
+<p class="text_align_center font_120"> <strong>{{translate("Your cart is empty.")}}</strong></p>
 
 </div>
 @endif
@@ -91,7 +91,7 @@ $total_price=0;
 
 <div class="row no_margin_sides default_radius ">
     <div class="col-lg-12 text-end">
-        <p ><strong class="font_120">Total: {{ number_format($total_price, 2) }}€</strong>  </p>
+        <p ><strong class="font_120">{{translate("Total:")}} {{ number_format($total_price, 2) }}€</strong>  </p>
     </div>
 </div>
 

@@ -112,7 +112,7 @@
                         <!-- Price Filter -->
                         <div class=" ">
                         <div class="parameter-item parameter-item-price-only">
-                            <p><strong>Price Range</strong></p>
+                            <p><strong>{{translate("Price Range")}}</strong></p>
                             <div id="category_price_filter_slider" 
                                  data-min-price="{{ $minPrice }}" 
                                  data-max-price="{{ $maxPrice }}" 
@@ -127,7 +127,7 @@
                                  </div>
                             <input type="hidden" id="category_identifier" value="{{ $specified_category_id_or_name }}">
                                 <div class="d-flex">
-                                    <a id="apply_filter" href="" class="btn btn-outline-primary flex-fill">Apply</a>
+                                    <a id="apply_filter" href="" class="btn btn-outline-primary flex-fill">{{translate("Filter")}}</a>
                                 </div>
                             </div>
                         <br>
@@ -142,7 +142,7 @@
                         @foreach ($item_filter_parameters as $i)
                             @if (!in_array($i->parameter_name, $displayedParameters))  
                                 <div class="parameter-item">
-                                    <p> <strong>{{$i->parameter_name}} </strong> </p>
+                                    <p> <strong>{{translate("$i->parameter_name")}} </strong> </p>
                                     @php
                                     $displayedValues = []; 
                                     
@@ -166,7 +166,7 @@
                                                     id="filter_{{$ii->value_id}}"
                                                     onchange="updateFilterUrl()">
                                                 <label class="form-check-label" for="filter_{{$ii->value_id}}">
-                                                    {{$ii->value_name}} 
+                                                    {{translate("$ii->value_name")}}
                                                 </label>
                                             </div>
                                     
@@ -205,10 +205,10 @@
                                         {{ request()->query('order') == '' ? 'A-Z' : '' }}
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">Alphabeticly A-Z</a></li>
-                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">Alphabeticly Z-A</a></li>
-                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">Price Acen.</a></li>
-                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">Price Desc.</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphAcen']) }}">{{translate("Alphabeticly A-Z")}}</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'AlphDesc']) }}">{{translate("Alphabeticly Z-A")}}</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriAcen']) }}">{{translate("Price Acen.")}}</a></li>
+                                        <li><a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['order' => 'PriDesc']) }}">{{translate("Price Desc.")}}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -301,7 +301,7 @@
                                 <img id="replace_image_item_view" class="default_radius full_width_image image_cover" src=""   onerror="this.onerror=null; this.src='{{ url('/images/missingPicture.png') }}';"  alt="." >
                                 @endif
                                 @if ($i->status==1)
-                                <p class="status_text default_margin default_radius">Not Public</p>
+                                <p class="status_text default_margin default_radius">{{translate("Not Public")}}</p>
                                 @endif
                                 </div>
 
@@ -380,7 +380,7 @@
                         </svg>                     
                     </p>        
 
-                    <p class="text_align_center font_120"> <strong>No Items Found </strong></p>
+                    <p class="text_align_center font_120"> <strong>{{translate("No Items Found")}} </strong></p>
                     <br>
                     @endif
                     </div>

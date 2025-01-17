@@ -24,9 +24,9 @@
                 <div class="col-4">
                     <p class="font_110 no_padding   default_margin ">
                         @if ($i->status == 0)
-                            Inactive
+                        {{translate("Inactive")}}
                         @elseif ($i->status == 1)
-                            Active
+                        {{translate("Active")}}
                         @endif
 
                     </p>
@@ -34,9 +34,9 @@
                 <div class="col-8 ">
                     <div class="text-end">
                         @if ($i->status == 0)
-                        <button id="category_status_set_active" class="btn btn-success" data-category-id="{{$i->id}}"> Set Active</button>   
+                        <button id="category_status_set_active" class="btn btn-success" data-category-id="{{$i->id}}"> {{translate("Set Active")}}</button>   
                         @elseif ($i->status == 1)
-                        <button id="category_status_set_inactive" class="btn btn-danger"  data-category-id="{{$i->id}}"> Set Inactive</button>   
+                        <button id="category_status_set_inactive" class="btn btn-danger"  data-category-id="{{$i->id}}"> {{translate("Set Inactive")}}</button>   
                         @endif                      
                     </div>
                 </div>
@@ -63,45 +63,45 @@
                 </div>
                 <div class="col-xl-8">
                     <!--<p class=" default_padding"><strong>ID: </strong> {{$i->id}}</p> -->
-                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>Category Name <br> </strong></p>
+                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>{{translate("Category Name")}} <br> </strong></p>
 
                     <form id="update_category_name" method="POST">
                         @csrf
                         <div class="no_padding_left input-group mb-3 no_margin_bottom large_padding_sides">
                             <input type="text" name="category_name" class="form-control" value="{{ $i->category }}" required>
-                            <button type="submit" class="btn btn-primary ">Update</button>
+                            <button type="submit" class="btn btn-primary ">{{translate("Update")}}</button>
                         </div>
                         <input type="hidden" name="id" value="{{ $i->id }}">
                     </form>
                     
                     
 
-                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>Full Category Name: <br></strong></p>
+                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>{{translate("Full Category Name:")}} <br></strong></p>
                     
                     <form id="update_category_name_full"  method="POST">
                         @csrf
                         <div class="no_padding_left input-group mb-3 no_margin_bottom large_padding_sides">
                             <input type="text" name="category_name_full" class="form-control" value="{{$i->category_full}}" required>
-                            <button type="submit" class="btn btn-primary ">Update</button>
+                            <button type="submit" class="btn btn-primary ">{{translate("Update")}}</button>
                         </div>
                         <input type="hidden" name="id" value="{{ $i->id }}">
                     </form>   
 
 
                     <!--<p class=" default_padding default_margin"><strong>Created At: <br></strong>{{$i->created_at}}</p> -->
-                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>Updated At: <br></strong>{{$i->updated_at}}</p>                      
+                    <p class="no_padding_left default_padding default_margin large_padding_sides"><strong>{{translate("Updated At:")}} <br></strong>{{$i->updated_at}}</p>                      
                 </div>
                 <div class="col-12">
                     <hr>
                     <form id="category_image_upload" enctype="multipart/form-data" method="POST" class="mb-3">
                         @csrf
                         <div class="large_padding_sides">
-                            <p class=" default_padding default_margin"><strong>Upload a New Image File <br> </strong></p>
+                            <p class=" default_padding default_margin"><strong>{{translate("Upload a New Image File ")}}<br> </strong></p>
                             <div class="input-group mb-3">
                                 <input type="file" name="image" id="image" class="form-control" required>
                             </div>
                             <div class="text-end">
-                                <button type="submit" class="btn btn-primary">Update Image</button>
+                                <button type="submit" class="btn btn-primary">{{translate("Update Image")}}</button>
 
                             </div>
                             <input type="hidden" name="id" value="{{$i->id}}">
