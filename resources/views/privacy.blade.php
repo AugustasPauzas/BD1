@@ -22,7 +22,7 @@
     <p><strong>{{translate("Affiliate")}}</strong> {{translate("means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority")}} .</p>
     </li>
     <li>
-    <p><strong>{{translate("ompany")}}C</strong> {{translate("(referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to PcParts.")}}</p>
+    <p><strong>{{translate("Company")}}</strong> {{translate("(referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to PcParts.")}}</p>
     </li>
     <li>
     <p><strong>{{translate("Cookies")}}</strong> {{translate("are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.")}}</p>
