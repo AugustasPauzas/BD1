@@ -135,13 +135,13 @@
                                     </svg>
                                     
                                     <span class="{{ $data_item->quantity >= 1 ? ($data_item->quantity <= 3 ? 'low_stock' : 'in_stock') : 'out_of_stock' }}
-                                    font_110"> <strong>{{ $data_item->quantity >= 1 ? ($data_item->quantity <= 3 ? 'Low Stock' : 'In Stock') : 'Out Of Stock' }} </span><span class="font_110">{{$data_item->quantity}}</span></strong><span class="font_75 secondary_text"> /pcs</span> </p> 
+                                    font_110"> <strong>{{ $data_item->quantity >= 1 ? ($data_item->quantity <= 3 ? translate("Low Stock") : translate("In Stock")) : translate("Out Of Stock") }} </span><span class="font_110">{{$data_item->quantity}}</span></strong><span class="font_75 secondary_text"> /pcs</span> </p> 
                                 </div>
                             </div>
     
                             <div class="row ">
                                 <div class="col-lg-6 default_margin">
-                                    <p><strong>Price</strong>  <span class="price_p"><strong>{{ number_format($data_item->price, 2) }} €</strong></span> <span class="font_75 secondary_text">/pcs</span> </p>
+                                    <p><strong>{{translate("Price")}}</strong>  <span class="price_p"><strong>{{ number_format($data_item->price, 2) }} €</strong></span> <span class="font_75 secondary_text">{{translate("/pcs")}}</span> </p>
     
                                     
     
